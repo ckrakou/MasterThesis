@@ -1,0 +1,348 @@
+Program called with the following parameters:
+ * angleHardThreshold = 90
+ * bestScoreThreshold = 0
+ * downscale =  Unknown Type "unsigned int"
+ * fillHoles = 0
+ * flipNormals = 0
+ * forceVisibleByAllVertices = 0
+ * ini = "E:/BALDER WORKFILES/SemioticUncertenty/project/MeshroomCache/PrepareDenseScene/e5c059a256afe448559ca483d22145a5d8f29e5b/mvs.ini"
+ * inputDenseReconstruction = "E:/BALDER WORKFILES/SemioticUncertenty/project/MeshroomCache/Meshing/f519811a7a8094ec976b99c0d4e5c6b82161a187/denseReconstruction.bin"
+ * inputMesh = "E:/BALDER WORKFILES/SemioticUncertenty/project/MeshroomCache/MeshFiltering/64b20e857a08132c48c6366ca7e9fc356b83a73f/mesh.obj"
+ * maxNbImagesForFusion = 3
+ * output = "E:/BALDER WORKFILES/SemioticUncertenty/project/MeshroomCache/Texturing/2ee922cb57254462185954d598efa9ed86d829cb"
+ * outputTextureFileType = "png"
+ * padding =  Unknown Type "unsigned int"
+ * textureSide =  Unknown Type "unsigned int"
+ * unwrapMethod = "Basic"
+ * verboseLevel = "info"
+ * visibilityRemappingMethod = "PullPush"
+
+[12:37:53.630276][info] Found 1 image dimension(s): 
+[12:37:53.631276][info]  - [4160x3120]
+[12:37:53.960170][info] Overall maximum dimension: [4160x3120]
+[12:37:54.388539][info] Loading mesh from obj file: E:/BALDER WORKFILES/SemioticUncertenty/project/MeshroomCache/MeshFiltering/64b20e857a08132c48c6366ca7e9fc356b83a73f/mesh.obj
+[12:37:55.633642][info] 	- # vertices: 1276727
+	- # normals: 0
+	- # uv coordinates: 0
+	- # triangles: 2549664
+[12:37:59.084543][info] Mesh loaded: 
+	- #points: 1276727
+	- # triangles: 2549664
+[12:37:59.695348][info] remapMeshVisibility based on triangles start.
+[12:38:04.828710][info] remapMeshVisibility done.
+[12:38:05.071631][info] Input mesh has no UV coordinates, start unwrapping (Basic)
+[12:38:05.071631][info] Generating UVs (textureSide: 8192; padding: 15).
+[12:38:05.071631][info] Creating texture charts.
+[12:38:12.227143][info] Packing texture charts (2549664 charts).
+[12:38:19.305887][info] Finalize packed charts (4767 charts).
+[12:38:19.423850][info] Creating texture atlases.
+[12:38:19.425849][info] 	- texture atlas 1
+[12:38:19.465837][info] Filled with 2676 charts.
+[12:38:19.468835][info] 	- texture atlas 2
+[12:38:19.478832][info] Filled with 1638 charts.
+[12:38:19.481831][info] 	- texture atlas 3
+[12:38:19.481831][info] Filled with 453 charts.
+[12:38:23.549533][info] Unwrapping done.
+[12:38:23.550532][info] Writing obj and mtl file.
+[12:38:27.973206][info] Writing done: 
+	- obj file: E:/BALDER WORKFILES/SemioticUncertenty/project/MeshroomCache/Texturing/2ee922cb57254462185954d598efa9ed86d829cb\texturedMesh.obj
+	- mtl file: E:/BALDER WORKFILES/SemioticUncertenty/project/MeshroomCache/Texturing/2ee922cb57254462185954d598efa9ed86d829cb\texturedMesh.mtl
+[12:38:27.975205][info] Generate textures.
+[12:38:28.093167][info] Generating texture for atlas 1/3 (1131521 triangles).
+[12:38:41.186984][info] Reading pixel color.
+[12:38:41.649836][info]  - camera 1/93 (54215 triangles)
+[12:38:42.587039][info]  - camera 2/93 (13279 triangles)
+[12:38:43.421276][info]  - camera 3/93 (90554 triangles)
+[12:38:44.322986][info]  - camera 4/93 (0 triangles)
+[12:38:45.137266][info]  - camera 5/93 (2415 triangles)
+[12:38:45.947006][info]  - camera 6/93 (87364 triangles)
+[12:38:46.772741][info]  - camera 7/93 (54068 triangles)
+[12:38:47.552092][info]  - camera 8/93 (69499 triangles)
+[12:38:48.319845][info]  - camera 9/93 (30739 triangles)
+[12:38:49.151588][info]  - camera 10/93 (62804 triangles)
+[12:38:50.121277][info]  - camera 11/93 (26943 triangles)
+[12:38:50.926018][info]  - camera 12/93 (104308 triangles)
+[12:38:51.808782][info]  - camera 13/93 (21976 triangles)
+[12:38:52.572537][info]  - camera 14/93 (49589 triangles)
+[12:38:53.345379][info]  - camera 15/93 (131592 triangles)
+[12:38:54.232205][info]  - camera 16/93 (35443 triangles)
+[12:38:55.176901][info]  - camera 17/93 (34462 triangles)
+[12:38:55.989641][info]  - camera 18/93 (46114 triangles)
+[12:38:56.862383][info]  - camera 19/93 (65608 triangles)
+[12:38:57.729105][info]  - camera 20/93 (470 triangles)
+[12:38:58.525353][info]  - camera 21/93 (52688 triangles)
+[12:38:59.381583][info]  - camera 22/93 (32646 triangles)
+[12:39:00.336277][info]  - camera 23/93 (147491 triangles)
+[12:39:01.129546][info]  - camera 24/93 (63951 triangles)
+[12:39:01.864816][info]  - camera 25/93 (7916 triangles)
+[12:39:02.597580][info]  - camera 26/93 (72854 triangles)
+[12:39:03.498795][info]  - camera 27/93 (38647 triangles)
+[12:39:04.316037][info]  - camera 28/93 (43893 triangles)
+[12:39:05.157766][info]  - camera 29/93 (20320 triangles)
+[12:39:06.052504][info]  - camera 30/93 (27868 triangles)
+[12:39:06.939724][info]  - camera 31/93 (43632 triangles)
+[12:39:07.707478][info]  - camera 32/93 (51575 triangles)
+[12:39:08.606189][info]  - camera 33/93 (13216 triangles)
+[12:39:09.484413][info]  - camera 34/93 (20217 triangles)
+[12:39:10.290155][info]  - camera 35/93 (0 triangles)
+[12:39:11.088403][info]  - camera 36/93 (41995 triangles)
+[12:39:11.923135][info]  - camera 37/93 (30974 triangles)
+[12:39:12.712882][info]  - camera 38/93 (49191 triangles)
+[12:39:13.527124][info]  - camera 39/93 (130914 triangles)
+[12:39:14.366854][info]  - camera 40/93 (31943 triangles)
+[12:39:15.199615][info]  - camera 41/93 (21462 triangles)
+[12:39:15.888898][info]  - camera 42/93 (5325 triangles)
+[12:39:16.565681][info]  - camera 43/93 (7178 triangles)
+[12:39:17.352429][info]  - camera 44/93 (55257 triangles)
+[12:39:18.153676][info]  - camera 45/93 (72706 triangles)
+[12:39:19.004403][info]  - camera 46/93 (49486 triangles)
+[12:39:19.716184][info]  - camera 47/93 (34355 triangles)
+[12:39:20.457946][info]  - camera 48/93 (47706 triangles)
+[12:39:21.260780][info]  - camera 49/93 (51047 triangles)
+[12:39:22.039530][info]  - camera 50/93 (8523 triangles)
+[12:39:22.793288][info]  - camera 51/93 (13547 triangles)
+[12:39:23.640039][info]  - camera 52/93 (26405 triangles)
+[12:39:24.455777][info]  - camera 53/93 (26240 triangles)
+[12:39:25.263022][info]  - camera 54/93 (5444 triangles)
+[12:39:26.035774][info]  - camera 55/93 (4744 triangles)
+[12:39:26.785545][info]  - camera 56/93 (74924 triangles)
+[12:39:27.611783][info]  - camera 57/93 (42048 triangles)
+[12:39:28.393038][info]  - camera 58/93 (90383 triangles)
+[12:39:29.116805][info]  - camera 59/93 (0 triangles)
+[12:39:29.785590][info]  - camera 60/93 (9214 triangles)
+[12:39:30.503360][info]  - camera 61/93 (76829 triangles)
+[12:39:31.318602][info]  - camera 62/93 (22379 triangles)
+[12:39:32.085859][info]  - camera 63/93 (43874 triangles)
+[12:39:32.865113][info]  - camera 64/93 (82784 triangles)
+[12:39:33.686850][info]  - camera 65/93 (52313 triangles)
+[12:39:34.455602][info]  - camera 66/93 (28870 triangles)
+[12:39:35.205389][info]  - camera 67/93 (21714 triangles)
+[12:39:35.969144][info]  - camera 68/93 (22880 triangles)
+[12:39:36.774885][info]  - camera 69/93 (57979 triangles)
+[12:39:37.573629][info]  - camera 70/93 (26451 triangles)
+[12:39:38.358377][info]  - camera 71/93 (84794 triangles)
+[12:39:39.120133][info]  - camera 72/93 (84613 triangles)
+[12:39:39.831904][info]  - camera 73/93 (49679 triangles)
+[12:39:40.531184][info]  - camera 74/93 (59834 triangles)
+[12:39:41.360925][info]  - camera 75/93 (14681 triangles)
+[12:39:42.114683][info]  - camera 76/93 (65606 triangles)
+[12:39:42.894432][info]  - camera 77/93 (36294 triangles)
+[12:39:43.677199][info]  - camera 78/93 (41615 triangles)
+[12:39:44.460947][info]  - camera 79/93 (46859 triangles)
+[12:39:45.201709][info]  - camera 80/93 (134230 triangles)
+[12:39:46.017447][info]  - camera 81/93 (46031 triangles)
+[12:39:46.764207][info]  - camera 82/93 (164678 triangles)
+[12:39:47.609451][info]  - camera 83/93 (121362 triangles)
+[12:39:48.435185][info]  - camera 84/93 (131092 triangles)
+[12:39:49.243481][info]  - camera 85/93 (49352 triangles)
+[12:39:50.021735][info]  - camera 86/93 (22848 triangles)
+[12:39:50.768028][info]  - camera 87/93 (14632 triangles)
+[12:39:51.445879][info]  - camera 88/93 (22754 triangles)
+[12:39:52.125673][info]  - camera 89/93 (101349 triangles)
+[12:39:52.916925][info]  - camera 90/93 (21617 triangles)
+[12:39:53.673221][info]  - camera 91/93 (137382 triangles)
+[12:39:54.517006][info]  - camera 92/93 (62548 triangles)
+[12:39:55.386258][info]  - camera 93/93 (10810 triangles)
+[12:39:56.219990][info] Edge padding (15 pixels).
+[12:39:58.626722][info] Computing final (average) color.
+[12:39:59.274514][info] Writing texture file: E:/BALDER WORKFILES/SemioticUncertenty/project/MeshroomCache/Texturing/2ee922cb57254462185954d598efa9ed86d829cb\texture_0.png
+[12:39:59.274514][info] Downscaling texture (2x).
+[12:40:04.953336][info] Generating texture for atlas 2/3 (1338948 triangles).
+[12:40:16.952509][info] Reading pixel color.
+[12:40:17.425358][info]  - camera 1/93 (105139 triangles)
+[12:40:18.229109][info]  - camera 2/93 (33277 triangles)
+[12:40:19.013362][info]  - camera 3/93 (123660 triangles)
+[12:40:19.900077][info]  - camera 4/93 (0 triangles)
+[12:40:20.634841][info]  - camera 5/93 (5997 triangles)
+[12:40:21.436634][info]  - camera 6/93 (70172 triangles)
+[12:40:22.393829][info]  - camera 7/93 (58426 triangles)
+[12:40:23.178578][info]  - camera 8/93 (64690 triangles)
+[12:40:23.981831][info]  - camera 9/93 (52249 triangles)
+[12:40:24.780575][info]  - camera 10/93 (62649 triangles)
+[12:40:25.648297][info]  - camera 11/93 (27149 triangles)
+[12:40:26.411559][info]  - camera 12/93 (72400 triangles)
+[12:40:27.203333][info]  - camera 13/93 (61880 triangles)
+[12:40:27.978085][info]  - camera 14/93 (41235 triangles)
+[12:40:28.768896][info]  - camera 15/93 (89611 triangles)
+[12:40:29.485666][info]  - camera 16/93 (83362 triangles)
+[12:40:30.277916][info]  - camera 17/93 (65885 triangles)
+[12:40:31.040671][info]  - camera 18/93 (69691 triangles)
+[12:40:31.812424][info]  - camera 19/93 (114877 triangles)
+[12:40:32.756121][info]  - camera 20/93 (1370 triangles)
+[12:40:33.490885][info]  - camera 21/93 (79205 triangles)
+[12:40:34.206159][info]  - camera 22/93 (58404 triangles)
+[12:40:34.942952][info]  - camera 23/93 (85884 triangles)
+[12:40:35.712705][info]  - camera 24/93 (76206 triangles)
+[12:40:36.480980][info]  - camera 25/93 (25275 triangles)
+[12:40:37.238737][info]  - camera 26/93 (53120 triangles)
+[12:40:38.056506][info]  - camera 27/93 (69552 triangles)
+[12:40:38.832771][info]  - camera 28/93 (79817 triangles)
+[12:40:39.660010][info]  - camera 29/93 (31957 triangles)
+[12:40:40.342790][info]  - camera 30/93 (44745 triangles)
+[12:40:41.117046][info]  - camera 31/93 (57542 triangles)
+[12:40:41.893840][info]  - camera 32/93 (72437 triangles)
+[12:40:42.675626][info]  - camera 33/93 (32837 triangles)
+[12:40:43.431383][info]  - camera 34/93 (62339 triangles)
+[12:40:44.195168][info]  - camera 35/93 (0 triangles)
+[12:40:44.947936][info]  - camera 36/93 (66372 triangles)
+[12:40:45.742681][info]  - camera 37/93 (50933 triangles)
+[12:40:46.531961][info]  - camera 38/93 (99378 triangles)
+[12:40:47.330210][info]  - camera 39/93 (104184 triangles)
+[12:40:48.139051][info]  - camera 40/93 (71323 triangles)
+[12:40:48.824355][info]  - camera 41/93 (46538 triangles)
+[12:40:49.515133][info]  - camera 42/93 (13716 triangles)
+[12:40:50.268397][info]  - camera 43/93 (13458 triangles)
+[12:40:51.027678][info]  - camera 44/93 (44072 triangles)
+[12:40:51.814426][info]  - camera 45/93 (115743 triangles)
+[12:40:52.632270][info]  - camera 46/93 (54182 triangles)
+[12:40:53.426016][info]  - camera 47/93 (44437 triangles)
+[12:40:54.213763][info]  - camera 48/93 (48586 triangles)
+[12:40:54.969581][info]  - camera 49/93 (46750 triangles)
+[12:40:55.739459][info]  - camera 50/93 (12709 triangles)
+[12:40:56.574695][info]  - camera 51/93 (43432 triangles)
+[12:40:57.347447][info]  - camera 52/93 (70131 triangles)
+[12:40:58.146715][info]  - camera 53/93 (102968 triangles)
+[12:40:58.981110][info]  - camera 54/93 (12636 triangles)
+[12:40:59.720872][info]  - camera 55/93 (7184 triangles)
+[12:41:00.460679][info]  - camera 56/93 (55425 triangles)
+[12:41:01.270420][info]  - camera 57/93 (81693 triangles)
+[12:41:02.046171][info]  - camera 58/93 (55290 triangles)
+[12:41:02.825426][info]  - camera 59/93 (0 triangles)
+[12:41:03.560223][info]  - camera 60/93 (28928 triangles)
+[12:41:04.320946][info]  - camera 61/93 (115576 triangles)
+[12:41:05.126688][info]  - camera 62/93 (38310 triangles)
+[12:41:05.898946][info]  - camera 63/93 (55510 triangles)
+[12:41:06.628765][info]  - camera 64/93 (69208 triangles)
+[12:41:07.365529][info]  - camera 65/93 (50390 triangles)
+[12:41:08.206284][info]  - camera 66/93 (38072 triangles)
+[12:41:08.983037][info]  - camera 67/93 (63238 triangles)
+[12:41:09.927777][info]  - camera 68/93 (57107 triangles)
+[12:41:10.709030][info]  - camera 69/93 (62791 triangles)
+[12:41:11.577375][info]  - camera 70/93 (73899 triangles)
+[12:41:12.450624][info]  - camera 71/93 (96271 triangles)
+[12:41:13.279946][info]  - camera 72/93 (49655 triangles)
+[12:41:13.962231][info]  - camera 73/93 (45271 triangles)
+[12:41:14.758975][info]  - camera 74/93 (105831 triangles)
+[12:41:15.598803][info]  - camera 75/93 (24532 triangles)
+[12:41:16.373059][info]  - camera 76/93 (57249 triangles)
+[12:41:17.086548][info]  - camera 77/93 (33618 triangles)
+[12:41:17.764836][info]  - camera 78/93 (48248 triangles)
+[12:41:18.450645][info]  - camera 79/93 (44653 triangles)
+[12:41:19.170422][info]  - camera 80/93 (56146 triangles)
+[12:41:19.965167][info]  - camera 81/93 (68392 triangles)
+[12:41:20.786408][info]  - camera 82/93 (75463 triangles)
+[12:41:21.563159][info]  - camera 83/93 (97588 triangles)
+[12:41:22.371438][info]  - camera 84/93 (76394 triangles)
+[12:41:23.180683][info]  - camera 85/93 (29775 triangles)
+[12:41:23.947942][info]  - camera 86/93 (51310 triangles)
+[12:41:24.665712][info]  - camera 87/93 (68566 triangles)
+[12:41:25.354490][info]  - camera 88/93 (67389 triangles)
+[12:41:26.052772][info]  - camera 89/93 (66176 triangles)
+[12:41:26.878011][info]  - camera 90/93 (66133 triangles)
+[12:41:27.661843][info]  - camera 91/93 (72009 triangles)
+[12:41:28.439593][info]  - camera 92/93 (74108 triangles)
+[12:41:29.211893][info]  - camera 93/93 (22069 triangles)
+[12:41:30.008637][info] Edge padding (15 pixels).
+[12:41:32.508338][info] Computing final (average) color.
+[12:41:33.186624][info] Writing texture file: E:/BALDER WORKFILES/SemioticUncertenty/project/MeshroomCache/Texturing/2ee922cb57254462185954d598efa9ed86d829cb\texture_1.png
+[12:41:33.186624][info] Downscaling texture (2x).
+[12:41:39.221667][info] Generating texture for atlas 3/3 (79195 triangles).
+[12:41:39.857464][info] Reading pixel color.
+[12:41:40.320818][info]  - camera 1/93 (5770 triangles)
+[12:41:41.055582][info]  - camera 2/93 (1687 triangles)
+[12:41:41.803848][info]  - camera 3/93 (6993 triangles)
+[12:41:42.558605][info]  - camera 4/93 (0 triangles)
+[12:41:43.299368][info]  - camera 5/93 (298 triangles)
+[12:41:44.050126][info]  - camera 6/93 (2219 triangles)
+[12:41:44.812387][info]  - camera 7/93 (3197 triangles)
+[12:41:45.562146][info]  - camera 8/93 (3125 triangles)
+[12:41:46.330900][info]  - camera 9/93 (2647 triangles)
+[12:41:47.017218][info]  - camera 10/93 (3778 triangles)
+[12:41:47.789011][info]  - camera 11/93 (1497 triangles)
+[12:41:48.522775][info]  - camera 12/93 (2846 triangles)
+[12:41:49.277593][info]  - camera 13/93 (4754 triangles)
+[12:41:50.045346][info]  - camera 14/93 (2328 triangles)
+[12:41:50.806607][info]  - camera 15/93 (5683 triangles)
+[12:41:51.473955][info]  - camera 16/93 (2475 triangles)
+[12:41:52.215786][info]  - camera 17/93 (3409 triangles)
+[12:41:52.967486][info]  - camera 18/93 (3484 triangles)
+[12:41:53.631790][info]  - camera 19/93 (6267 triangles)
+[12:41:54.302623][info]  - camera 20/93 (153 triangles)
+[12:41:55.027932][info]  - camera 21/93 (4621 triangles)
+[12:41:55.782714][info]  - camera 22/93 (2438 triangles)
+[12:41:56.532473][info]  - camera 23/93 (5326 triangles)
+[12:41:57.303226][info]  - camera 24/93 (3463 triangles)
+[12:41:58.046541][info]  - camera 25/93 (1852 triangles)
+[12:41:58.820292][info]  - camera 26/93 (3640 triangles)
+[12:41:59.562054][info]  - camera 27/93 (4447 triangles)
+[12:42:00.320366][info]  - camera 28/93 (3311 triangles)
+[12:42:01.097621][info]  - camera 29/93 (1386 triangles)
+[12:42:01.833385][info]  - camera 30/93 (1565 triangles)
+[12:42:02.614156][info]  - camera 31/93 (4738 triangles)
+[12:42:03.395410][info]  - camera 32/93 (3565 triangles)
+[12:42:04.156165][info]  - camera 33/93 (1034 triangles)
+[12:42:04.916449][info]  - camera 34/93 (4531 triangles)
+[12:42:05.658714][info]  - camera 35/93 (0 triangles)
+[12:42:06.387984][info]  - camera 36/93 (3322 triangles)
+[12:42:07.228231][info]  - camera 37/93 (3085 triangles)
+[12:42:07.973991][info]  - camera 38/93 (6039 triangles)
+[12:42:08.732252][info]  - camera 39/93 (4890 triangles)
+[12:42:09.463525][info]  - camera 40/93 (1957 triangles)
+[12:42:10.226280][info]  - camera 41/93 (3981 triangles)
+[12:42:10.986036][info]  - camera 42/93 (948 triangles)
+[12:42:11.821779][info]  - camera 43/93 (610 triangles)
+[12:42:12.566044][info]  - camera 44/93 (4348 triangles)
+[12:42:13.310805][info]  - camera 45/93 (6197 triangles)
+[12:42:14.055565][info]  - camera 46/93 (3870 triangles)
+[12:42:14.800349][info]  - camera 47/93 (2930 triangles)
+[12:42:15.557106][info]  - camera 48/93 (3198 triangles)
+[12:42:16.286872][info]  - camera 49/93 (1960 triangles)
+[12:42:17.061149][info]  - camera 50/93 (1072 triangles)
+[12:42:17.848402][info]  - camera 51/93 (2331 triangles)
+[12:42:18.601665][info]  - camera 52/93 (3660 triangles)
+[12:42:19.331431][info]  - camera 53/93 (5279 triangles)
+[12:42:19.993219][info]  - camera 54/93 (1575 triangles)
+[12:42:20.729487][info]  - camera 55/93 (495 triangles)
+[12:42:21.446761][info]  - camera 56/93 (4794 triangles)
+[12:42:22.204618][info]  - camera 57/93 (5569 triangles)
+[12:42:22.945380][info]  - camera 58/93 (4230 triangles)
+[12:42:23.708639][info]  - camera 59/93 (0 triangles)
+[12:42:24.452519][info]  - camera 60/93 (1692 triangles)
+[12:42:25.229774][info]  - camera 61/93 (4952 triangles)
+[12:42:25.974566][info]  - camera 62/93 (3567 triangles)
+[12:42:26.728828][info]  - camera 63/93 (4403 triangles)
+[12:42:27.485585][info]  - camera 64/93 (4439 triangles)
+[12:42:28.251351][info]  - camera 65/93 (3882 triangles)
+[12:42:28.997657][info]  - camera 66/93 (2219 triangles)
+[12:42:29.749415][info]  - camera 67/93 (3701 triangles)
+[12:42:30.515241][info]  - camera 68/93 (2214 triangles)
+[12:42:31.189039][info]  - camera 69/93 (2468 triangles)
+[12:42:31.842829][info]  - camera 70/93 (6005 triangles)
+[12:42:32.599586][info]  - camera 71/93 (5302 triangles)
+[12:42:33.359342][info]  - camera 72/93 (1849 triangles)
+[12:42:34.200100][info]  - camera 73/93 (3105 triangles)
+[12:42:34.920868][info]  - camera 74/93 (7534 triangles)
+[12:42:35.671654][info]  - camera 75/93 (1539 triangles)
+[12:42:36.498389][info]  - camera 76/93 (4686 triangles)
+[12:42:37.271690][info]  - camera 77/93 (2675 triangles)
+[12:42:38.007979][info]  - camera 78/93 (5012 triangles)
+[12:42:38.741743][info]  - camera 79/93 (1917 triangles)
+[12:42:39.497501][info]  - camera 80/93 (5231 triangles)
+[12:42:40.253259][info]  - camera 81/93 (1473 triangles)
+[12:42:41.013532][info]  - camera 82/93 (5673 triangles)
+[12:42:41.760329][info]  - camera 83/93 (5011 triangles)
+[12:42:42.524588][info]  - camera 84/93 (6741 triangles)
+[12:42:43.283850][info]  - camera 85/93 (1644 triangles)
+[12:42:43.954635][info]  - camera 86/93 (2586 triangles)
+[12:42:44.633947][info]  - camera 87/93 (5033 triangles)
+[12:42:45.297251][info]  - camera 88/93 (2706 triangles)
+[12:42:46.147979][info]  - camera 89/93 (5653 triangles)
+[12:42:46.912238][info]  - camera 90/93 (3874 triangles)
+[12:42:47.677499][info]  - camera 91/93 (6310 triangles)
+[12:42:48.434786][info]  - camera 92/93 (4980 triangles)
+[12:42:49.198045][info]  - camera 93/93 (614 triangles)
+[12:42:49.949307][info] Edge padding (15 pixels).
+[12:42:52.530478][info] Computing final (average) color.
+[12:42:52.993330][info] Writing texture file: E:/BALDER WORKFILES/SemioticUncertenty/project/MeshroomCache/Texturing/2ee922cb57254462185954d598efa9ed86d829cb\texture_2.png
+[12:42:52.993330][info] Downscaling texture (2x).
+[12:42:57.546434][info] Task done in (s): 303.917000

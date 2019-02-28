@@ -1,0 +1,18 @@
+{
+    "status": "SUCCESS",
+    "execMode": "LOCAL",
+    "nodeName": "Texturing_1",
+    "nodeType": "Texturing",
+    "packageName": "aliceVision",
+    "packageVersion": null,
+    "graph": "",
+    "commandLine": "aliceVision_texturing  --ini \"E:/BALDER WORKFILES/SemioticUncertenty/project/MeshroomCache/PrepareDenseScene/37283db8868199e64c959dbaf325a81ba609aa06/mvs.ini\" --inputDenseReconstruction \"E:/BALDER WORKFILES/SemioticUncertenty/project/MeshroomCache/Meshing/55c5d1636417847514a08ee73319f2d10547f903/denseReconstruction.bin\" --inputMesh \"E:/BALDER WORKFILES/SemioticUncertenty/project/MeshroomCache/MeshFiltering/68f8762724d653945bd4a0e7047c0f100b6bd3c1/mesh.obj\" --textureSide 8192 --downscale 2 --outputTextureFileType png --unwrapMethod Basic --fillHoles False --padding 15 --maxNbImagesForFusion 3 --bestScoreThreshold 0.0 --angleHardThreshold 90.0 --forceVisibleByAllVertices False --flipNormals False --visibilityRemappingMethod PullPush --verboseLevel info --output \"E:/BALDER WORKFILES/SemioticUncertenty/project/MeshroomCache/Texturing/263c142c7b230eea4b585d11b3035835913e1dc7\" ",
+    "env": null,
+    "startDateTime": "2019-02-27 14:27:23.808404",
+    "endDateTime": "2019-02-27 14:30:00.780645",
+    "elapsedTime": 156.97224068641663,
+    "hostname": "DESKTOP-EI397V5",
+    "sessionUid": "63aabc9e-3a6d-11e9-a14c-408d5cbb3be7",
+    "returnCode": 0,
+    "elapsedTimeStr": "0:02:36.972241"
+}
