@@ -32,8 +32,17 @@ VideoClipImporter:
       aspectRatio: 0
       customWidth: 320
       customHeight: 240
-      bitrateMode: 1
+      bitrateMode: 0
       spatialQuality: 2
+    13:
+      enableTranscoding: 1
+      codec: 0
+      resizeFormat: 0
+      aspectRatio: 0
+      customWidth: 320
+      customHeight: 240
+      bitrateMode: 0
+      spatialQuality: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
