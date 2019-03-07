@@ -155,6 +155,16 @@ namespace Kino
             _material = null;
         }
 
+        public void RandomGlitch(){
+
+            blockSize=Random.Range(1,24);
+            entropy=Random.Range(0.01f,1f);
+            noiseContrast=Random.Range(0.5f,4);
+            velocityScale=Random.Range(0.01f,2);
+            diffusion=Random.Range(0.01f,2);
+            Glitch();
+        }
+
         void OnRenderImage(RenderTexture source, RenderTexture destination)
         {
             _material.SetFloat("_BlockSize", _blockSize);
