@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Chris - Workbench.unity
     guid: d469817d0d6b64f4f9833845b47186a0
   - enabled: 1

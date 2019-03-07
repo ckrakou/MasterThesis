@@ -369,75 +369,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1001 &1084862558
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4421364994205197603, guid: ef44426152fb4432caba00e69f6741c4,
-        type: 3}
-      propertyPath: m_Name
-      value: ClockPrefab
-      objectReference: {fileID: 0}
-    - target: {fileID: 5021593008393673050, guid: ef44426152fb4432caba00e69f6741c4,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5021593008393673050, guid: ef44426152fb4432caba00e69f6741c4,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5021593008393673050, guid: ef44426152fb4432caba00e69f6741c4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 71.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 5021593008393673050, guid: ef44426152fb4432caba00e69f6741c4,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5021593008393673050, guid: ef44426152fb4432caba00e69f6741c4,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5021593008393673050, guid: ef44426152fb4432caba00e69f6741c4,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5021593008393673050, guid: ef44426152fb4432caba00e69f6741c4,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5021593008393673050, guid: ef44426152fb4432caba00e69f6741c4,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5021593008393673050, guid: ef44426152fb4432caba00e69f6741c4,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5021593008393673050, guid: ef44426152fb4432caba00e69f6741c4,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5021593008393673050, guid: ef44426152fb4432caba00e69f6741c4,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ef44426152fb4432caba00e69f6741c4, type: 3}
 --- !u!1 &1089346230
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,8 +575,8 @@ MonoBehaviour:
     type: 3}
   MinDatamoshColliders: 100
   MaxDatamoshColliders: 150
-  MinAnalogGlitchColliders: 300
-  MaxAnalogGlitchColliders: 400
+  MinAnalogGlitchColliders: 10
+  MaxAnalogGlitchColliders: 30
 --- !u!4 &1893666268
 Transform:
   m_ObjectHideFlags: 0

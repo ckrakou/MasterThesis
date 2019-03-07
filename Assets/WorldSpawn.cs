@@ -25,8 +25,10 @@ public int MinAnalogGlitchColliders = 25;
         Cursor.visible = false;
     for(int i = 0; i < WorldMonuments.Length; i++){
       //spawn world monuments at random
+       int ramdomMonumentRotationY=Random.Range(-180,180);
+      Quaternion MonumenrSpawnRotation = Quaternion.Euler(0,ramdomMonumentRotationY,0);
         placeToSpawn = new Vector3(Random.Range(-500, 500), 0, Random.Range(-500, 500));
-	Instantiate(WorldMonuments[i], placeToSpawn, Quaternion.identity);
+	Instantiate(WorldMonuments[i], placeToSpawn, MonumenrSpawnRotation);
         
         }
 
@@ -45,7 +47,18 @@ public int MinAnalogGlitchColliders = 25;
       
         placeToSpawn = new Vector3(Random.Range(-500, 500), 0, Random.Range(-500, 500));
 	Instantiate(AnalogGlitchCubes, placeToSpawn, Quaternion.identity);
-        
+        }
+
+         //spawn alot of clocks
+          int NumberOfClocks = Random.Range(40,60);
+        for(int i = 0; i < NumberOfClocks; i++){
+      
+        placeToSpawn = new Vector3(Random.Range(-500, 500), 0, Random.Range(-500, 500));
+        int ramdomClockRotationY=Random.Range(-180,180);
+         Quaternion ClockSpawnRotation = Quaternion.Euler(0,ramdomClockRotationY,0);
+	GameObject newObject = Instantiate(WorldMonuments[1], placeToSpawn, ClockSpawnRotation) as GameObject;
+        int randonSize = Random.Range(4, 10);
+        newObject.transform.localScale = new Vector3(randonSize, randonSize+Random.Range(0,4), randonSize);
         }
 
 
