@@ -19,7 +19,7 @@ public class VideoControl : MonoBehaviour
     void Update()
     {
         if(video.isPrepared &&videoBool){
-            playVideo();
+            //playVideo();
             videoBool=false;
         }
     }
