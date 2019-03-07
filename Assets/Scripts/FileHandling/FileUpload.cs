@@ -9,9 +9,15 @@ using System;
 public class FileUpload : MonoBehaviour
 {
     public bool debugging = false;
+    public GameObject TestCube;
 
     [DllImport("__Internal")]
     private static extern void ImageUploaderCaptureClick();
+
+    [DllImport("__Internal")]
+    private static extern void ImageUploaderInit();
+
+    static string s_dataUrlPrefix = "data:image/png;base64,";
 
     private byte[] masterFile = new byte[0];
     private GameUnlocker unlocker;
@@ -21,17 +27,9 @@ public class FileUpload : MonoBehaviour
         unlocker = GetComponent<GameUnlocker>();
         TextAsset bindata = Resources.Load("MasterFile") as TextAsset;
         masterFile = bindata.bytes;
+        //ImageUploaderInit();
     }
-    /*
-    IEnumerator LoadTexture(string url)
-    {
-        WWW image = new WWW(url);
-        yield return image;
-        Texture2D texture = new Texture2D(1, 1);
-        image.LoadImageIntoTexture(texture);
-        Debug.Log("Loaded image size: " + texture.width + "x" + texture.height);
-    }
-    */
+    
     IEnumerator EnterFile(string url)
     {
         UnityWebRequest file = UnityWebRequest.Get(url);
@@ -47,7 +45,16 @@ public class FileUpload : MonoBehaviour
         }
 
         if (CheckFile(rawFile))
-            unlocker.UnlockMainScene();
+        {
+            if (debugging)
+            {
+                Debug.Log("FileUpload: File identified successfully");
+                TestCube.GetComponent<Renderer>().material.color = Color.red;
+            }
+            else
+                unlocker.UnlockMainScene();
+        }
+
     }
 
     private bool CheckFile(byte[] rawFile)
@@ -73,13 +80,15 @@ public class FileUpload : MonoBehaviour
 
     public void OnButtonPointerDown()
     {
-
+        
 #if UNITY_EDITOR
-        string path = UnityEditor.EditorUtility.OpenFilePanel("Open image", "", "jpg,png,bmp");
+        string path = UnityEditor.EditorUtility.OpenFilePanel("Open image", "","");
         if (!System.String.IsNullOrEmpty(path))
             FileSelected("file:///" + path);
 #else
         ImageUploaderCaptureClick ();
+
 #endif
+
     }
 }
