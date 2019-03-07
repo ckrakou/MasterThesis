@@ -17,7 +17,7 @@ public class WorldSpawn : MonoBehaviour
 
 	// Use this for initialization
 	void Awake () {
-
+        Cursor.visible = false;
     for(int i = 0; i < WorldMonuments.Length; i++){
       //spawn world monuments at random
         placeToSpawn = new Vector3(Random.Range(-500, 500), 0, Random.Range(-500, 500));
