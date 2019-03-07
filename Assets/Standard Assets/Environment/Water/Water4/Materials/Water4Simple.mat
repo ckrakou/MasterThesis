@@ -60,11 +60,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _FresnelScale: 0.1
+    - _FresnelScale: 0.28
     - _GerstnerIntensity: 0.1
     - _HeightDisplacement: 2.3370318
     - _NormalsDisplacement: 72.72728
-    - _Shininess: 349.13794
+    - _Shininess: 276
     m_Colors:
     - _AnimationDirection: {r: 2, g: 1, b: -1, a: 1}
     - _AnimationTiling: {r: 0.4, g: 0.39099997, b: 0.56, a: 0.7}
@@ -81,8 +81,8 @@ Material:
     - _GFrequency: {r: 0.1, g: 0.1, b: 0.1, a: 0.1}
     - _GSpeed: {r: 0.001, g: 0.001, b: 0.001, a: 0.001}
     - _GSteepness: {r: 3.0301306, g: 1, b: 1, a: 1}
-    - _InvFadeParemeter: {r: 0.13, g: 0.08562102, b: 0.09414239, a: 1.32}
-    - _ReflectionColor: {r: 0.42433426, g: 0.0020024967, b: 0.0458564, a: 0.47058824}
+    - _InvFadeParemeter: {r: 0.06, g: 0.08562102, b: 0.09414239, a: 1.45}
+    - _ReflectionColor: {r: 0.42428657, g: 0.0020024967, b: 0.045822382, a: 0.47058824}
     - _RefractionFog: {r: 0.8681778, g: 0.8797176, b: 0.8880597, a: 1}
     - _SpecularColor: {r: 0.82089555, g: 0.80581594, b: 0.7718869, a: 1}
     - _WorldLightDir: {r: 0.013992369, g: -0.17359081, b: -0.9847186, a: 0}
