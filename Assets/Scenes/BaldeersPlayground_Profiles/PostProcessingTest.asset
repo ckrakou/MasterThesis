@@ -1466,40 +1466,40 @@ MonoBehaviour:
     value: 1
   baseAxis:
     overrideState: 1
-    value: {x: 0, y: 1, z: 0}
+    value: {x: 1, y: 1, z: 1}
   lineInterval:
     overrideState: 1
-    value: 2.15
+    value: 1.98
   lineOffset:
     overrideState: 1
-    value: 1.44
+    value: 2.22
   lineScroll:
     overrideState: 1
-    value: 2.11
+    value: 0.2
   lineColor:
     overrideState: 1
-    value: {r: 2.433572, g: 2.433572, b: 2.433572, a: 1}
+    value: {r: 2.6082377, g: 0, b: 0.16386834, a: 1}
   lineWidth:
-    overrideState: 0
-    value: 1.5
+    overrideState: 1
+    value: 1.03
   sourceContribution:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 0.342
   backgroundColor:
     overrideState: 0
     value: {r: 0, g: 0, b: 0, a: 0}
   modulationStrength:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 0.56
   modulationFrequency:
-    overrideState: 0
-    value: 0.1
+    overrideState: 1
+    value: 0.204
   modulationWidth:
-    overrideState: 0
+    overrideState: 1
     value: 0.1
   modulationOffset:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 0.33
   modulationScroll:
-    overrideState: 0
-    value: 1
+    overrideState: 1
+    value: 3.78
