@@ -12,9 +12,6 @@ public class FileUpload : MonoBehaviour
     public GameObject TestCube;
 
     [DllImport("__Internal")]
-    private static extern void ImageUploaderCaptureClick();
-
-    [DllImport("__Internal")]
     private static extern void ImageUploaderInit();
 
     static string s_dataUrlPrefix = "data:image/png;base64,";
@@ -34,20 +31,15 @@ public class FileUpload : MonoBehaviour
             ImageUploaderInit();
         }
     }
-    
+
+    // Get the uploaded file. If we're debugging, change the test cube. If we're 
+    // live, load the main scene. 
     IEnumerator EnterFile(string url)
     {
         UnityWebRequest file = UnityWebRequest.Get(url);
         yield return file.SendWebRequest();
         byte[] rawFile = file.downloadHandler.data;
 
-        if (debugging)
-        {
-            if (CheckFile(rawFile))
-                Debug.Log("FileUpload: File matches");
-            else
-                Debug.Log("FileUpload: File does not match");
-        }
 
         if (CheckFile(rawFile))
         {
@@ -59,9 +51,15 @@ public class FileUpload : MonoBehaviour
             else
                 unlocker.UnlockMainScene();
         }
+        else
+        {
+            if (debugging)
+                Debug.Log("FileUpload: File does not match");
+        }
 
     }
 
+    // Compares master file to uploaded file, byte by byte
     private bool CheckFile(byte[] rawFile)
     {
         if (rawFile.Length != masterFile.Length)
@@ -85,13 +83,13 @@ public class FileUpload : MonoBehaviour
 
     public void OnButtonPointerDown()
     {
-        
+
 #if UNITY_EDITOR
-        string path = UnityEditor.EditorUtility.OpenFilePanel("Open image", "","");
+        string path = UnityEditor.EditorUtility.OpenFilePanel("Open file", "", "");
         if (!System.String.IsNullOrEmpty(path))
             FileSelected("file:///" + path);
 #else
-        ImageUploaderCaptureClick ();
+        //ImageUploaderCaptureClick ();
 
 #endif
 
