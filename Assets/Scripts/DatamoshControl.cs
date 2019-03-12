@@ -11,13 +11,13 @@ public class DatamoshControl : MonoBehaviour
     public UnityEvent EnterDatamoshCollider;
     public UnityEvent ExitDatamoshCollider;
 
-    public AudioClip[] DatamoshAudio;
-    private AudioSource AudioPlayer;
+   
+   
 
     public GameObject FPSCam;
 
       void Start(){
-          AudioPlayer= GetComponent<AudioSource>();
+         
       }  
 
 
@@ -29,12 +29,7 @@ public class DatamoshControl : MonoBehaviour
          EnterDatamoshCollider.Invoke();
          
 
-        int RandomGlitchsound = Random.Range(0,DatamoshAudio.Length);
-Debug.Log("Glitch! "+RandomGlitchsound);
-            AudioPlayer.clip=DatamoshAudio[RandomGlitchsound];
-            AudioPlayer.pitch=Random.Range(0.3f,1.5f);
-            AudioPlayer.time=Random.Range(0.3f,30.5f);
-            AudioPlayer.Play();            
+            
             
 
          }
@@ -54,9 +49,6 @@ Debug.Log("Glitch! "+RandomGlitchsound);
          {
          ExitDatamoshCollider.Invoke();
          Debug.Log("Remove Glitch!");
-         AudioPlayer.Stop();  
-       
-
          }
           if(target.tag == "AnalogGlitchCollider"){
             FPSCam.GetComponent<Kino.AnalogGlitch>().enabled=false;
