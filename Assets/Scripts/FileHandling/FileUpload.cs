@@ -27,7 +27,12 @@ public class FileUpload : MonoBehaviour
         unlocker = GetComponent<GameUnlocker>();
         TextAsset bindata = Resources.Load("MasterFile") as TextAsset;
         masterFile = bindata.bytes;
-        ImageUploaderInit();
+
+        if (!debugging)
+        {
+            TestCube.SetActive(false);
+            ImageUploaderInit();
+        }
     }
     
     IEnumerator EnterFile(string url)
