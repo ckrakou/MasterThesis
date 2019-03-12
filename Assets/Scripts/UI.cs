@@ -15,18 +15,10 @@ public class UI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ChangeSign(0);
-        ChangeSign(1);
-        ChangeSign(2);
-        ChangeSign(3);
-        ChangeSign(4);
+   
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
+    // Update is called once per frame 
 //change top right UI Image
     public void ChangeSign(int SignNumber){
         
@@ -44,21 +36,42 @@ public class UI : MonoBehaviour
         }   
 
             signs[SignNumber].color = new Color32(229,3,3,137);
+
+            //START BLINK
     StartCoroutine(Blink(SignNumber));
     }
 
+      // GLITCHY BLINK EFFECT  
     IEnumerator Blink(int SignNumber) {
   signs[SignNumber].color = new Color32(229,3,3,137);  
-    yield return new WaitForSeconds(0.5f);       
+    yield return new WaitForSeconds(Random.Range(0.05f,0.5f));       
  
    signs[SignNumber].color = new Color32(229,3,3,0);  
-    yield return new WaitForSeconds(0.5f);       
- 
+    yield return new WaitForSeconds(Random.Range(0.05f,0.5f));       
+
     signs[SignNumber].color = new Color32(229,3,3,137);       
-    yield return new WaitForSeconds(0.2f);
+    yield return new WaitForSeconds(Random.Range(0.05f,0.5f));
 
     signs[SignNumber].color = new Color32(229,3,3,0);
-    yield return new WaitForSeconds(0.7f);
+    yield return new WaitForSeconds(Random.Range(0.05f,0.5f));
+
+    signs[SignNumber].color = new Color32(229,3,3,50);
+    yield return new WaitForSeconds(Random.Range(0.05f,0.5f));
+
+    signs[SignNumber].color = new Color32(229,3,3,137);  
+    yield return new WaitForSeconds(Random.Range(0.05f,0.5f));       
+ 
+   signs[SignNumber].color = new Color32(229,3,3,0);  
+    yield return new WaitForSeconds(Random.Range(0.05f,0.5f));       
+ 
+    signs[SignNumber].color = new Color32(229,3,3,137);       
+    yield return new WaitForSeconds(Random.Range(0.05f,0.5f));
+
+    signs[SignNumber].color = new Color32(229,3,3,0);
+    yield return new WaitForSeconds(Random.Range(0.05f,0.5f));
+
+    signs[SignNumber].color = new Color32(229,3,3,80);
+    yield return new WaitForSeconds(Random.Range(0.05f,0.5f));
 
     signs[SignNumber].color = new Color32(229,3,3,137);
       

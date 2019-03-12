@@ -121,12 +121,14 @@ PlayerSettings:
   bundleVersion: 0.1
   preloadedAssets:
   - {fileID: 4467928605519189906, guid: 7921f491cb9a54a1aa046e59aec64375, type: 3}
-  - {fileID: 4421364994205197603, guid: ef44426152fb4432caba00e69f6741c4, type: 3}
-  - {fileID: 6104632560172640181, guid: 3898e65fa39004f3e9502559ed687e50, type: 3}
-  - {fileID: 999879884660642299, guid: 87fcfc9bff5404285bf45d9389b14747, type: 3}
-  - {fileID: 3552887746142606144, guid: 2195f1d13a65c4768821180a19812412, type: 3}
-  - {fileID: 7019766676498630090, guid: 6afcc7d56f2134737ac8ab5b71deea4a, type: 3}
   - {fileID: 3149489213051044084, guid: 51a1489c12a0a4a078a41183d06eec11, type: 3}
+  - {fileID: 7019766676498630090, guid: 6afcc7d56f2134737ac8ab5b71deea4a, type: 3}
+  - {fileID: 3552887746142606144, guid: 2195f1d13a65c4768821180a19812412, type: 3}
+  - {fileID: 999879884660642299, guid: 87fcfc9bff5404285bf45d9389b14747, type: 3}
+  - {fileID: 6104632560172640181, guid: 3898e65fa39004f3e9502559ed687e50, type: 3}
+  - {fileID: 4421364994205197603, guid: ef44426152fb4432caba00e69f6741c4, type: 3}
+  - {fileID: 1772691960884353434, guid: 7b2f4c1f5afbd4e39b6fd825b404f4c0, type: 3}
+  - {fileID: 1772691960884353434, guid: 8ac18ebb9a5e24903926645733210748, type: 3}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
