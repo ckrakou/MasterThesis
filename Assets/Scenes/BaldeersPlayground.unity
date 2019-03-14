@@ -736,7 +736,7 @@ MonoBehaviour:
   EerieMusic: {fileID: 116389655}
   preloadAudioData: 1
   DigitalGlitch: {fileID: 1859750071}
-  AngelSynth: {fileID: 0}
+  AngelSynth: {fileID: 880575162}
   DatamoshAudio:
   - {fileID: 8300000, guid: 9ef276a646a8f49429da848d3746ade9, type: 3}
   - {fileID: 8300000, guid: 2c1d3a2da8daf4cabbb1eb84e18f56c8, type: 3}
@@ -2045,7 +2045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 176d2c668898844c08148fc047ce36ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Gamestate: 0
+  Gamestate: 3
   OneWorldMonumentVisited:
     m_PersistentCalls:
       m_Calls:
