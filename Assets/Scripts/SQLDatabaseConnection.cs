@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 
-public class RegisterLogin : MonoBehaviour
+public class SQLDatabaseConnection : MonoBehaviour
 {
     private const string V = "playtime: ";
     public GameObject Player;
@@ -15,7 +15,8 @@ public class RegisterLogin : MonoBehaviour
 	void Start(){
 		//RegisterSucessfullLogin();
 		//Debug.Log("registration started");
-	//RegisterPlayerDeath();
+		//RegisterWhenPlayerDies();
+	
 }
 void Update(){
 	playtime = playtime+Time.deltaTime;
@@ -23,6 +24,10 @@ void Update(){
 }
 	public void RegisterSucessfullLogin(){
 		StartCoroutine(RegisterPlayerLogin());
+
+	} 
+		public void RegisterWhenPlayerDies(){
+		StartCoroutine(RegisterPlayerDeath());
 
 	} 
 	
@@ -52,7 +57,7 @@ void Update(){
         WWWForm DeathForm = new WWWForm();
         DeathForm.AddField("x", Player.transform.position.x.ToString());
 		DeathForm.AddField("y", Player.transform.position.y.ToString());
-		DeathForm.AddField("z", Player.transform.position.y.ToString());
+		DeathForm.AddField("z", Player.transform.position.z.ToString());
 		DeathForm.AddField("plytime", playtime.ToString());
 
 
@@ -60,7 +65,7 @@ void Update(){
       //  WWW www = new WWW("http://hawaiipizza.dk/stuff/registerlogin.php", registerForm);
 
 
- using (UnityWebRequest www = UnityWebRequest.Post("http://hawaiipizza.dk/stuff/registerlogin.php", DeathForm))
+ using (UnityWebRequest www = UnityWebRequest.Post("http://hawaiipizza.dk/stuff/deadplayers.php", DeathForm))
         {
             yield return www.SendWebRequest();
 
