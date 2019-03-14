@@ -16,6 +16,7 @@ public class SQLDatabaseConnection : MonoBehaviour
 		//RegisterSucessfullLogin();
 		//Debug.Log("registration started");
 		//RegisterWhenPlayerDies();
+		RegisterFailedLogin();
 	
 }
 void Update(){
@@ -26,6 +27,10 @@ void Update(){
 		StartCoroutine(RegisterPlayerLogin());
 
 	} 
+	public void RegisterFailedLogin(){
+		StartCoroutine(RegisterPlayerLoginFail());
+
+	}
 		public void RegisterWhenPlayerDies(){
 		StartCoroutine(RegisterPlayerDeath());
 
@@ -52,6 +57,25 @@ void Update(){
         }    
         }    
     }
+   IEnumerator RegisterPlayerLoginFail(){
+        //create webform
+        WWWForm FailForm = new WWWForm();
+        FailForm.AddField("is_player_logged_in", "no");
+
+ using (UnityWebRequest www = UnityWebRequest.Post("http://hawaiipizza.dk/stuff/RegisterFailedLogin.php", FailForm))
+        {
+            yield return www.SendWebRequest();
+
+            Debug.Log(www.downloadHandler.text);
+
+         if(www.downloadHandler.text=="0: Sucess!"){
+            Debug.Log("failed login sucessfully stored in database");	
+           
+        	}    
+        }    
+    }
+
+
     IEnumerator RegisterPlayerDeath(){
         //create webform
         WWWForm DeathForm = new WWWForm();
