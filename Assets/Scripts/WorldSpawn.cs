@@ -9,6 +9,8 @@ public class WorldSpawn : MonoBehaviour
  public GameObject DatamoshCubes;
  public GameObject AnalogGlitchCubes;
 
+ public GameObject Clock;
+
 
     public int MinDatamoshColliders = 25;
     public int MaxDatamoshColliders = 50;
@@ -56,7 +58,7 @@ public int MinAnalogGlitchColliders = 25;
         placeToSpawn = new Vector3(Random.Range(-500, 500), 0, Random.Range(-500, 500));
         int ramdomClockRotationY=Random.Range(-180,180);
          Quaternion ClockSpawnRotation = Quaternion.Euler(0,ramdomClockRotationY,0);
-	GameObject newObject = Instantiate(WorldMonuments[1], placeToSpawn, ClockSpawnRotation) as GameObject;
+	GameObject newObject = Instantiate(Clock, placeToSpawn, ClockSpawnRotation) as GameObject;
         int randonSize = Random.Range(4, 10);
         newObject.transform.localScale = new Vector3(randonSize, randonSize+Random.Range(0,4), randonSize);
         }

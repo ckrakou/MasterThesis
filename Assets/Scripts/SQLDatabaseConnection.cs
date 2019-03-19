@@ -9,6 +9,7 @@ public class SQLDatabaseConnection : MonoBehaviour
 {
     private const string V = "playtime: ";
     public GameObject Player;
+	public GameObject DeadPlayers;
 
 	private float playtime;
 
@@ -16,7 +17,8 @@ public class SQLDatabaseConnection : MonoBehaviour
 		//RegisterSucessfullLogin();
 		//Debug.Log("registration started");
 		//RegisterWhenPlayerDies();
-		RegisterFailedLogin();
+		//RegisterFailedLogin();
+		RetriveDeadCoordinates();
 	
 }
 void Update(){
@@ -33,6 +35,11 @@ void Update(){
 	}
 		public void RegisterWhenPlayerDies(){
 		StartCoroutine(RegisterPlayerDeath());
+
+	} 
+
+	public void RetriveDeadCoordinates(){
+		StartCoroutine(RetriveDeadSpawnPointsFromWeb());
 
 	} 
 	
@@ -62,7 +69,7 @@ void Update(){
         WWWForm FailForm = new WWWForm();
         FailForm.AddField("is_player_logged_in", "no");
 
- using (UnityWebRequest www = UnityWebRequest.Post("http://hawaiipizza.dk/stuff/RegisterFailedLogin.php", FailForm))
+ using (UnityWebRequest www = UnityWebRequest.Post("http://hawaiipizza.dk/stuff/registerloginfail.php", FailForm))
         {
             yield return www.SendWebRequest();
 
@@ -103,4 +110,42 @@ void Update(){
     }
 
 
-}
+ IEnumerator RetriveDeadSpawnPointsFromWeb()
+ 
+    {
+
+		 UnityWebRequest www = UnityWebRequest.Get("http://hawaiipizza.dk/stuff/retrivedatafromweb.php");
+        yield return www.SendWebRequest();
+
+		if(www.isNetworkError || www.isHttpError) {
+            Debug.Log(www.error);
+        }
+ else {
+            //Debug.Log(www.downloadHandler.text);
+            //  retrieve results as string
+            string[] results = www.downloadHandler.text.Split('\t');;
+			int lengthoftable = results.Length-1;
+			 for(int i = 0; i < lengthoftable; i++){
+				 string[] xyz = results[i].Split('_');
+				  float x = float.Parse(xyz[0]);
+				  float y = float.Parse(xyz[1]);
+				  float z = float.Parse(xyz[2]);
+				  float playtime = float.Parse(xyz[3]);
+				float NewLogSize = playtime/500;
+				  Vector3 vec = new Vector3(x,0+NewLogSize/2,z);
+				 int ramdomLogY=Random.Range(-180,180);
+         		Quaternion LogSpawnRotation = Quaternion.Euler(0,ramdomLogY,0);
+
+			GameObject newObject = Instantiate(DeadPlayers, vec, LogSpawnRotation) as GameObject;
+        		
+        		newObject.transform.localScale = new Vector3(1, NewLogSize, 1);
+				
+
+				
+			 }
+        }
+       }
+      
+    }
+
+
