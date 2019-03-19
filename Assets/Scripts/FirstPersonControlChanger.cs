@@ -1,42 +1,51 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
+using Random = UnityEngine.Random;
 
 public class FirstPersonControlChanger : MonoBehaviour
 {
     public bool Debugging;
-    [Range(0, 3)]
-    public float Noise = 1.0f;
+
     [Header("Smoothing Paramenters")]
-    public float Minimum = 1;
-    public float Maximum = 15;
-    /*
-    [Range(4, 7)]
-    public float Mean = 5f;
-    [Range(2,5)]
-    public float StandardDeviation = 1f;
-    */
-    public float SecondsBetweenChanges = 1.0f;
+    public float SmoothingMinimum = 1;
+    public float SmoothingMaximum = 15;
+    public float SmoothingInterval = 1.0f;
+
+    [Header("Mouse Look Parameters")]
+    public float MouseLookMinimum = 1;
+    public float MouseLookMaximum = 3;
+    [Range(0, 3)]
+    public float MouseLookNoise = 1.0f;
+
+
 
     private FirstPersonController controller;
-    private bool noise;
+    private bool lookNoise;
+    private bool sensitivityShift;
     private bool smoothChange;
     private float smoothChangeTimestamp;
+    private float initialSensitivityX;
+    private float initialSensitivityY;
+
 
     void Start()
     {
         controller = GetComponent<FirstPersonController>();
         smoothChangeTimestamp = Time.time;
+        initialSensitivityX = controller.m_MouseLook.XSensitivity;
+        initialSensitivityY = controller.m_MouseLook.YSensitivity;
 
-        if (Debugging)
-        {
-            Debug.Log(this.GetType() + ": time is " + Time.time);
-            Debug.Log(this.GetType() + ": Next change at " + Time.time + SecondsBetweenChanges);
-        }
 
         // needs to be smooth for noise to work
         controller.m_MouseLook.smooth = true;
+
+        if (Debugging)
+        {
+            Debug.Log(this.GetType() + ": Initialised. Left Control = Invert mouse look. Left Alt = Noise on mouse look. Return = change in mouse smoothing. Insert = shift in sensitivity");
+        }
     }
 
     void Update()
@@ -53,48 +62,43 @@ public class FirstPersonControlChanger : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                ToogleSmoothChange();
+                ToggleSmoothChange();
             }
-        }
-
-        if (noise)
-        {
-            this.transform.Rotate(new Vector3(0, Random.value * Noise, 0));
-            this.transform.Find("FirstPersonCharacter").Rotate(new Vector3(Random.value * Noise, 0, 0));
-            this.transform.position += new Vector3(Random.value * Noise, 0, Random.value * Noise);
-        }
-
-        if (smoothChange)
-        {
-
-            
-            if (smoothChangeTimestamp + SecondsBetweenChanges < Time.time)
+            if (Input.GetKeyDown(KeyCode.Insert))
             {
-                float newSmoothTime = Random.Range(Minimum, Maximum);
-                controller.m_MouseLook.smoothTime = newSmoothTime;
-                smoothChangeTimestamp = Time.time + SecondsBetweenChanges;
-
-                if (Debugging)
-                {
-                    Debug.Log(this.GetType() + ": time is " + Time.time);
-                    Debug.Log(this.GetType() + ": Changing smoothness to " + newSmoothTime);
-                    Debug.Log(this.GetType() + ": Next change at " + Time.time + SecondsBetweenChanges);
-                }
-
-                /*
-                float newSmoothTime = StandardNormalDistribution(Mean, StandardDeviation);
-                controller.m_MouseLook.smoothTime = newSmoothTime;
-                smoothChangeTimestamp = Time.time + SecondsBetweenChanges;
-
-                if (Debugging)
-                {
-                    Debug.Log(this.GetType() + ": time is " + Time.time);
-                    Debug.Log(this.GetType() + ": Changing smoothness to " + newSmoothTime);
-                    Debug.Log(this.GetType() + ": Next change at " + Time.time + SecondsBetweenChanges);
-                }
-                */
+                ToggleSensitivityShift();
             }
+        }
 
+        if (lookNoise)
+        {
+            this.transform.Rotate(new Vector3(0, Random.value * MouseLookNoise, 0));
+            this.transform.Find("FirstPersonCharacter").Rotate(new Vector3(Random.value * MouseLookNoise, 0, 0));
+            this.transform.position += new Vector3(Random.value * MouseLookNoise, 0, Random.value * MouseLookNoise);
+        }
+
+        if (sensitivityShift)
+                    ShiftMouseSensitivity();
+        
+       
+
+        if (smoothChange && smoothChangeTimestamp + SmoothingInterval < Time.time)
+        {
+            ChangeSmoothness();
+        }
+    }
+
+    private void ChangeSmoothness()
+    {
+        float newSmoothTime = Random.Range(SmoothingMinimum, SmoothingMaximum);
+        controller.m_MouseLook.smoothTime = newSmoothTime;
+        smoothChangeTimestamp = Time.time + SmoothingInterval;
+
+        if (Debugging)
+        {
+            Debug.Log(this.GetType() + ": time is " + Time.time);
+            Debug.Log(this.GetType() + ": Changing smoothness to " + newSmoothTime);
+            Debug.Log(this.GetType() + ": Next change at " + Time.time + SmoothingInterval);
         }
     }
 
@@ -108,15 +112,17 @@ public class FirstPersonControlChanger : MonoBehaviour
 
     }
 
+  
+
     public void ToggleNoise()
     {
-        noise = !noise;
+        lookNoise = !lookNoise;
         if(Debugging)
         Debug.Log(this.GetType() + ": Toggling Smoothness");
 
     }
 
-    public void ToogleSmoothChange()
+    public void ToggleSmoothChange()
     {
         smoothChange = !smoothChange;
         smoothChangeTimestamp = Time.time;
@@ -125,25 +131,41 @@ public class FirstPersonControlChanger : MonoBehaviour
         {
             Debug.Log(this.GetType() + ": Toggling Smoothness");
             Debug.Log(this.GetType() + ": time is " + Time.time);
-
-            Debug.Log(this.GetType() + ": Next change at " + smoothChangeTimestamp + SecondsBetweenChanges);
+            Debug.Log(this.GetType() + ": Next change at " + smoothChangeTimestamp + SmoothingInterval);
         }
     }
 
+    public void ToggleSensitivityShift()
+    {
+        Debug.Log(this.GetType() + ": Toggling Mouse Sensitivity");
+        if (sensitivityShift == true)
+        {
+            controller.m_MouseLook.XSensitivity = initialSensitivityX;
+            controller.m_MouseLook.YSensitivity = initialSensitivityY;
+            Debug.Log(this.GetType() + ": Reset Mouse Sensitivity to " + initialSensitivityX + ", " + initialSensitivityY);
+        }
+
+        sensitivityShift = !sensitivityShift;
+    }
+
+    private void ShiftMouseSensitivity()
+    {
+
+        controller.m_MouseLook.XSensitivity = StandardNormalDistribution(initialSensitivityX, 1, MouseLookMinimum, MouseLookMaximum);
+        controller.m_MouseLook.YSensitivity = StandardNormalDistribution(initialSensitivityY, 1, MouseLookMinimum, MouseLookMaximum);
+
+    }
 
     // source: https://www.alanzucconi.com/2015/09/16/how-to-sample-from-a-gaussian-distribution/
-    private float StandardNormalDistribution(float mean = 0, float standardDeviation = 1)
+    private float StandardNormalDistribution(float mean = 0, float standardDeviation = 1, float min = -3, float max = 3)
     {
         float x;
 
         do
         {
             x = mean + NextGaussian() * standardDeviation;
-        } while ((x < 4 || x > 7));
-        /*
-        if (Debugging)
-            Debug.Log(this.GetType() + ": NormalDistribution returned: " + x);
-            */
+        } while ((x < min || x > max));
+
         return x;
     }
 
@@ -160,10 +182,8 @@ public class FirstPersonControlChanger : MonoBehaviour
         } while (s >= 1.0f || s == 0f);
 
         s = Mathf.Sqrt((-2.0f * Mathf.Log(s)) / s);
-        /*
-        if (Debugging)
-            Debug.Log(this.GetType() + ": NextGaussian returned: " + v1 * s);
-*/
+
+
         return v1 * s;
     }
 

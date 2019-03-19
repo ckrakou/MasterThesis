@@ -287,10 +287,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Debugging: 1
-  Noise: 1
-  Minimum: 1
-  Maximum: 15
-  SecondsBetweenChanges: 2
+  SmoothingMinimum: 1
+  SmoothingMaximum: 15
+  SmoothingInterval: 1
+  MouseLookMinimum: 1
+  MouseLookMaximum: 3
+  MouseLookNoise: 1
 --- !u!114 &1249417442
 MonoBehaviour:
   m_ObjectHideFlags: 0
