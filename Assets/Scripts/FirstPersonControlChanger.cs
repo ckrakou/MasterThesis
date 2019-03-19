@@ -9,7 +9,7 @@ public class FirstPersonControlChanger : MonoBehaviour
 {
     public bool Debugging;
 
-    [Header("Smoothing Paramenters")]
+    [Header("Mouse Smoothing Paramenters")]
     public float SmoothingMinimum = 1;
     public float SmoothingMaximum = 15;
     public float SmoothingInterval = 1.0f;
@@ -17,8 +17,10 @@ public class FirstPersonControlChanger : MonoBehaviour
     [Header("Mouse Look Parameters")]
     public float MouseLookMinimum = 1;
     public float MouseLookMaximum = 3;
-    [Range(0, 3)]
-    public float MouseLookNoise = 1.0f;
+
+    [Header("Mouse Noise Parameters")]
+    public float NoiseStandardDeviation = 1f;
+    public float NoiseBoundary = 5f;
 
 
 
@@ -72,15 +74,14 @@ public class FirstPersonControlChanger : MonoBehaviour
 
         if (lookNoise)
         {
-            this.transform.Rotate(new Vector3(0, Random.value * MouseLookNoise, 0));
-            this.transform.Find("FirstPersonCharacter").Rotate(new Vector3(Random.value * MouseLookNoise, 0, 0));
-            this.transform.position += new Vector3(Random.value * MouseLookNoise, 0, Random.value * MouseLookNoise);
+            this.transform.Rotate(new Vector3(0, StandardNormalDistribution(0, NoiseStandardDeviation, -NoiseBoundary, NoiseBoundary), 0));
+            this.transform.Find("FirstPersonCharacter").Rotate(new Vector3(StandardNormalDistribution(0, NoiseStandardDeviation, -NoiseBoundary, NoiseBoundary), 0, 0));
         }
 
         if (sensitivityShift)
-                    ShiftMouseSensitivity();
-        
-       
+            ShiftMouseSensitivity();
+
+
 
         if (smoothChange && smoothChangeTimestamp + SmoothingInterval < Time.time)
         {
@@ -112,13 +113,13 @@ public class FirstPersonControlChanger : MonoBehaviour
 
     }
 
-  
+
 
     public void ToggleNoise()
     {
         lookNoise = !lookNoise;
-        if(Debugging)
-        Debug.Log(this.GetType() + ": Toggling Smoothness");
+        if (Debugging)
+            Debug.Log(this.GetType() + ": Toggling Smoothness");
 
     }
 
