@@ -20,6 +20,9 @@ public class GameStateCollider : MonoBehaviour
                     WMNotVisited1=false;
                     GameControl.GetComponent<GameStateController>().TriggerWorldEvents(GameStateManager.MasterGameState);
                     UI.GetComponent<UI>().ChangeSign(0);
+
+
+
                 }
          }
         
@@ -78,4 +81,6 @@ public class GameStateCollider : MonoBehaviour
          }
          }
      }
+     
+  
 }

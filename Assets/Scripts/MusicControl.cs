@@ -9,6 +9,8 @@ public class MusicControl : MonoBehaviour
 
     public AudioSource RoomTone;
     public AudioSource EerieMusic;
+
+    public AudioSource Gong;
     public bool preloadAudioData; 
 
     public AudioSource DigitalGlitch;
@@ -33,9 +35,14 @@ public class MusicControl : MonoBehaviour
     EerieMusic.Play();
     StartCoroutine(FadeUp(EerieMusic,FadeTime)); 
     }
-     public void PlayAngelSynth(int FadeTime){
+public void PlayAngelSynth(int FadeTime){
     AngelSynth.Play();
     StartCoroutine(FadeUp(AngelSynth,FadeTime)); 
+    }
+
+    public void PlayGong(){
+        Gong.pitch=Random.Range(0.8f,1.2f);
+         Gong.Play();
     }
 
     public void PlayDigitalGlitchSound(int FadeTime){
