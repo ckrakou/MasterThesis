@@ -164,6 +164,15 @@ namespace Kino
             diffusion=Random.Range(0.01f,2);
             Glitch();
         }
+         public void HeavyGlitch(){
+
+            blockSize=30;
+            entropy=0.8f;
+            noiseContrast=4;
+            velocityScale=1.8f;
+            diffusion=0.8f;
+            Glitch();
+        }
 
         void OnRenderImage(RenderTexture source, RenderTexture destination)
         {

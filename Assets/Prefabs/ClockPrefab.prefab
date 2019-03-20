@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 5021593008393673050}
   - component: {fileID: 434009195}
   - component: {fileID: 434009196}
-  - component: {fileID: 3469438514456242306}
+  - component: {fileID: 1202342990499854262}
   m_Layer: 0
   m_Name: ClockPrefab
   m_TagString: WorldMonument
@@ -187,7 +187,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3469438514456242306
+--- !u!114 &1202342990499854262
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -196,6 +196,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4421364994205197603}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e2ecc6dcc8e14f98ad0ef48708af650, type: 3}
+  m_Script: {fileID: 11500000, guid: a2936ca31bd424f6986c9fd5b9308f4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

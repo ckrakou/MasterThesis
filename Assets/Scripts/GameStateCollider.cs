@@ -70,8 +70,9 @@ public class GameStateCollider : MonoBehaviour
                     GameControl.GetComponent<GameStateController>().TriggerWorldEvents(GameStateManager.MasterGameState);
                     UI.GetComponent<UI>().ChangeSign(5);
                 }
-                 if(target.name == "WorldMonument7(Clone)")
-         {
+         }
+                 if(target.name == "WorldMonument7(Clone)"){
+         
                 if(WMNotVisited7){
                     GameStateManager.MasterGameState++;
                     WMNotVisited7=false;
@@ -79,8 +80,9 @@ public class GameStateCollider : MonoBehaviour
                     UI.GetComponent<UI>().ChangeSign(6);
                 }
          }
-         }
-     }
+
+        }
+     
      
   
 }

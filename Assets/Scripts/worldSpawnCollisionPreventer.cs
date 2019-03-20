@@ -10,7 +10,15 @@ public class worldSpawnCollisionPreventer : MonoBehaviour
 
     public GameObject WorldMonument;
 
+    public AudioSource GlitchSound;
+
     private bool OnlyBlinkOnce = true;
+
+
+
+    void Awake(){
+     
+    }
     
      void OnTriggerStay(Collider target)
      {
@@ -24,8 +32,7 @@ public class worldSpawnCollisionPreventer : MonoBehaviour
      {
          if(target.tag == "Player")
          {
-            Destroy(Light);
-             Destroy(Particles);
+          
              if(OnlyBlinkOnce){
              StartCoroutine(Blink());
              OnlyBlinkOnce=false;
@@ -34,29 +41,58 @@ public class worldSpawnCollisionPreventer : MonoBehaviour
      }
 
        IEnumerator Blink() {
+
        WorldMonument.GetComponent<Renderer>().enabled=false;
+         Particles.GetComponent<Renderer>().enabled=false;
     yield return new WaitForSeconds(Random.Range(0.05f,0.5f));       
  
    WorldMonument.GetComponent<Renderer>().enabled=true;
+         Particles.GetComponent<Renderer>().enabled=true;
+   GlitchSound.Play();
     yield return new WaitForSeconds(Random.Range(0.05f,0.5f));       
 
-    WorldMonument.GetComponent<Renderer>().enabled=false;      
-    yield return new WaitForSeconds(Random.Range(0.05f,0.5f));
+      WorldMonument.GetComponent<Renderer>().enabled=false;
+         Particles.GetComponent<Renderer>().enabled=false;
+    yield return new WaitForSeconds(Random.Range(0.05f,0.5f));       
+ 
+   WorldMonument.GetComponent<Renderer>().enabled=true;
+         Particles.GetComponent<Renderer>().enabled=true;
+   GlitchSound.Play();
+    yield return new WaitForSeconds(Random.Range(0.05f,0.5f));  
 
-    WorldMonument.GetComponent<Renderer>().enabled=true;
-    yield return new WaitForSeconds(Random.Range(0.05f,0.5f)); 
+       WorldMonument.GetComponent<Renderer>().enabled=false;
+         Particles.GetComponent<Renderer>().enabled=false;
+    yield return new WaitForSeconds(Random.Range(0.05f,0.5f));       
+ 
+   WorldMonument.GetComponent<Renderer>().enabled=true;
+         Particles.GetComponent<Renderer>().enabled=true;
+   GlitchSound.Play();
+    yield return new WaitForSeconds(Random.Range(0.05f,0.5f));  
+
+       WorldMonument.GetComponent<Renderer>().enabled=false;
+         Particles.GetComponent<Renderer>().enabled=false;
+    yield return new WaitForSeconds(Random.Range(0.05f,0.5f));       
+ 
+   WorldMonument.GetComponent<Renderer>().enabled=true;
+         Particles.GetComponent<Renderer>().enabled=true;
+   GlitchSound.Play();
+    yield return new WaitForSeconds(Random.Range(0.05f,0.5f));  
+
+       WorldMonument.GetComponent<Renderer>().enabled=false;
+         Particles.GetComponent<Renderer>().enabled=false;
+    yield return new WaitForSeconds(Random.Range(0.05f,0.5f));       
+ 
+   WorldMonument.GetComponent<Renderer>().enabled=true;
+         Particles.GetComponent<Renderer>().enabled=true;
+    GlitchSound.Play();
+  
+
+    yield return new WaitForSeconds(Random.Range(0.05f,0.5f));      
+   GlitchSound.Stop();
+     Destroy(Light);
+    Destroy(Particles);
+     
     
-         WorldMonument.GetComponent<Renderer>().enabled=false;
-    yield return new WaitForSeconds(Random.Range(0.05f,0.5f));       
- 
-   WorldMonument.GetComponent<Renderer>().enabled=true;
-    yield return new WaitForSeconds(Random.Range(0.05f,0.5f));       
-
-    WorldMonument.GetComponent<Renderer>().enabled=false;      
-    yield return new WaitForSeconds(Random.Range(0.05f,0.5f));
-
-    WorldMonument.GetComponent<Renderer>().enabled=true;
-    yield return new WaitForSeconds(Random.Range(0.05f,0.5f)); 
       
  }
 
