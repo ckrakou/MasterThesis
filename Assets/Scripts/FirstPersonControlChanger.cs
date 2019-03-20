@@ -14,9 +14,9 @@ public class FirstPersonControlChanger : MonoBehaviour
     public float SmoothingMaximum = 15;
     public float SmoothingInterval = 1.0f;
 
-    [Header("Mouse Look Parameters")]
-    public float MouseLookMinimum = 1;
-    public float MouseLookMaximum = 3;
+    [Header("Mouse Sensitivity Parameters")]
+    public float MouseSensitivityMinimum = 1;
+    public float MouseSensitivityMaximum = 3;
 
     [Header("Mouse Noise Parameters")]
     public float NoiseStandardDeviation = 1f;
@@ -152,8 +152,8 @@ public class FirstPersonControlChanger : MonoBehaviour
     private void ShiftMouseSensitivity()
     {
 
-        controller.m_MouseLook.XSensitivity = StandardNormalDistribution(initialSensitivityX, 1, MouseLookMinimum, MouseLookMaximum);
-        controller.m_MouseLook.YSensitivity = StandardNormalDistribution(initialSensitivityY, 1, MouseLookMinimum, MouseLookMaximum);
+        controller.m_MouseLook.XSensitivity = StandardNormalDistribution(initialSensitivityX, 1, MouseSensitivityMinimum, MouseSensitivityMaximum);
+        controller.m_MouseLook.YSensitivity = StandardNormalDistribution(initialSensitivityY, 1, MouseSensitivityMinimum, MouseSensitivityMaximum);
 
     }
 
