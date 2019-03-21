@@ -231,8 +231,38 @@ MonoBehaviour:
   SmoothingInterval: 1
   MouseSensitivityMinimum: 1
   MouseSensitivityMaximum: 3
+  NoiseInterval: 1
   NoiseStandardDeviation: 1
-  NoiseBoundary: 5
+  NoiseBoundary: 3
+--- !u!114 &1458090523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6460607991050677461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c12c8bbfc1602d44a5d537938ebd436, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Debugging: 1
+  initialMovementType: 0
+  NoiseInterval: 1
+  NoiseStandardDeviation: 5
+  NoiseMaxDeviation: 5
+--- !u!114 &1458090517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6460607991050677461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c866f533f7b1e0d4caffa27848f195d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1249417442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,7 +397,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_Name
-      value: FPSControllerGlitch
+      value: FPSControllerGlitch Variant
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_TagString
@@ -403,7 +433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 488
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalRotation.x

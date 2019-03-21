@@ -658,6 +658,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1437416653}
   m_CullTransparentMesh: 0
+--- !u!1 &1458090516 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6460607991050677461, guid: f5f56e76ccdfe4d378cc779cd4924e60,
+    type: 3}
+  m_PrefabInstance: {fileID: 1729931745}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1458090517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458090516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c866f533f7b1e0d4caffa27848f195d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1458090523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458090516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c12c8bbfc1602d44a5d537938ebd436, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Debugging: 1
+  initialMovementType: 0
+  NoiseInterval: 1
+  NoiseStandardDeviation: 5
+  NoiseMaxDeviation: 5
 --- !u!1 &1482265642
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,6 +850,19 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6460607991040989493, guid: f5f56e76ccdfe4d378cc779cd4924e60,
+        type: 3}
+      propertyPath: m_WalkSpeed
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729931747, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
+      propertyPath: NoiseBoundary
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729931747, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
+      propertyPath: NoiseStandardDeviation
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}

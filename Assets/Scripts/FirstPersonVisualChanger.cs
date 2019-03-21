@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
 using Random = UnityEngine.Random;
-
-public class FirstPersonControlChanger : MonoBehaviour
+using DG.Tweening;
+public class FirstPersonVisualChanger : MonoBehaviour
 {
     public bool Debugging;
 
@@ -19,8 +19,9 @@ public class FirstPersonControlChanger : MonoBehaviour
     public float MouseSensitivityMaximum = 3;
 
     [Header("Mouse Noise Parameters")]
-    public float NoiseStandardDeviation = 1f;
-    public float NoiseBoundary = 5f;
+    public float NoiseInterval = 1;
+    public float NoiseStandardDeviation = 0.2f;
+    public float NoiseBoundary = 1f;
 
 
 
@@ -29,14 +30,18 @@ public class FirstPersonControlChanger : MonoBehaviour
     private bool sensitivityShift;
     private bool smoothChange;
     private float smoothChangeTimestamp;
+    private float noiseChangeTimestamp;
     private float initialSensitivityX;
     private float initialSensitivityY;
+    private NormalDist normal;
 
 
     void Start()
     {
         controller = GetComponent<FirstPersonController>();
+        normal = GetComponent<NormalDist>();
         smoothChangeTimestamp = Time.time;
+        noiseChangeTimestamp = Time.time;
         initialSensitivityX = controller.m_MouseLook.XSensitivity;
         initialSensitivityY = controller.m_MouseLook.YSensitivity;
 
@@ -72,16 +77,15 @@ public class FirstPersonControlChanger : MonoBehaviour
             }
         }
 
-        if (lookNoise)
+        if (lookNoise&& Time.time >noiseChangeTimestamp)
         {
-            this.transform.Rotate(new Vector3(0, StandardNormalDistribution(0, NoiseStandardDeviation, -NoiseBoundary, NoiseBoundary), 0));
-            this.transform.Find("FirstPersonCharacter").Rotate(new Vector3(StandardNormalDistribution(0, NoiseStandardDeviation, -NoiseBoundary, NoiseBoundary), 0, 0));
+            this.transform.Rotate(new Vector3(0, normal.StandardNormalDistribution(0, NoiseStandardDeviation, -NoiseBoundary, NoiseBoundary), 0));
+            this.transform.Find("FirstPersonCharacter").Rotate(new Vector3(normal.StandardNormalDistribution(0, NoiseStandardDeviation, -NoiseBoundary, NoiseBoundary), 0, 0));
+            noiseChangeTimestamp += NoiseInterval * normal.StandardNormalDistribution(NoiseInterval/2,1,0,1);
         }
 
         if (sensitivityShift)
             ShiftMouseSensitivity();
-
-
 
         if (smoothChange && smoothChangeTimestamp + SmoothingInterval < Time.time)
         {
@@ -109,7 +113,7 @@ public class FirstPersonControlChanger : MonoBehaviour
         controller.m_MouseLook.YSensitivity = controller.m_MouseLook.YSensitivity * -1;
         if (Debugging)
 
-            Debug.Log(this.GetType() + ": Toggling Smoothness");
+            Debug.Log(this.GetType() + ": Inverting Controls");
 
     }
 
@@ -119,7 +123,7 @@ public class FirstPersonControlChanger : MonoBehaviour
     {
         lookNoise = !lookNoise;
         if (Debugging)
-            Debug.Log(this.GetType() + ": Toggling Smoothness");
+            Debug.Log(this.GetType() + ": Toggling Noise");
 
     }
 
@@ -152,40 +156,11 @@ public class FirstPersonControlChanger : MonoBehaviour
     private void ShiftMouseSensitivity()
     {
 
-        controller.m_MouseLook.XSensitivity = StandardNormalDistribution(initialSensitivityX, 1, MouseSensitivityMinimum, MouseSensitivityMaximum);
-        controller.m_MouseLook.YSensitivity = StandardNormalDistribution(initialSensitivityY, 1, MouseSensitivityMinimum, MouseSensitivityMaximum);
+        controller.m_MouseLook.XSensitivity = normal.StandardNormalDistribution(initialSensitivityX, 1, MouseSensitivityMinimum, MouseSensitivityMaximum);
+        controller.m_MouseLook.YSensitivity = normal.StandardNormalDistribution(initialSensitivityY, 1, MouseSensitivityMinimum, MouseSensitivityMaximum);
 
     }
 
-    // source: https://www.alanzucconi.com/2015/09/16/how-to-sample-from-a-gaussian-distribution/
-    private float StandardNormalDistribution(float mean = 0, float standardDeviation = 1, float min = -3, float max = 3)
-    {
-        float x;
-
-        do
-        {
-            x = mean + NextGaussian() * standardDeviation;
-        } while ((x < min || x > max));
-
-        return x;
-    }
-
-
-    private float NextGaussian()
-    {
-        float v1, v2, s;
-
-        do
-        {
-            v1 = 2.0f * Random.Range(0f, 1f) - 1f;
-            v2 = 2.0f * Random.Range(0f, 1f) - 1f;
-            s = v1 * v1 + v2 * v2;
-        } while (s >= 1.0f || s == 0f);
-
-        s = Mathf.Sqrt((-2.0f * Mathf.Log(s)) / s);
-
-
-        return v1 * s;
-    }
+   
 
 }
