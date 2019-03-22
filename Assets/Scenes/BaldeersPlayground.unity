@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.056381892, g: 0.007763847, b: 0.011153754, a: 1}
+  m_IndirectSpecularColor: {r: 0.12931782, g: 0.01780664, b: 0.025581773, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -156,7 +156,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 66797d5fd25244f39ac9f6c42b557cf8, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.25
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -240,6 +240,80 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1001 &384125663
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4467928605519189906, guid: 7921f491cb9a54a1aa046e59aec64375,
+        type: 3}
+      propertyPath: m_Name
+      value: WorldMonument1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870324236953165673, guid: 7921f491cb9a54a1aa046e59aec64375,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870324236953165673, guid: 7921f491cb9a54a1aa046e59aec64375,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.8000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870324236953165673, guid: 7921f491cb9a54a1aa046e59aec64375,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870324236953165673, guid: 7921f491cb9a54a1aa046e59aec64375,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870324236953165673, guid: 7921f491cb9a54a1aa046e59aec64375,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870324236953165673, guid: 7921f491cb9a54a1aa046e59aec64375,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870324236953165673, guid: 7921f491cb9a54a1aa046e59aec64375,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870324236953165673, guid: 7921f491cb9a54a1aa046e59aec64375,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870324236953165673, guid: 7921f491cb9a54a1aa046e59aec64375,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870324236953165673, guid: 7921f491cb9a54a1aa046e59aec64375,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870324236953165673, guid: 7921f491cb9a54a1aa046e59aec64375,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2144639196825630817, guid: 7921f491cb9a54a1aa046e59aec64375,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7921f491cb9a54a1aa046e59aec64375, type: 3}
 --- !u!1 &491288759
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,80 +516,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1001 &503304412
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3149489213051044084, guid: 51a1489c12a0a4a078a41183d06eec11,
-        type: 3}
-      propertyPath: m_Name
-      value: WorldMonument2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1995026060364646149, guid: 51a1489c12a0a4a078a41183d06eec11,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1995026060364646149, guid: 51a1489c12a0a4a078a41183d06eec11,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.34
-      objectReference: {fileID: 0}
-    - target: {fileID: 1995026060364646149, guid: 51a1489c12a0a4a078a41183d06eec11,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1995026060364646149, guid: 51a1489c12a0a4a078a41183d06eec11,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1995026060364646149, guid: 51a1489c12a0a4a078a41183d06eec11,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.9787781
-      objectReference: {fileID: 0}
-    - target: {fileID: 1995026060364646149, guid: 51a1489c12a0a4a078a41183d06eec11,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1995026060364646149, guid: 51a1489c12a0a4a078a41183d06eec11,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.2049231
-      objectReference: {fileID: 0}
-    - target: {fileID: 1995026060364646149, guid: 51a1489c12a0a4a078a41183d06eec11,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1995026060364646149, guid: 51a1489c12a0a4a078a41183d06eec11,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1995026060364646149, guid: 51a1489c12a0a4a078a41183d06eec11,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 156.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 1995026060364646149, guid: 51a1489c12a0a4a078a41183d06eec11,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3726697454912220957, guid: 51a1489c12a0a4a078a41183d06eec11,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 51a1489c12a0a4a078a41183d06eec11, type: 3}
 --- !u!1 &547511095
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,7 +1119,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: a7d6ab1bae4324cfe981b1d8eb92f172, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.25
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -7110,6 +7110,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1893666267}
+        m_MethodName: TurnUpSkyboxExposure
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.6
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   TwoWorldMonumentVisited:
@@ -7134,6 +7145,17 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1893666267}
+        m_MethodName: TurnUpSkyboxExposure
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.65
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -7172,6 +7194,17 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1893666267}
+        m_MethodName: TurnUpSkyboxExposure
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.7
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
