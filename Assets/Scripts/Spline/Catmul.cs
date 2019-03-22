@@ -15,12 +15,12 @@ public class Catmul : MonoBehaviour
     float amountOfPoints = 10.0f;
 
     //set from 0-1
-    [Range(0,1)]
+    [Range(0, 1)]
     public float alpha = 0.5f;
 
     /////////////////////////////
 
-    void Update()
+    void Awake()
     {
         CatmulRom();
     }
@@ -29,7 +29,7 @@ public class Catmul : MonoBehaviour
     {
         newPoints.Clear();
 
-        Vector3 p0 = points[0].position; // Vector3 has an implicit conversion to Vector2
+        Vector3 p0 = points[0].position;
         Vector3 p1 = points[1].position;
         Vector3 p2 = points[2].position;
         Vector3 p3 = points[3].position;
@@ -66,11 +66,62 @@ public class Catmul : MonoBehaviour
     //Visualize the points
     void OnDrawGizmos()
     {
+        CatmulRom();
+
         Gizmos.color = Color.red;
+        Gizmos.DrawLine(points[0].position, points[1].position);
+        Gizmos.DrawCube(points[0].position, new Vector3(0.3f, 0.3f, 0.3f));
+        Gizmos.DrawCube(points[3].position, new Vector3(0.3f, 0.3f, 0.3f));
+
+
+        Gizmos.DrawLine(points[2].position, points[3].position);
+
         foreach (Vector3 temp in newPoints)
         {
             Vector3 pos = new Vector3(temp.x, temp.y, temp.z);
             Gizmos.DrawSphere(pos, 0.3f);
         }
+
     }
+
+    public Transform GetBeginning()
+    {
+        return points[1];
+    }
+
+    public Transform GetEnd()
+    {
+        return points[2];
+    }
+
+    public List<Vector3> GetPoints()
+    {
+        return newPoints;
+    }
+
+    public Vector3 GetPos(float t)
+    {
+        Vector3 p0 = points[0].position;
+        Vector3 p1 = points[1].position;
+        Vector3 p2 = points[2].position;
+        Vector3 p3 = points[3].position;
+
+        float t0 = 0.0f;
+        float t1 = GetT(t0, p0, p1);
+        float t2 = GetT(t1, p1, p2);
+        float t3 = GetT(t2, p2, p3);
+
+
+        Vector3 A1 = (t1 - t) / (t1 - t0) * p0 + (t - t0) / (t1 - t0) * p1;
+        Vector3 A2 = (t2 - t) / (t2 - t1) * p1 + (t - t1) / (t2 - t1) * p2;
+        Vector3 A3 = (t3 - t) / (t3 - t2) * p2 + (t - t2) / (t3 - t2) * p3;
+
+        Vector3 B1 = (t2 - t) / (t2 - t0) * A1 + (t - t0) / (t2 - t0) * A2;
+        Vector3 B2 = (t3 - t) / (t3 - t1) * A2 + (t - t1) / (t3 - t1) * A3;
+
+        Vector3 C = (t2 - t) / (t2 - t1) * B1 + (t - t1) / (t2 - t1) * B2;
+
+        return C;
+    }
+
 }
