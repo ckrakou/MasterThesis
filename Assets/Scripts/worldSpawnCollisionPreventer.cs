@@ -11,6 +11,7 @@ public class worldSpawnCollisionPreventer : MonoBehaviour
     public GameObject WorldMonument;
 
     public AudioSource GlitchSound;
+    public AudioSource Speak;
 
     private bool OnlyBlinkOnce = true;
 
@@ -98,6 +99,7 @@ public class worldSpawnCollisionPreventer : MonoBehaviour
 
     yield return new WaitForSeconds(Random.Range(0.05f,0.5f));      
    GlitchSound.Stop();
+      Speak.Play();
      Destroy(Light);
     Destroy(Particles);
      
