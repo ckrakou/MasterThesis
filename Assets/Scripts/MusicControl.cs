@@ -20,11 +20,31 @@ public class MusicControl : MonoBehaviour
 
      public AudioClip[] DatamoshAudio;
 
+     private bool FunWorldPauseMusic = true;
+
+    private float RoomToneVolume;
+    private float EerieMusicVolume;
+    private float AngelSynthVolume;
     void Start()
     {
-     PlayRoomtone(20);  
-     
-     
+        PlayRoomtone(20);  
+        RoomToneVolume = RoomTone.volume;
+        EerieMusicVolume = EerieMusic.volume;
+        AngelSynthVolume = AngelSynth.volume;
+
+    }
+    void update(){
+
+        if(GameStateManager.IsPlayerInSuperFunWorld){
+            RoomTone.volume=0;
+            AngelSynth.volume=0;
+            EerieMusic.volume=0;
+        }
+        else{
+               RoomTone.volume=RoomToneVolume;
+            AngelSynth.volume=AngelSynthVolume;
+            EerieMusic.volume=EerieMusicVolume;
+        }
     }
 
     public void PlayRoomtone(int FadeTime){

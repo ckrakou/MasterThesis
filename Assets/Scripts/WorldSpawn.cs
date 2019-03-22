@@ -29,7 +29,7 @@ public int MinAnalogGlitchColliders = 25;
       //spawn world monuments at random
        int ramdomMonumentRotationY=Random.Range(-180,180);
       Quaternion MonumenrSpawnRotation = Quaternion.Euler(0,ramdomMonumentRotationY,0);
-        placeToSpawn = new Vector3(Random.Range(-300, 300), 0, Random.Range(-300, 300));
+        placeToSpawn = new Vector3(Random.Range(-100, 100), 0, Random.Range(-300, 300));
 	Instantiate(WorldMonuments[i], placeToSpawn, MonumenrSpawnRotation);
         
         }
