@@ -8,7 +8,6 @@ using DG.Tweening;
 public class FirstPersonMovementChanger : MonoBehaviour
 {
     public bool Debugging;
-    public MovementType initialMovementType = MovementType.Normal;
 
     [Header("Movement Speed")]
     public float WalkSpeedNoiseInterval = 1f;
@@ -25,9 +24,12 @@ public class FirstPersonMovementChanger : MonoBehaviour
     private float nextWalkSpeedNoise;
     private float nextPositionNoise;
     private float walkSpeedMean;
+    private float initialMouselookClamp;
+    private float initialYSensitivity;
 
     private bool walkSpeedNoise = false;
     private bool PositionNoise = false;
+    private bool mouseLookLocked = false;
 
 
     // Start is called before the first frame update
@@ -35,9 +37,12 @@ public class FirstPersonMovementChanger : MonoBehaviour
     {
         normal = GetComponent<NormalDist>();
         controller = GetComponent<FirstPersonController>();
+
         nextWalkSpeedNoise = Time.time + WalkSpeedNoiseInterval;
         nextPositionNoise = Time.time + PositionNoiseInterval;
         walkSpeedMean = controller.m_WalkSpeed;
+        initialMouselookClamp = controller.m_MouseLook.MaximumX;
+        initialYSensitivity = controller.m_MouseLook.YSensitivity;
     }
 
     // Update is called once per frame
@@ -53,11 +58,15 @@ public class FirstPersonMovementChanger : MonoBehaviour
             {
                 ToggleMoveNoise();
             }
+            if (Input.GetKey(KeyCode.N))
+            {
+                ToggleMovementType();
+            }
         }
 
         if (walkSpeedNoise && Time.time > nextWalkSpeedNoise)
         {
-            ChangeWalkSpeed();
+            ToggleMovementType();
 
         }
 
@@ -94,30 +103,36 @@ public class FirstPersonMovementChanger : MonoBehaviour
 
     }
 
-    public void ChangeMovementControls(MovementType type)
+    public void ToggleMovementType()
     {
-        switch (type)
+        if (Debugging)
         {
-            case MovementType.Normal:
-                controller.m_MouseLook.XSensitivity = controller.m_MouseLook.YSensitivity = 2f;
-
-                break;
-            case MovementType.ForwardOnly:
-                controller.m_MouseLook.XSensitivity = controller.m_MouseLook.YSensitivity = 2f;
-
-                break;
-            case MovementType.TurnLeftAndRight:
-                controller.m_MouseLook.XSensitivity = controller.m_MouseLook.YSensitivity = 0f;
-                break;
-            default:
-                break;
+            Debug.Log(this.GetType() + ": Toggling Mouse Look");
         }
+        if (mouseLookLocked)
+        {
+            controller.m_MouseLook.YSensitivity = initialYSensitivity;
+            controller.m_MouseLook.MinimumX = -initialMouselookClamp;
+            controller.m_MouseLook.MaximumX = initialMouselookClamp;
+
+        }
+        else
+        {
+            controller.m_MouseLook.YSensitivity = 0;
+            controller.m_MouseLook.MinimumX = 0;
+            controller.m_MouseLook.MaximumX = 0;
+        }
+
+        mouseLookLocked = !mouseLookLocked;
     }
 
     private void ChangeWalkSpeed()
     {
         float target = normal.StandardNormalDistribution(walkSpeedMean, WalkSpeedNoiseStandardDeviation, walkSpeedMean - WalkSpeedNoiseMaxDeviation, walkSpeedMean + WalkSpeedNoiseMaxDeviation);
-        DOTween.To(() => controller.m_WalkSpeed, x => controller.m_WalkSpeed = x, target, WalkSpeedNoiseInterval / 2);
+
+            DOTween.To(() => controller.m_WalkSpeed, x => controller.m_WalkSpeed = x, target, WalkSpeedNoiseInterval / 2);
+
+
         nextWalkSpeedNoise = Time.time + WalkSpeedNoiseInterval;
 
         if (Debugging)
@@ -147,7 +162,3 @@ public class FirstPersonMovementChanger : MonoBehaviour
 
 
 
-public enum MovementType
-{
-    Normal,ForwardOnly,TurnLeftAndRight
-}
