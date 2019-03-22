@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.06822274, g: 0.0093938, b: 0.013495472, a: 1}
+  m_IndirectSpecularColor: {r: 0.056381892, g: 0.007763847, b: 0.011153754, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -979,9 +979,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9ef276a646a8f49429da848d3746ade9, type: 3}
   - {fileID: 8300000, guid: 2c1d3a2da8daf4cabbb1eb84e18f56c8, type: 3}
   - {fileID: 8300000, guid: 5ae9c499c68574b3abc92fb411527fa7, type: 3}
-  - {fileID: 8300000, guid: 26c7541ac8da947a5bea2f5fd7466a21, type: 3}
-  - {fileID: 8300000, guid: 270e3ce5e389247cca8477d592deb2d5, type: 3}
-  - {fileID: 8300000, guid: f581f09d9f0024f45b2cfacbd61dc447, type: 3}
+  - {fileID: 8300000, guid: 0f69614bab9d54df6bb966c547add73f, type: 3}
+  - {fileID: 8300000, guid: 580535e9bff2a4445b20199fea0ab700, type: 3}
+  - {fileID: 8300000, guid: f8fc0a5b568ac45a2bcde2e88b299195, type: 3}
 --- !u!4 &853503216
 Transform:
   m_ObjectHideFlags: 0
@@ -1043,7 +1043,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: ee22d370119fb49b4b49442634da9cb3,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 7133c419450bd4488a110a6ba9eeee68, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a7d6ab1bae4324cfe981b1d8eb92f172, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.25
   m_Pitch: 1
@@ -6591,7 +6591,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cb2e8499348f544489a4d373f5697eab, type: 2}
+  - {fileID: 2100000, guid: 32ddf84d2d46f4784ba7ccd4b1570ffe, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7139,6 +7139,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1893666267}
+        m_MethodName: TurnUpSkyboxExposure
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.8
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &1893743564
@@ -7602,12 +7613,12 @@ PrefabInstance:
     - target: {fileID: 6460607991051170037, guid: f5f56e76ccdfe4d378cc779cd4924e60,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6460607991051170037, guid: f5f56e76ccdfe4d378cc779cd4924e60,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 488
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6460607991051170037, guid: f5f56e76ccdfe4d378cc779cd4924e60,
         type: 3}

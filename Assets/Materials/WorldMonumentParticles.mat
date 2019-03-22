@@ -93,4 +93,4 @@ Material:
     - _Color: {r: 0, g: 15.999998, b: 14.994762, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
-    - _TintColor: {r: 0.8172405, g: 1, b: 0, a: 0.08235294}
+    - _TintColor: {r: 0.8172405, g: 1, b: 0, a: 0.15686275}

@@ -29,16 +29,16 @@ public int MinAnalogGlitchColliders = 25;
       //spawn world monuments at random
        int ramdomMonumentRotationY=Random.Range(-180,180);
       Quaternion MonumenrSpawnRotation = Quaternion.Euler(0,ramdomMonumentRotationY,0);
-        placeToSpawn = new Vector3(Random.Range(-500, 500), 0, Random.Range(-500, 500));
+        placeToSpawn = new Vector3(Random.Range(-300, 300), 0, Random.Range(-300, 300));
 	Instantiate(WorldMonuments[i], placeToSpawn, MonumenrSpawnRotation);
         
         }
-
+             
         //spawn datamosh colliders
         int NumberOfDatamosh = Random.Range(MinDatamoshColliders,MaxDatamoshColliders);
         for(int i = 0; i < NumberOfDatamosh; i++){
       
-        placeToSpawn = new Vector3(Random.Range(-500, 500), 0, Random.Range(-500, 500));
+        placeToSpawn = new Vector3(Random.Range(-500, 500), 0, Random.Range(-400, 400));
 	Instantiate(DatamoshCubes, placeToSpawn, Quaternion.identity);
         
         }
@@ -47,7 +47,7 @@ public int MinAnalogGlitchColliders = 25;
         int NumberOfAnalogGlitch = Random.Range(MinAnalogGlitchColliders,MaxAnalogGlitchColliders);
         for(int i = 0; i < NumberOfAnalogGlitch; i++){
       
-        placeToSpawn = new Vector3(Random.Range(-500, 500), 0, Random.Range(-500, 500));
+        placeToSpawn = new Vector3(Random.Range(-500, 500), 0, Random.Range(-400, 400));
 	Instantiate(AnalogGlitchCubes, placeToSpawn, Quaternion.identity);
         }
 
@@ -62,7 +62,8 @@ public int MinAnalogGlitchColliders = 25;
         int randonSize = Random.Range(4, 10);
         newObject.transform.localScale = new Vector3(randonSize, randonSize+Random.Range(0,4), randonSize);
         }
-
+        //Set starting skybox exposure
+        RenderSettings.skybox.SetFloat ("_Exposure",0.55f);
 
 
 	}
@@ -71,7 +72,7 @@ public int MinAnalogGlitchColliders = 25;
 
         for(int i = 0; i < NumberOfCubes; i++){
       
-        placeToSpawn = new Vector3(Random.Range(-500, 500), 0, Random.Range(-500, 500));
+        placeToSpawn = new Vector3(Random.Range(-400, 400), 0, Random.Range(-400, 400));
 	Instantiate(DatamoshCubes, placeToSpawn, Quaternion.identity);
         
         }
@@ -81,10 +82,55 @@ public int MinAnalogGlitchColliders = 25;
 
         public void spawnAnalogGlitchCubes(int NumberOfCubes){
         for(int i = 0; i < NumberOfCubes; i++){
-        placeToSpawn = new Vector3(Random.Range(-500, 500), 0, Random.Range(-500, 500));
+        placeToSpawn = new Vector3(Random.Range(-400, 400), 0, Random.Range(-400, 400));
 	Instantiate(AnalogGlitchCubes, placeToSpawn, Quaternion.identity);
                 }
                 Debug.Log("spawned "+NumberOfCubes+" analog-glitch cubes");
+        }
+
+        public void TurnUpSkyboxExposure(float SetNewExposure){
+
+             StartCoroutine(glitchSkybox(SetNewExposure));
+
+        }
+        IEnumerator glitchSkybox(float newExposure){
+        float OldExposure = RenderSettings.skybox.GetFloat ("_Exposure");
+
+        yield return new WaitForSeconds(Random.Range(0.05f,0.5f));   
+        RenderSettings.skybox.SetFloat ("_Exposure",newExposure);
+
+         yield return new WaitForSeconds(Random.Range(0.05f,0.5f));   
+        RenderSettings.skybox.SetFloat ("_Exposure",OldExposure);
+        
+        yield return new WaitForSeconds(Random.Range(0.05f,0.5f));   
+        RenderSettings.skybox.SetFloat ("_Exposure",newExposure);
+
+         yield return new WaitForSeconds(Random.Range(0.05f,0.5f));   
+        RenderSettings.skybox.SetFloat ("_Exposure",OldExposure);
+
+           yield return new WaitForSeconds(Random.Range(0.05f,0.5f));   
+        RenderSettings.skybox.SetFloat ("_Exposure",newExposure);
+
+         yield return new WaitForSeconds(Random.Range(0.05f,0.5f));   
+        RenderSettings.skybox.SetFloat ("_Exposure",OldExposure);
+           yield return new WaitForSeconds(Random.Range(0.05f,0.5f));   
+        
+        RenderSettings.skybox.SetFloat ("_Exposure",newExposure);
+
+         yield return new WaitForSeconds(Random.Range(0.05f,0.5f));   
+        RenderSettings.skybox.SetFloat ("_Exposure",OldExposure);
+
+           yield return new WaitForSeconds(Random.Range(0.05f,0.5f));   
+        RenderSettings.skybox.SetFloat ("_Exposure",newExposure);
+
+         yield return new WaitForSeconds(Random.Range(0.05f,0.5f));   
+        RenderSettings.skybox.SetFloat ("_Exposure",OldExposure);
+          
+           yield return new WaitForSeconds(Random.Range(0.05f,0.5f));   
+        RenderSettings.skybox.SetFloat ("_Exposure",newExposure);
+
+   
+
         }
 
 }
