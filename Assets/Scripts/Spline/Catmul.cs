@@ -12,11 +12,10 @@ public class Catmul : MonoBehaviour
     List<Vector3> newPoints = new List<Vector3>();
 
     //How many points you want on the curve
-    float amountOfPoints = 10.0f;
+    [HideInInspector]
+    public float amountOfPoints = 10.0f;
 
-    //set from 0-1
-    [Range(0, 1)]
-    public float alpha = 0.5f;
+    private float alpha = 0;
 
     /////////////////////////////
 
@@ -96,6 +95,7 @@ public class Catmul : MonoBehaviour
 
     public List<Vector3> GetPoints()
     {
+        CatmulRom();
         return newPoints;
     }
 
@@ -111,6 +111,7 @@ public class Catmul : MonoBehaviour
         float t2 = GetT(t1, p1, p2);
         float t3 = GetT(t2, p2, p3);
 
+        t += t1;
 
         Vector3 A1 = (t1 - t) / (t1 - t0) * p0 + (t - t0) / (t1 - t0) * p1;
         Vector3 A2 = (t2 - t) / (t2 - t1) * p1 + (t - t1) / (t2 - t1) * p2;
