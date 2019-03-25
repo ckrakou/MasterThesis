@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+// Magic Code (TM) allows for float arguments in events
+[System.Serializable] public class UnityEventFloat : UnityEvent<float> { }
 public class WorldTimer : MonoBehaviour
 {
     public bool Debugging;
@@ -13,7 +15,7 @@ public class WorldTimer : MonoBehaviour
     [HideInInspector]
     public float CurrentProgression = 0;
 
-    public UnityEvent ProgressEvents;
+    public UnityEventFloat ProgressEvents;
     public UnityEvent EndGameEvents;
 
 
@@ -38,7 +40,7 @@ public class WorldTimer : MonoBehaviour
         {
             timeProgressed += decayRate * Time.deltaTime;
             CurrentProgression = timeProgressed / PlayTime;
-            ProgressEvents.Invoke();
+            ProgressEvents.Invoke(CurrentProgression);
         }
     }
 
