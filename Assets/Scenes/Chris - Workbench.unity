@@ -590,6 +590,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d6eda277d8512d4dbd9b5e40dd2e5fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &830676789 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3205520338240610546, guid: 2f51021404f911b48b5a63074a4cb14c,
+    type: 3}
+  m_PrefabInstance: {fileID: 3205520338997713713}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1307109552
 GameObject:
   m_ObjectHideFlags: 0
@@ -1585,6 +1591,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
+        type: 3}
+      propertyPath: ProgressEvents.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
+        type: 3}
+      propertyPath: ProgressEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
+        type: 3}
+      propertyPath: ProgressEvents.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
+        type: 3}
+      propertyPath: ProgressEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 830676789}
+    - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
+        type: 3}
+      propertyPath: ProgressEvents.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LookAt
+      objectReference: {fileID: 0}
+    - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
+        type: 3}
+      propertyPath: ProgressEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Transform, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45697bdd8ec32414e9e78b4ad16e446e, type: 3}
