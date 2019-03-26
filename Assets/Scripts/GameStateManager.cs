@@ -8,5 +8,5 @@ public static class GameStateManager
 
    public static int TimesInSuperFunWorld = 1;
 
-   public static bool IsPlayerInSuperFunWorld = false;
+   public static bool IsPlayerInSuperFunWorld=false;
 }

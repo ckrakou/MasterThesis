@@ -7,10 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DarkSkybox 1
-  m_Shader: {fileID: 4800000, guid: 1bd21c9be7f6f4549a0817ebff94e8d9, type: 3}
-  m_ShaderKeywords: _SUNDISK_HIGH_QUALITY _SWITCH2_ON _SWITCH3_ON _SWITCH4_ON
-  m_LightmapFlags: 4
+  m_Name: blueSky
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _EMISSION
+  m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -40,7 +40,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: d854186f43ad34dda97a6f2bd64edaa3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -56,16 +56,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _AtmosphereThickness: 1.06
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Exponent1: 12.9
-    - _Exponent2: 15.3
-    - _Exponent3: 14.2
-    - _Exponent4: 9.3
-    - _Exposure: 0.55
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -76,32 +70,8 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _SunDisk: 2
-    - _SunSize: 0.07
-    - _SunSizeConvergence: 3.1
-    - _Switch2: 1
-    - _Switch3: 1
-    - _Switch4: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.14150941, g: 0.0060074725, b: 0.0060074725, a: 1}
-    - _BottomColor: {r: 0.18867922, g: 0.004449981, b: 0.004449981, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color1: {r: 0.10392157, g: 0, b: 0.0019607844, a: 1}
-    - _Color2: {r: 0.1509434, g: 0.09445829, b: 0.06621573, a: 1}
-    - _Color3: {r: 0.14217278, g: 0.03172837, b: 0.21698111, a: 1}
-    - _Color4: {r: 0.48039216, g: 0.16078432, b: 0.18431373, a: 1}
-    - _Direction1: {r: -3.49, g: 3.05, b: 0.02, a: 0}
-    - _Direction2: {r: 0.5, g: 0.3, b: -0.4, a: 0}
-    - _Direction3: {r: 6.53, g: 0.57, b: 7.37, a: 0}
-    - _Direction4: {r: 0, g: 1, b: 0, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _GroundColor: {r: 0.509434, g: 0, b: 0, a: 1}
-    - _MiddleColor: {r: 0.02745098, g: 0.013656577, b: 0.007843139, a: 1}
-    - _NormalizedVector1: {r: -0.75297046, g: 0.6580401, b: 0.004315017, a: 0}
-    - _NormalizedVector2: {r: 0.70710677, g: 0.4242641, b: -0.56568545, a: 0}
-    - _NormalizedVector3: {r: 0.662057, g: 0.057790577, b: 0.74722207, a: 0}
-    - _NormalizedVector4: {r: 0, g: 1, b: 0, a: 0}
-    - _SkyTint: {r: 0, g: 0, b: 0, a: 1}
-    - _TopColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Color: {r: 0.08962262, g: 0.9321677, b: 1, a: 0.85882354}
+    - _EmissionColor: {r: 0, g: 20.580393, b: 23.968628, a: 1}

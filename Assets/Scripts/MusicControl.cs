@@ -33,12 +33,14 @@ public class MusicControl : MonoBehaviour
         AngelSynthVolume = AngelSynth.volume;
 
     }
-    void update(){
+    void Update(){
 
-        if(GameStateManager.IsPlayerInSuperFunWorld){
-            RoomTone.volume=0;
-            AngelSynth.volume=0;
-            EerieMusic.volume=0;
+       
+
+        if(GameStateManager.IsPlayerInSuperFunWorld==true){
+            RoomTone.volume=0.0f;
+            AngelSynth.volume=0.0f;
+            EerieMusic.volume=0.0f;
         }
         else{
                RoomTone.volume=RoomToneVolume;
