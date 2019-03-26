@@ -5,6 +5,11 @@ using UnityEngine.Events;
 
 // Magic Code (TM) allows for float arguments in events
 [System.Serializable] public class UnityEventFloat : UnityEvent<float> { }
+[System.Serializable]
+public struct TimedEventSpawn{
+    public float spawnTime;
+    public UnityEvent Function;
+}
 public class WorldTimer : MonoBehaviour
 {
     public bool Debugging;
@@ -17,6 +22,8 @@ public class WorldTimer : MonoBehaviour
 
     public UnityEventFloat ProgressEvents;
     public UnityEvent EndGameEvents;
+
+    public TimedEventSpawn[] TimedEvents;
 
 
     private float decayRate = 1f;

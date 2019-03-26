@@ -341,7 +341,7 @@ PrefabInstance:
     - target: {fileID: 1772691960884353428, guid: 7b2f4c1f5afbd4e39b6fd825b404f4c0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.19
+      value: -62.4
       objectReference: {fileID: 0}
     - target: {fileID: 1772691960884353428, guid: 7b2f4c1f5afbd4e39b6fd825b404f4c0,
         type: 3}
@@ -17392,6 +17392,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FirstTimeStartToLeave:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  SecondTimeStartToLeave:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  ThirdTimeStartToLeave:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
