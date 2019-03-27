@@ -96,14 +96,14 @@ public class FirstPersonVisualChanger : MonoBehaviour
 
     private void ChangeSmoothness()
     {
-        float newSmoothTime = Random.Range(SmoothingMinimum, SmoothingMaximum);
-        controller.m_MouseLook.smoothTime = newSmoothTime;
+        float newSmoothing = Random.Range(SmoothingMinimum, SmoothingMaximum);
+        controller.m_MouseLook.smoothTime = newSmoothing;
         smoothChangeTimestamp = Time.time + SmoothingInterval;
 
         if (Debugging)
         {
             Debug.Log(this.GetType() + ": time is " + Time.time);
-            Debug.Log(this.GetType() + ": Changing smoothness to " + newSmoothTime);
+            Debug.Log(this.GetType() + ": Changing smoothness to " + newSmoothing);
             Debug.Log(this.GetType() + ": Next change at " + Time.time + SmoothingInterval);
         }
     }

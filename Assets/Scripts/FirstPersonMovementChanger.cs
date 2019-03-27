@@ -90,6 +90,7 @@ public class FirstPersonMovementChanger : MonoBehaviour
     public void ToogleSpeedNoise()
     {
         walkSpeedNoise = !walkSpeedNoise;
+
         if (walkSpeedNoise)
         {
             controller.m_WalkSpeed = walkSpeedMean;

@@ -45,23 +45,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74410aea5f68a474cbc236e989468fce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Debugging: 1
-  PlayTime: 1
+  Debugging: 0
+  PlayTime: 2
   CurrentProgression: 0
   ProgressEvents:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2104415027}
-        m_MethodName: SetSyboxExposure
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 4632268277165724253}
         m_MethodName: AdjustMouseNoise
         m_Mode: 0
@@ -85,7 +74,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 4632268277165724253}
-        m_MethodName: AdjustMovementNoise
+        m_MethodName: AdjustMovementSpeed
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -95,8 +84,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4632268277165724253}
-        m_MethodName: AdjustMovementSpeed
+      - m_Target: {fileID: 2104415027}
+        m_MethodName: SetSyboxExposure
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -113,28 +102,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  TimedEvents:
-  - Time: 0
-    Function:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    HasHappened: 0
-  - Time: 0
-    Function:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    HasHappened: 0
-  - Time: 0
-    Function:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    HasHappened: 0
+  TimedEvents: []
 --- !u!114 &2104415027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c15e1d2868bb91c4eb3deb1d4a43bfac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkyboxMode: 2
+  SkyboxMode: 0
   MinimumSkyboxExposure: 0.6
   MaximumSkyboxExposure: 0.8
 --- !u!114 &4632268277165724253
@@ -162,52 +130,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c79845cdda02e8742aa5b7f0ce19a9e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Debugging: 0
+  Debugging: 1
   Player: {fileID: 0}
   MouseLookNoise:
-    mean:
-      initialValue: 0
-      endValue: 0
-      delayInMinutes: 0
-    deviation:
-      initialValue: 0
-      endValue: 1
-      delayInMinutes: 0
-    interval:
-      initialValue: 0
-      endValue: 2
-      delayInMinutes: 0
-    bounds:
-      initialValue: 2
-      endValue: 2
-      delayInMinutes: 0
+    mean: 0
+    deviation: 2
+    bounds: 3
   MouseAdjustmentChange:
-    upper:
-      initialValue: 5
-      endValue: 9
-      delayInMinutes: 0
-    lower:
-      initialValue: 5
-      endValue: 1
-      delayInMinutes: 0
-    interval:
-      initialValue: 0
-      endValue: 2
-      delayInMinutes: 0
+    upper: 10
+    lower: 0
+    initial: 5
   MovementSpeed:
-    mean:
-      initialValue: 5
-      endValue: 5
-      delayInMinutes: 0
-    deviation:
-      initialValue: 0
-      endValue: 2
-      delayInMinutes: 0
-    interval:
-      initialValue: 0
-      endValue: 2
-      delayInMinutes: 0
-    bounds:
-      initialValue: 0
-      endValue: 6
-      delayInMinutes: 0
+    mean: 5
+    deviation: 3
+    bounds: 10
