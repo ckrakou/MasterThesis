@@ -62,6 +62,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4632268277165724253}
+        m_MethodName: AdjustMouseNoise
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEventFloat, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   EndGameEvents:
@@ -120,15 +131,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Debugging: 0
   Player: {fileID: 0}
-  MouseNoiseDeviation:
-    initialValue: 0
-    endValue: 0
-    delayInMinutes: 0
-  MouseNoiseBounds:
-    initialValue: 0
-    endValue: 0
-    delayInMinutes: 0
-  MouseNoiseInterval:
-    initialValue: 0
-    endValue: 0
-    delayInMinutes: 0
+  MouseLookNoise:
+    mean:
+      initialValue: 0
+      endValue: 0
+      delayInMinutes: 0
+    deviation:
+      initialValue: 0
+      endValue: 0
+      delayInMinutes: 0
+    interval:
+      initialValue: 0
+      endValue: 0
+      delayInMinutes: 0
+    bounds:
+      initialValue: 0
+      endValue: 0
+      delayInMinutes: 0
+  MouseAdjustmentChange:
+    upper:
+      initialValue: 0
+      endValue: 0
+      delayInMinutes: 0
+    lower:
+      initialValue: 0
+      endValue: 0
+      delayInMinutes: 0
+    interval:
+      initialValue: 0
+      endValue: 0
+      delayInMinutes: 0
+  MovementSpeed:
+    mean:
+      initialValue: 0
+      endValue: 0
+      delayInMinutes: 0
+    deviation:
+      initialValue: 0
+      endValue: 0
+      delayInMinutes: 0
+    interval:
+      initialValue: 0
+      endValue: 0
+      delayInMinutes: 0
+    bounds:
+      initialValue: 0
+      endValue: 0
+      delayInMinutes: 0
