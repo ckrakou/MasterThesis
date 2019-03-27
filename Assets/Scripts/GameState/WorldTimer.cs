@@ -127,7 +127,8 @@ public class WorldTimer : MonoBehaviour
         {
             var currentEvent = TimedEvents[i];
 
-            if (currentEvent.Time/PlayTime*60 > CurrentProgression && currentEvent.HasHappened == false)
+            // TODO: FIX THIS BULLSHIT
+            if (timeProgressed > Time.time && currentEvent.HasHappened == false)
             {
                 currentEvent.HasHappened = true;
                 currentEvent.Function.Invoke();

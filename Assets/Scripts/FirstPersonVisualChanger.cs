@@ -34,6 +34,7 @@ public class FirstPersonVisualChanger : MonoBehaviour
     private float initialSensitivityY;
     private NormalDist normal;
 
+
     void Start()
     {
         controller = GetComponent<FirstPersonController>();
