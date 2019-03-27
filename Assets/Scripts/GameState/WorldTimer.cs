@@ -1,14 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 using UnityEngine.Events;
 
 // Magic Code (TM) allows for float arguments in events
 [System.Serializable] public class UnityEventFloat : UnityEvent<float> { }
+
 [System.Serializable]
-public struct TimedEventSpawn{
-    public float spawnTime;
+public struct TimedEvent{
+    public int Time;
     public UnityEvent Function;
+
+    [HideInInspector]
+    public bool HasHappened;
 }
 public class WorldTimer : MonoBehaviour
 {
@@ -22,19 +25,18 @@ public class WorldTimer : MonoBehaviour
 
     public UnityEventFloat ProgressEvents;
     public UnityEvent EndGameEvents;
-
-    public TimedEventSpawn[] TimedEvents;
-
+    public TimedEvent[] TimedEvents;
 
     private float decayRate = 1f;
+    private float savedRate = 1f;
     private float timeProgressed = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
+    
     // Update is called once per frame
     void Update()
     {
@@ -48,6 +50,31 @@ public class WorldTimer : MonoBehaviour
             timeProgressed += decayRate * Time.deltaTime;
             CurrentProgression = timeProgressed / PlayTime;
             ProgressEvents.Invoke(CurrentProgression);
+            TriggerTimedEvents();
+
+        }
+    }
+
+    public void StopTimeFor(int seconds)
+    {
+        
+        savedRate = decayRate;
+        decayRate = 0;
+        Invoke("StartTime", seconds);
+
+        if (Debugging)
+        {
+            Debug.Log(GetType() + ": Stopping time for " + seconds + " seconds");
+        }
+    }
+
+    private void StartTime()
+    {
+        decayRate = savedRate;
+
+        if (Debugging)
+        {
+            Debug.Log(GetType() + ": Starting time with rate:" + decayRate);
         }
     }
 
@@ -98,5 +125,20 @@ public class WorldTimer : MonoBehaviour
             Debug.Log(GetType() + ": Game Completed at " + Time.time);
         }
     }
+
+    private void TriggerTimedEvents()
+    {
+        for (int i = 0; i < TimedEvents.Length; i++)
+        {
+            var currentEvent = TimedEvents[i];
+
+            if (currentEvent.Time/PlayTime > CurrentProgression && currentEvent.HasHappened == false)
+            {
+                currentEvent.HasHappened = true;
+                currentEvent.Function.Invoke();
+            }
+        }
+    }
+
 
 }
