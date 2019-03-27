@@ -32,16 +32,17 @@ public class PlayerChanger : MonoBehaviour
         movement = Player.GetComponent<FirstPersonMovementChanger>();
         visuals = Player.GetComponent<FirstPersonVisualChanger>();
         timer = GetComponent<WorldTimer>();
-
+        /*
         AdjustMouseNoise(0);
         AdjustMouseSmoothness(0);
         AdjustMovementNoise(0);
         AdjustMovementSpeed(0);
-
+        */
+        /*
         visuals.SmoothingMinimum = MouseAdjustmentChange.lower.initialValue;
         visuals.SmoothingMaximum = MouseAdjustmentChange.upper.initialValue;
         visuals.SmoothingInterval = MouseAdjustmentChange.interval.initialValue;
-
+        */
         visuals.ToggleNoise();
         visuals.ToggleSensitivityShift();
         visuals.ToggleSmoothChange();
@@ -51,7 +52,7 @@ public class PlayerChanger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        noise = false;
+
     }
 
     public void StartNoise()
@@ -61,7 +62,7 @@ public class PlayerChanger : MonoBehaviour
 
     public void StopNoise()
     {
-
+        noise = false;
     }
 
     public void AdjustMouseNoise(float progression)
