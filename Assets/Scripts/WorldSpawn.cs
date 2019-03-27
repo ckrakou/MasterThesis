@@ -9,6 +9,8 @@ public class WorldSpawn : MonoBehaviour
  public GameObject DatamoshCubes;
  public GameObject AnalogGlitchCubes;
 
+ public GameObject teleporterCubes;
+
  public GameObject Clock;
 
 
@@ -18,6 +20,9 @@ public class WorldSpawn : MonoBehaviour
 
 public int MinAnalogGlitchColliders = 25;
     public int MaxAnalogGlitchColliders = 50;
+
+    public int MinTeleportColliders = 1;
+   public int  MaxTeleportColliders = 4;
 
     private Vector3 placeToSpawn;    
 
@@ -41,6 +46,14 @@ public int MinAnalogGlitchColliders = 25;
         placeToSpawn = new Vector3(Random.Range(-500, 500), 0, Random.Range(-400, 400));
 	Instantiate(DatamoshCubes, placeToSpawn, Quaternion.identity);
         
+        }
+
+         //spawn teleport colliders
+        int NumberOfTeleport = Random.Range(MinTeleportColliders,MaxTeleportColliders);
+        for(int i = 0; i < NumberOfTeleport; i++){
+      
+        placeToSpawn = new Vector3(Random.Range(-300, 300), 0, Random.Range(-300, 300));
+	Instantiate(teleporterCubes, placeToSpawn, Quaternion.identity);
         }
 
         //spawn AnalogGlitch colliders

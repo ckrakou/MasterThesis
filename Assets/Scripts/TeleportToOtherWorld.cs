@@ -33,7 +33,7 @@ public class TeleportToOtherWorld : MonoBehaviour
      {
          if(target.tag == "TeleportCollider")
          {
-         
+         if(GameStateManager.TimesInSuperFunWorld<4)
            TeleportToFunWorld();
          }
      }

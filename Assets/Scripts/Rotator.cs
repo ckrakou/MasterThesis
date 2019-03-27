@@ -6,11 +6,13 @@ public class Rotator : MonoBehaviour
 {
     // Start is called before the first frame update
 
+    public float Max = 2.5f;
+    public float Min = 0.3f;
     private float speed;
    
 
     void Start(){
-        speed = Random.Range(0.2f,2);
+        speed = Random.Range(Min,Max);
     }
     // Update is called once per frame
     void Update()
