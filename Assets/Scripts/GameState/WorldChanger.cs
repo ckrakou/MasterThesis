@@ -6,15 +6,20 @@ using UnityEngine;
 [RequireComponent(typeof(WorldTimer))]
 public class WorldChanger : MonoBehaviour
 {
+    [Header("Skybox")]
+    public SkyboxChange SkyboxMode = SkyboxChange.NONE;
+    [Range(0,1)]
+    public float MinimumSkyboxExposure = 0.6f;
+    [Range(0, 1)]
+    public float MaximumSkyboxExposure = 0.8f;
 
-
-
-    private WorldTimer worldTimer;
+    private float skyboxExposureInterval;
 
     // Start is called before the first frame update
     void Start()
     {
-        worldTimer = GetComponent<WorldTimer>();
+        skyboxExposureInterval = MaximumSkyboxExposure - MinimumSkyboxExposure;
+        SetSyboxExposure(MinimumSkyboxExposure);
     }
 
     // Update is called once per frame
@@ -22,4 +27,28 @@ public class WorldChanger : MonoBehaviour
     {
         
     }
+
+    public void SetSyboxExposure(float progression)
+    {
+        switch (SkyboxMode)
+        {
+            case SkyboxChange.INCREASE:
+                RenderSettings.skybox.SetFloat("_Exposure", MinimumSkyboxExposure + (progression * skyboxExposureInterval));
+                break;
+            case SkyboxChange.DECREASE:
+                RenderSettings.skybox.SetFloat("_Exposure", MaximumSkyboxExposure - (progression * skyboxExposureInterval));
+                break;
+            case SkyboxChange.NONE:
+                break;
+            default:
+                break;
+        }
+    }
+
+    public enum SkyboxChange
+    {
+        INCREASE, DECREASE, NONE
+    }
+
 }
+

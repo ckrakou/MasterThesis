@@ -34,6 +34,8 @@ public class WorldTimer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (Debugging)
+            Debug.Log(GetType() + ": Time Begins");
     }
 
     
