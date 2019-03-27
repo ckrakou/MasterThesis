@@ -27,6 +27,7 @@ public class FirstPersonVisualChanger : MonoBehaviour
     private bool lookNoise;
     private bool sensitivityShift;
     private bool smoothChange;
+    private bool verticalDistabled = false;
     private float smoothChangeTimestamp;
     private float noiseChangeTimestamp;
     private float initialSensitivityX;
@@ -158,6 +159,21 @@ public class FirstPersonVisualChanger : MonoBehaviour
 
     }
 
+    public void ToggleVertical()
+    {
+        if (verticalDistabled)
+        {
+            controller.m_MouseLook.MinimumX = -90;
+            controller.m_MouseLook.MaximumX = 90;
+        }
+        else
+        {
+            controller.m_MouseLook.MinimumX = 0;
+            controller.m_MouseLook.MaximumX = 0;
+        }
+
+
+    }
    
 
 }
