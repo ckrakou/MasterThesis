@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3621371295798908181}
   - component: {fileID: 6643967092860436870}
   - component: {fileID: 2104415027}
+  - component: {fileID: 4632268277165724253}
   m_Layer: 0
   m_Name: GameStateManager
   m_TagString: Untagged
@@ -52,6 +53,50 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2104415027}
         m_MethodName: SetSyboxExposure
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4632268277165724253}
+        m_MethodName: AdjustMouseNoise
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4632268277165724253}
+        m_MethodName: AdjustMouseSmoothness
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4632268277165724253}
+        m_MethodName: AdjustMovementNoise
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4632268277165724253}
+        m_MethodName: AdjustMovementSpeed
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -105,3 +150,64 @@ MonoBehaviour:
   SkyboxMode: 2
   MinimumSkyboxExposure: 0.6
   MaximumSkyboxExposure: 0.8
+--- !u!114 &4632268277165724253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6643967092860436869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c79845cdda02e8742aa5b7f0ce19a9e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Debugging: 0
+  Player: {fileID: 0}
+  MouseLookNoise:
+    mean:
+      initialValue: 0
+      endValue: 0
+      delayInMinutes: 0
+    deviation:
+      initialValue: 0
+      endValue: 1
+      delayInMinutes: 0
+    interval:
+      initialValue: 0
+      endValue: 2
+      delayInMinutes: 0
+    bounds:
+      initialValue: 2
+      endValue: 2
+      delayInMinutes: 0
+  MouseAdjustmentChange:
+    upper:
+      initialValue: 5
+      endValue: 9
+      delayInMinutes: 0
+    lower:
+      initialValue: 5
+      endValue: 1
+      delayInMinutes: 0
+    interval:
+      initialValue: 0
+      endValue: 2
+      delayInMinutes: 0
+  MovementSpeed:
+    mean:
+      initialValue: 5
+      endValue: 5
+      delayInMinutes: 0
+    deviation:
+      initialValue: 0
+      endValue: 2
+      delayInMinutes: 0
+    interval:
+      initialValue: 0
+      endValue: 2
+      delayInMinutes: 0
+    bounds:
+      initialValue: 0
+      endValue: 6
+      delayInMinutes: 0

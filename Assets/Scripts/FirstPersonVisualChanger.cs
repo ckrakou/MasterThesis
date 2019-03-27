@@ -23,18 +23,16 @@ public class FirstPersonVisualChanger : MonoBehaviour
     public float NoiseStandardDeviation = 0.2f;
     public float NoiseBoundary = 1f;
 
-
-
     private FirstPersonController controller;
     private bool lookNoise;
     private bool sensitivityShift;
     private bool smoothChange;
+    private bool verticalDistabled = false;
     private float smoothChangeTimestamp;
     private float noiseChangeTimestamp;
     private float initialSensitivityX;
     private float initialSensitivityY;
     private NormalDist normal;
-
 
     void Start()
     {
@@ -45,6 +43,7 @@ public class FirstPersonVisualChanger : MonoBehaviour
         initialSensitivityX = controller.m_MouseLook.XSensitivity;
         initialSensitivityY = controller.m_MouseLook.YSensitivity;
 
+        
 
         // needs to be smooth for noise to work
         controller.m_MouseLook.smooth = true;
@@ -91,6 +90,7 @@ public class FirstPersonVisualChanger : MonoBehaviour
         {
             ChangeSmoothness();
         }
+
     }
 
     private void ChangeSmoothness()
@@ -116,8 +116,6 @@ public class FirstPersonVisualChanger : MonoBehaviour
             Debug.Log(this.GetType() + ": Inverting Controls");
 
     }
-
-
 
     public void ToggleNoise()
     {
@@ -161,6 +159,21 @@ public class FirstPersonVisualChanger : MonoBehaviour
 
     }
 
+    public void ToggleVertical()
+    {
+        if (verticalDistabled)
+        {
+            controller.m_MouseLook.MinimumX = -90;
+            controller.m_MouseLook.MaximumX = 90;
+        }
+        else
+        {
+            controller.m_MouseLook.MinimumX = 0;
+            controller.m_MouseLook.MaximumX = 0;
+        }
+
+
+    }
    
 
 }

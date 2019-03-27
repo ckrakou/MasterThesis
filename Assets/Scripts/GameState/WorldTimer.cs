@@ -5,14 +5,7 @@ using UnityEngine.Events;
 // Magic Code (TM) allows for float arguments in events
 [System.Serializable] public class UnityEventFloat : UnityEvent<float> { }
 
-[System.Serializable]
-public struct TimedEvent{
-    public int Time;
-    public UnityEvent Function;
 
-    [HideInInspector]
-    public bool HasHappened;
-}
 public class WorldTimer : MonoBehaviour
 {
     public bool Debugging;
@@ -50,27 +43,27 @@ public class WorldTimer : MonoBehaviour
         else
         {
             timeProgressed += decayRate * Time.deltaTime;
-            CurrentProgression = timeProgressed / PlayTime;
+            CurrentProgression = timeProgressed / (PlayTime * 60);
             ProgressEvents.Invoke(CurrentProgression);
             TriggerTimedEvents();
 
         }
     }
 
-    public void StopTimeFor(int seconds)
+    public void StopTime()
     {
         
         savedRate = decayRate;
         decayRate = 0;
-        Invoke("StartTime", seconds);
+
 
         if (Debugging)
         {
-            Debug.Log(GetType() + ": Stopping time for " + seconds + " seconds");
+            Debug.Log(GetType() + ": Stopping time");
         }
     }
 
-    private void StartTime()
+    public void StartTime()
     {
         decayRate = savedRate;
 
@@ -134,7 +127,7 @@ public class WorldTimer : MonoBehaviour
         {
             var currentEvent = TimedEvents[i];
 
-            if (currentEvent.Time/PlayTime > CurrentProgression && currentEvent.HasHappened == false)
+            if (currentEvent.Time/PlayTime*60 > CurrentProgression && currentEvent.HasHappened == false)
             {
                 currentEvent.HasHappened = true;
                 currentEvent.Function.Invoke();
@@ -143,4 +136,13 @@ public class WorldTimer : MonoBehaviour
     }
 
 
+}
+[System.Serializable]
+public struct TimedEvent
+{
+    public int Time;
+    public UnityEvent Function;
+
+    [HideInInspector]
+    public bool HasHappened;
 }

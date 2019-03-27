@@ -7,7 +7,7 @@ using UnityEngine;
 public class WorldChanger : MonoBehaviour
 {
     [Header("Skybox")]
-    public SkyboxChange SkyboxMode = SkyboxChange.NONE;
+    public LinearChange SkyboxMode = LinearChange.NONE;
     [Range(0,1)]
     public float MinimumSkyboxExposure = 0.6f;
     [Range(0, 1)]
@@ -32,20 +32,20 @@ public class WorldChanger : MonoBehaviour
     {
         switch (SkyboxMode)
         {
-            case SkyboxChange.INCREASE:
+            case LinearChange.INCREASE:
                 RenderSettings.skybox.SetFloat("_Exposure", MinimumSkyboxExposure + (progression * skyboxExposureInterval));
                 break;
-            case SkyboxChange.DECREASE:
+            case LinearChange.DECREASE:
                 RenderSettings.skybox.SetFloat("_Exposure", MaximumSkyboxExposure - (progression * skyboxExposureInterval));
                 break;
-            case SkyboxChange.NONE:
+            case LinearChange.NONE:
                 break;
             default:
                 break;
         }
     }
 
-    public enum SkyboxChange
+    public enum LinearChange
     {
         INCREASE, DECREASE, NONE
     }
