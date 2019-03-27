@@ -29,16 +29,16 @@ public class WorldTimer : MonoBehaviour
     {
         if (Debugging)
             Debug.Log(GetType() + ": Time Begins");
+
     }
 
-    
+
     // Update is called once per frame
     void Update()
     {
         if (timeProgressed > PlayTime * 60)
         {
             EndGame();
-            GetComponent<WorldTimer>().enabled = false;
         }
         else
         {
@@ -46,8 +46,10 @@ public class WorldTimer : MonoBehaviour
             CurrentProgression = timeProgressed / (PlayTime * 60);
             ProgressEvents.Invoke(CurrentProgression);
             TriggerTimedEvents();
-
         }
+
+        if (Debugging)
+            Debug.Log(GetType() + ": time is " + timeProgressed);
     }
 
     public void StopTime()
@@ -114,6 +116,10 @@ public class WorldTimer : MonoBehaviour
     private void EndGame()
     {
         EndGameEvents.Invoke();
+        GetComponent<PlayerChanger>().enabled = false;
+        GetComponent<WorldChanger>().enabled = false;
+        GetComponent<WorldTimer>().enabled = false;
+
 
         if (Debugging)
         {
@@ -127,12 +133,13 @@ public class WorldTimer : MonoBehaviour
         {
             var currentEvent = TimedEvents[i];
 
-            // TODO: FIX THIS BULLSHIT
-            if (timeProgressed > Time.time && currentEvent.HasHappened == false)
+               if(Time.time > currentEvent.Time*60 && currentEvent.HasHappened == false)
             {
-                currentEvent.HasHappened = true;
                 currentEvent.Function.Invoke();
+                currentEvent.HasHappened = true;
             }
+
+            
         }
     }
 
