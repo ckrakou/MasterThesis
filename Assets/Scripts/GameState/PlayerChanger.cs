@@ -23,8 +23,10 @@ public class PlayerChanger : MonoBehaviour
     private FirstPersonMovementChanger movement;
     private FirstPersonVisualChanger visuals;
     private WorldTimer timer;
+    private bool noise = true;
 
     // Start is called before the first frame update
+
     void Start()
     {
         movement = Player.GetComponent<FirstPersonMovementChanger>();
@@ -49,42 +51,61 @@ public class PlayerChanger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        noise = false;
+    }
+
+    public void StartNoise()
+    {
+        noise = true;
+    }
+
+    public void StopNoise()
+    {
 
     }
-    
+
     public void AdjustMouseNoise(float progression)
     {
+        if (noise)
+        {
             visuals.NoiseStandardDeviation = Mathf.Lerp(MouseLookNoise.deviation.initialValue, MouseLookNoise.deviation.endValue, progression);
 
             visuals.NoiseInterval = Mathf.Lerp(MouseLookNoise.interval.initialValue, MouseLookNoise.interval.endValue, progression);
 
             visuals.NoiseBoundary = Mathf.Lerp(MouseLookNoise.bounds.initialValue, MouseLookNoise.bounds.endValue, progression);
 
+        }
     }
     public void AdjustMouseSmoothness(float progression)
     {
+        if (noise)
+        {
             visuals.SmoothingInterval = Mathf.Lerp(MouseAdjustmentChange.interval.initialValue, MouseAdjustmentChange.interval.endValue, progression);
 
             visuals.SmoothingMaximum = Mathf.Lerp(MouseAdjustmentChange.upper.initialValue, MouseAdjustmentChange.upper.endValue, progression);
 
             visuals.SmoothingMinimum = Mathf.Lerp(MouseAdjustmentChange.lower.initialValue, MouseAdjustmentChange.lower.endValue, progression);
+        }
     }
-
     public void AdjustMovementNoise(float progression)
     {
 
     }
-    
+
     public void AdjustMovementSpeed(float progression)
     {
+        if (noise)
+        {
             movement.WalkSpeedNoiseInterval = Mathf.Lerp(MovementSpeed.interval.initialValue, MovementSpeed.interval.endValue, progression);
 
             movement.WalkSpeedNoiseMaxDeviation = Mathf.Lerp(MovementSpeed.bounds.initialValue, MovementSpeed.bounds.endValue, progression);
 
             movement.WalkSpeedNoiseStandardDeviation = Mathf.Lerp(MovementSpeed.deviation.initialValue, MovementSpeed.deviation.endValue, progression);
+        }
+
     }
-    
 }
+
 
 [System.Serializable]
 public struct GaussianVariableChange
