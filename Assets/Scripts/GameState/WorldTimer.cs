@@ -57,20 +57,20 @@ public class WorldTimer : MonoBehaviour
         }
     }
 
-    public void StopTimeFor(int seconds)
+    public void StopTime()
     {
         
         savedRate = decayRate;
         decayRate = 0;
-        Invoke("StartTime", seconds);
+
 
         if (Debugging)
         {
-            Debug.Log(GetType() + ": Stopping time for " + seconds + " seconds");
+            Debug.Log(GetType() + ": Stopping time");
         }
     }
 
-    private void StartTime()
+    public void StartTime()
     {
         decayRate = savedRate;
 
