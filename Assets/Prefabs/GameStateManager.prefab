@@ -138,43 +138,43 @@ MonoBehaviour:
       delayInMinutes: 0
     deviation:
       initialValue: 0
-      endValue: 0
+      endValue: 1
       delayInMinutes: 0
     interval:
       initialValue: 0
-      endValue: 0
+      endValue: 2
       delayInMinutes: 0
     bounds:
-      initialValue: 0
-      endValue: 0
+      initialValue: 2
+      endValue: 2
       delayInMinutes: 0
   MouseAdjustmentChange:
     upper:
-      initialValue: 0
-      endValue: 0
+      initialValue: 5
+      endValue: 9
       delayInMinutes: 0
     lower:
-      initialValue: 0
-      endValue: 0
+      initialValue: 5
+      endValue: 1
       delayInMinutes: 0
     interval:
       initialValue: 0
-      endValue: 0
+      endValue: 2
       delayInMinutes: 0
   MovementSpeed:
     mean:
-      initialValue: 0
-      endValue: 0
+      initialValue: 5
+      endValue: 5
       delayInMinutes: 0
     deviation:
       initialValue: 0
-      endValue: 0
+      endValue: 2
       delayInMinutes: 0
     interval:
       initialValue: 0
-      endValue: 0
+      endValue: 2
       delayInMinutes: 0
     bounds:
       initialValue: 0
-      endValue: 0
+      endValue: 6
       delayInMinutes: 0

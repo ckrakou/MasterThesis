@@ -36,12 +36,9 @@ public class PlayerChanger : MonoBehaviour
         AdjustMovementNoise(0);
         AdjustMovementSpeed(0);
 
-
         visuals.SmoothingMinimum = MouseAdjustmentChange.lower.initialValue;
         visuals.SmoothingMaximum = MouseAdjustmentChange.upper.initialValue;
         visuals.SmoothingInterval = MouseAdjustmentChange.interval.initialValue;
-
-
 
         visuals.ToggleNoise();
         visuals.ToggleSensitivityShift();
@@ -62,7 +59,6 @@ public class PlayerChanger : MonoBehaviour
             visuals.NoiseInterval = Mathf.Lerp(MouseLookNoise.interval.initialValue, MouseLookNoise.interval.endValue, progression);
 
             visuals.NoiseBoundary = Mathf.Lerp(MouseLookNoise.bounds.initialValue, MouseLookNoise.bounds.endValue, progression);
-
 
     }
     public void AdjustMouseSmoothness(float progression)
