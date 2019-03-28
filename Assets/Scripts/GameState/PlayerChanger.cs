@@ -17,8 +17,7 @@ public class PlayerChanger : MonoBehaviour
     [Header("Mouse Adjustment Noise")]
     public IntervalVariableChange MouseAdjustmentChange;
 
-    [Header("Movement Speed Shift")]
-    public GaussianVariableChange MovementSpeed;
+
 
     private FirstPersonVisualChanger visuals;
     private WorldTimer timer;
