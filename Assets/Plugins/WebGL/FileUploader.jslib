@@ -44,7 +44,7 @@ var ImageUploaderPlugin = {
         console.log("Listener for file dialog")
       var OpenFileDialog = function() {
         document.getElementById('ImageUploaderInput').click();
-        //document.getElementById('#canvas').removeEventListener('click', OpenFileDialog);
+        document.getElementById('#canvas').removeEventListener('click', OpenFileDialog);
       };
 
       console.log("Adding Listener")

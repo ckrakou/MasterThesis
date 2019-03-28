@@ -16,6 +16,7 @@ public class GameUnlocker : MonoBehaviour
         {
             GetComponent<FileUpload>().Button.SetActive(false);
             GetComponent<FileUpload>().Text.SetActive(true);
+            GetComponent<FileUpload>().enabled = false;
         }
     }
 

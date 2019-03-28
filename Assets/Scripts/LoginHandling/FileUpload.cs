@@ -104,6 +104,9 @@ public class FileUpload : MonoBehaviour
 
     public void OnButtonPointerDown()
     {
+        if (GetComponent<IdentityTester>().KeyFound == false)
+        {
+
 
 
 #if UNITY_EDITOR
@@ -114,7 +117,7 @@ public class FileUpload : MonoBehaviour
         //ImageUploaderCaptureClick ();
 
 #endif
-
+        }
         
     }
 }

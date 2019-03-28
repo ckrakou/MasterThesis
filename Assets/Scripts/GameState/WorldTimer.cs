@@ -11,7 +11,7 @@ public class WorldTimer : MonoBehaviour
     public bool Debugging;
 
     [Tooltip("Total Play Time in Minutes")]
-    [Range(0,30)]
+    [Range(1,30)]
     public float PlayTime = 20;
     [HideInInspector]
     public float CurrentProgression = 0;
