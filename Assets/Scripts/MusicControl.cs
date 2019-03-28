@@ -32,22 +32,22 @@ public class MusicControl : MonoBehaviour
         EerieMusicVolume = EerieMusic.volume;
         AngelSynthVolume = AngelSynth.volume;
 
+        Debug.Log(RoomToneVolume);
+
     }
-    void Update(){
 
-       
-
-        if(GameStateManager.IsPlayerInSuperFunWorld==true){
+    public void TurnDownMusic(){
             RoomTone.volume=0.0f;
             AngelSynth.volume=0.0f;
             EerieMusic.volume=0.0f;
-        }
-        else{
-               RoomTone.volume=RoomToneVolume;
-            AngelSynth.volume=AngelSynthVolume;
-            EerieMusic.volume=EerieMusicVolume;
-        }
+
     }
+    public void TurnUpMusic(){
+     RoomTone.volume=0.7f;
+            AngelSynth.volume=0.1f;
+            EerieMusic.volume=0.1f;
+    }
+   
 
     public void PlayRoomtone(int FadeTime){
     RoomTone.Play();

@@ -92,6 +92,17 @@ public int MinAnalogGlitchColliders = 25;
         Debug.Log("spawned "+NumberOfCubes+" datamosh cubes");
         }
 
+         public void SpawnTeleportCubes(int NumberOfCubes){
+
+        for(int i = 0; i < NumberOfCubes; i++){
+      
+        placeToSpawn = new Vector3(Random.Range(-300, 300), 0, Random.Range(-300, 300));
+	Instantiate(teleporterCubes, placeToSpawn, Quaternion.identity);
+        
+        }
+        Debug.Log("spawned "+NumberOfCubes+" Teleport cubes");
+        }
+
 
         public void spawnAnalogGlitchCubes(int NumberOfCubes){
         for(int i = 0; i < NumberOfCubes; i++){

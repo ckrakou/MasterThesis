@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6cbadb0b4271847188d6044eeec1df63
+guid: 06302eb5e74a44e2581e209a0e48e635
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: KaiserzeitGotisch
+  fontName: Great Victorian
   fontNames:
-  - KaiserzeitGotisch
+  - Great Victorian
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

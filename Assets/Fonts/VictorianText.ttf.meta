@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 02f64d5bdd92f4fb18d1e3939fa2cc2a
+guid: ccccc67f71c8a481a9e7ccdb168ea1c8
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Coraline's Cat
+  fontName: VictorianText
   fontNames:
-  - Coraline's Cat
+  - VictorianText
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
