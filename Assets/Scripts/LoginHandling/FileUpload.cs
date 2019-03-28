@@ -21,11 +21,13 @@ public class FileUpload : MonoBehaviour
 
     private byte[] masterFile = new byte[0];
     private GameUnlocker unlocker;
+    private SQLDatabaseConnection db;
 
 
 
     private void Start()
     {
+        db = GetComponent<SQLDatabaseConnection>();
         unlocker = GetComponent<GameUnlocker>();
         TextAsset bindata = Resources.Load("MasterFile") as TextAsset;
         masterFile = bindata.bytes;
@@ -48,11 +50,13 @@ public class FileUpload : MonoBehaviour
 
         if (CheckFile(rawFile))
         {
+            
             Button.SetActive(false);
             if (debugging)
             {
                 Debug.Log("FileUpload: File identified successfully");
                 TestCube.GetComponent<Renderer>().material.color = Color.red;
+                
             }
             else
             {

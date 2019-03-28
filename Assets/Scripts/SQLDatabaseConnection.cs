@@ -8,144 +8,165 @@ using UnityEngine.SceneManagement;
 public class SQLDatabaseConnection : MonoBehaviour
 {
     private const string V = "playtime: ";
+
+    public bool Debugging;
     public GameObject Player;
-	public GameObject DeadPlayers;
+    public GameObject DeadPlayers;
 
-	private float playtime;
+    private float playtime;
 
-	void Start(){
-		//RegisterSucessfullLogin();
-		//Debug.Log("registration started");
-		//RegisterWhenPlayerDies();
-		//RegisterFailedLogin();
-		RetriveDeadCoordinates();
-	
-}
-void Update(){
-	playtime = playtime+Time.deltaTime;
+    void Start()
+    {
+        if (Debugging)
+        {
 
-}
-	public void RegisterSucessfullLogin(){
-		StartCoroutine(RegisterPlayerLogin());
 
-	} 
-	public void RegisterFailedLogin(){
-		StartCoroutine(RegisterPlayerLoginFail());
+            //RegisterSucessfullLogin();
+            //Debug.Log("registration started");
+            //RegisterWhenPlayerDies();
+            //RegisterFailedLogin();
+            RetriveDeadCoordinates();
+        }
+    }
+    void Update()
+    {
+        playtime = playtime + Time.deltaTime;
 
-	}
-		public void RegisterWhenPlayerDies(){
-		StartCoroutine(RegisterPlayerDeath());
+    }
+    public void RegisterSucessfullLogin()
+    {
+        StartCoroutine(RegisterPlayerLogin());
 
-	} 
+    }
+    public void RegisterFailedLogin()
+    {
+        StartCoroutine(RegisterPlayerLoginFail());
 
-	public void RetriveDeadCoordinates(){
-		StartCoroutine(RetriveDeadSpawnPointsFromWeb());
+    }
+    public void RegisterWhenPlayerDies()
+    {
+        StartCoroutine(RegisterPlayerDeath());
 
-	} 
-	
-    IEnumerator RegisterPlayerLogin(){
+    }
+
+    public void RetriveDeadCoordinates()
+    {
+        StartCoroutine(RetriveDeadSpawnPointsFromWeb());
+
+    }
+
+    IEnumerator RegisterPlayerLogin()
+    {
         //create webform
         WWWForm registerForm = new WWWForm();
-        registerForm.AddField("is_player_logged_in", "yes");
+        registerForm.AddField("is_player_logged_in", "yes");
 
-        //call php script
-      //  WWW www = new WWW("http://hawaiipizza.dk/stuff/registerlogin.php", registerForm);
+        //call php script
+        //  WWW www = new WWW("http://hawaiipizza.dk/stuff/registerlogin.php", registerForm);
 
 
- using (UnityWebRequest www = UnityWebRequest.Post("http://hawaiipizza.dk/stuff/registerlogin.php", registerForm))
+        using (UnityWebRequest www = UnityWebRequest.Post("http://hawaiipizza.dk/stuff/registerlogin.php", registerForm))
         {
             yield return www.SendWebRequest();
 
             Debug.Log(www.downloadHandler.text);
 
-         if(www.downloadHandler.text=="0: Sucess!"){
-            Debug.Log("logintime sucessfully stored in database");	
-           
-        }    
-        }    
-    }
-   IEnumerator RegisterPlayerLoginFail(){
+            if (www.downloadHandler.text == "0: Sucess!")
+            {
+                Debug.Log("logintime sucessfully stored in database");
+
+            }
+        }
+    }
+    IEnumerator RegisterPlayerLoginFail()
+    {
         //create webform
         WWWForm FailForm = new WWWForm();
-        FailForm.AddField("is_player_logged_in", "no");
+        FailForm.AddField("is_player_logged_in", "no");
 
- using (UnityWebRequest www = UnityWebRequest.Post("http://hawaiipizza.dk/stuff/registerloginfail.php", FailForm))
+        using (UnityWebRequest www = UnityWebRequest.Post("http://hawaiipizza.dk/stuff/registerloginfail.php", FailForm))
         {
             yield return www.SendWebRequest();
 
             Debug.Log(www.downloadHandler.text);
 
-         if(www.downloadHandler.text=="0: Sucess!"){
-            Debug.Log("failed login sucessfully stored in database");	
-           
-        	}    
-        }    
-    }
+            if (www.downloadHandler.text == "0: Sucess!")
+            {
+                Debug.Log("failed login sucessfully stored in database");
+
+            }
+        }
+    }
 
 
-    IEnumerator RegisterPlayerDeath(){
+    IEnumerator RegisterPlayerDeath()
+    {
         //create webform
         WWWForm DeathForm = new WWWForm();
-        DeathForm.AddField("x", Player.transform.position.x.ToString());
-		DeathForm.AddField("y", Player.transform.position.y.ToString());
-		DeathForm.AddField("z", Player.transform.position.z.ToString());
-		DeathForm.AddField("plytime", playtime.ToString());
+        DeathForm.AddField("x", Player.transform.position.x.ToString());
+        DeathForm.AddField("y", Player.transform.position.y.ToString());
+        DeathForm.AddField("z", Player.transform.position.z.ToString());
+        DeathForm.AddField("plytime", playtime.ToString());
 
 
-        //call php script
-      //  WWW www = new WWW("http://hawaiipizza.dk/stuff/registerlogin.php", registerForm);
+        //call php script
+        //  WWW www = new WWW("http://hawaiipizza.dk/stuff/registerlogin.php", registerForm);
 
 
- using (UnityWebRequest www = UnityWebRequest.Post("http://hawaiipizza.dk/stuff/deadplayers.php", DeathForm))
+        using (UnityWebRequest www = UnityWebRequest.Post("http://hawaiipizza.dk/stuff/deadplayers.php", DeathForm))
         {
             yield return www.SendWebRequest();
 
             Debug.Log(www.downloadHandler.text);
 
-         if(www.downloadHandler.text=="0: Sucess!"){
-            Debug.Log("Deathcoordinates sucessfully stored in database");	
-           
-        }    
-        }    
-    }
+            if (www.downloadHandler.text == "0: Sucess!")
+            {
+                Debug.Log("Deathcoordinates sucessfully stored in database");
+
+            }
+        }
+    }
 
 
- IEnumerator RetriveDeadSpawnPointsFromWeb()
- 
+    IEnumerator RetriveDeadSpawnPointsFromWeb()
+
     {
 
-		 UnityWebRequest www = UnityWebRequest.Get("http://hawaiipizza.dk/stuff/retrivedatafromweb.php");
+        UnityWebRequest www = UnityWebRequest.Get("http://hawaiipizza.dk/stuff/retrivedatafromweb.php");
         yield return www.SendWebRequest();
 
-		if(www.isNetworkError || www.isHttpError) {
+        if (www.isNetworkError || www.isHttpError)
+        {
             Debug.Log(www.error);
         }
- else {
+        else
+        {
             //Debug.Log(www.downloadHandler.text);
             //  retrieve results as string
-            string[] results = www.downloadHandler.text.Split('\t');;
-			int lengthoftable = results.Length-1;
-			 for(int i = 0; i < lengthoftable; i++){
-				 string[] xyz = results[i].Split('_');
-				  float x = float.Parse(xyz[0]);
-				  float y = float.Parse(xyz[1]);
-				  float z = float.Parse(xyz[2]);
-				  float playtime = float.Parse(xyz[3]);
-				float NewLogSize = playtime/500;
-				  Vector3 vec = new Vector3(x,0+NewLogSize/2,z);
-				 int ramdomLogY=Random.Range(-180,180);
-         		Quaternion LogSpawnRotation = Quaternion.Euler(0,ramdomLogY,0);
+            string[] results = www.downloadHandler.text.Split('\t'); ;
+            int lengthoftable = results.Length - 1;
+            for (int i = 0; i < lengthoftable; i++)
+            {
+                string[] xyz = results[i].Split('_');
+                float x = float.Parse(xyz[0]);
+                float y = float.Parse(xyz[1]);
+                float z = float.Parse(xyz[2]);
+                float playtime = float.Parse(xyz[3]);
+                float NewLogSize = playtime / 500;
+                Vector3 vec = new Vector3(x, 0 + NewLogSize / 2, z);
+                int ramdomLogY = Random.Range(-180, 180);
+                Quaternion LogSpawnRotation = Quaternion.Euler(0, ramdomLogY, 0);
 
-			GameObject newObject = Instantiate(DeadPlayers, vec, LogSpawnRotation) as GameObject;
-        		
-        		newObject.transform.localScale = new Vector3(1, NewLogSize, 1);
-				
+                GameObject newObject = Instantiate(DeadPlayers, vec, LogSpawnRotation) as GameObject;
 
-				
-			 }
+                newObject.transform.localScale = new Vector3(1, NewLogSize, 1);
+
+
+
+            }
         }
-       }
-      
     }
+
+}
 
 
