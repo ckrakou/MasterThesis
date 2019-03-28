@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.08436027, g: 0.10561936, b: 0.14361875, a: 1}
+  m_IndirectSpecularColor: {r: 0.096968204, g: 0.121396154, b: 0.16508007, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -466,11 +466,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FPSControllerGlitch Variant
       objectReference: {fileID: 0}
-    - target: {fileID: 6460607991050677461, guid: f5f56e76ccdfe4d378cc779cd4924e60,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6460607991051170037, guid: f5f56e76ccdfe4d378cc779cd4924e60,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -525,94 +520,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6460607991048280341, guid: f5f56e76ccdfe4d378cc779cd4924e60,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6460607991040989493, guid: f5f56e76ccdfe4d378cc779cd4924e60,
-        type: 3}
-      propertyPath: m_MouseLook.XSensitivity
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6460607991040989493, guid: f5f56e76ccdfe4d378cc779cd4924e60,
-        type: 3}
-      propertyPath: m_MouseLook.YSensitivity
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6460607991040989493, guid: f5f56e76ccdfe4d378cc779cd4924e60,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6460607991040989493, guid: f5f56e76ccdfe4d378cc779cd4924e60,
-        type: 3}
-      propertyPath: m_MouseLook.lockCursor
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6460607991040989493, guid: f5f56e76ccdfe4d378cc779cd4924e60,
-        type: 3}
-      propertyPath: m_MouseLook.MinimumX
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 6460607991040989493, guid: f5f56e76ccdfe4d378cc779cd4924e60,
-        type: 3}
-      propertyPath: m_MouseLook.MaximumX
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 6460607991040989493, guid: f5f56e76ccdfe4d378cc779cd4924e60,
-        type: 3}
-      propertyPath: m_MouseLook.clampVerticalRotation
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6460607991040989493, guid: f5f56e76ccdfe4d378cc779cd4924e60,
-        type: 3}
-      propertyPath: m_IsWalking
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6460607991040989493, guid: f5f56e76ccdfe4d378cc779cd4924e60,
-        type: 3}
-      propertyPath: m_MouseLook.smooth
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6460607991056158645, guid: f5f56e76ccdfe4d378cc779cd4924e60,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6460607991056158645, guid: f5f56e76ccdfe4d378cc779cd4924e60,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1458090523, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
-      propertyPath: PositionNoiseStandardDeviation
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1458090523, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
-      propertyPath: PositionNoiseInterval
-      value: 0.125
-      objectReference: {fileID: 0}
-    - target: {fileID: 1458090523, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
-      propertyPath: Debugging
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1729931747, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
-      propertyPath: NoiseInterval
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1729931747, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
-      propertyPath: Debugging
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1729931747, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
-      propertyPath: SmoothingMinimum
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1729931747, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
-      propertyPath: SmoothingInterval
-      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
@@ -1063,6 +970,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameUnlocker
       objectReference: {fileID: 0}
+    - target: {fileID: 7212383128361749889, guid: 4a907ff6c901ce74a98721411d946d88,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7212383128361749916, guid: 4a907ff6c901ce74a98721411d946d88,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1132,11 +1044,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameStateManager
       objectReference: {fileID: 0}
-    - target: {fileID: 4632268277165724253, guid: 45697bdd8ec32414e9e78b4ad16e446e,
-        type: 3}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 1729931746}
     - target: {fileID: 3621371295798908181, guid: 45697bdd8ec32414e9e78b4ad16e446e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1192,5 +1099,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4632268277165724253, guid: 45697bdd8ec32414e9e78b4ad16e446e,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1729931746}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45697bdd8ec32414e9e78b4ad16e446e, type: 3}

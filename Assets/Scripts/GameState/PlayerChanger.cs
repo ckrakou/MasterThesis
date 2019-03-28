@@ -29,6 +29,7 @@ public class PlayerChanger : MonoBehaviour
 
     void Start()
     {
+        
         movement = Player.GetComponent<FirstPersonMovementChanger>();
         visuals = Player.GetComponent<FirstPersonVisualChanger>();
         timer = GetComponent<WorldTimer>();
@@ -36,9 +37,9 @@ public class PlayerChanger : MonoBehaviour
         AdjustMouseNoise(0);
         AdjustMouseSmoothness(0);
         AdjustMovementSpeed(0);
-
+        
         StartNoise();
-
+        
     }
 
     public void StartNoise()
@@ -65,6 +66,7 @@ public class PlayerChanger : MonoBehaviour
             visuals.NoiseStandardDeviation = Mathf.Lerp(0, MouseLookNoise.deviation,progression);
         }
     }
+
     public void AdjustMouseSmoothness(float progression)
     {
         if (noise)

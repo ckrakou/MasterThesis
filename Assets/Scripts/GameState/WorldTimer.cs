@@ -24,6 +24,7 @@ public class WorldTimer : MonoBehaviour
     private float savedRate = 1f;
     private float timeProgressed = 0;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,8 +45,12 @@ public class WorldTimer : MonoBehaviour
         {
             timeProgressed += decayRate * Time.deltaTime;
             CurrentProgression = timeProgressed / (PlayTime * 60);
-            ProgressEvents.Invoke(CurrentProgression);
             TriggerTimedEvents();
+
+            
+                ProgressEvents.Invoke(CurrentProgression);
+    
+            
         }
 
         if (Debugging)
@@ -133,7 +138,7 @@ public class WorldTimer : MonoBehaviour
         {
             var currentEvent = TimedEvents[i];
 
-               if(Time.time > currentEvent.Time*60 && currentEvent.HasHappened == false)
+               if(Time.time > currentEvent.Time*60f && currentEvent.HasHappened == false)
             {
                 currentEvent.Function.Invoke();
                 currentEvent.HasHappened = true;

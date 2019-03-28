@@ -13,10 +13,7 @@ public class FirstPersonMovementChanger : MonoBehaviour
     public float WalkSpeedNoiseInterval = 1f;
     public float WalkSpeedNoiseStandardDeviation = 1f;
     public float WalkSpeedNoiseMaxDeviation = 5f;
-    [Header("Position Noise")]
-    public float PositionNoiseInterval = 1f;
-    public float PositionNoiseStandardDeviation = 1f;
-    public float PositionNoiseMaxDeviation = 5f;
+   
 
     private FirstPersonController controller;
     private NormalDist normal;
@@ -39,7 +36,6 @@ public class FirstPersonMovementChanger : MonoBehaviour
         controller = GetComponent<FirstPersonController>();
 
         nextWalkSpeedNoise = Time.time + WalkSpeedNoiseInterval;
-        nextPositionNoise = Time.time + PositionNoiseInterval;
         walkSpeedMean = controller.m_WalkSpeed;
         initialMouselookClamp = controller.m_MouseLook.MaximumX;
         initialYSensitivity = controller.m_MouseLook.YSensitivity;
@@ -71,11 +67,7 @@ public class FirstPersonMovementChanger : MonoBehaviour
         }
 
 
-        if (PositionNoise && Time.time > nextPositionNoise)
-        {
-            ShiftPosition();
-
-        }
+        
     }
 
     public void ToggleMoveNoise()
@@ -90,12 +82,12 @@ public class FirstPersonMovementChanger : MonoBehaviour
     public void ToogleSpeedNoise()
     {
         walkSpeedNoise = !walkSpeedNoise;
-
+        /*
         if (walkSpeedNoise)
         {
             controller.m_WalkSpeed = walkSpeedMean;
         }
-
+        */
         if (Debugging)
         {
             Debug.Log(this.GetType() + ": Toggling Speed Noise");
@@ -144,21 +136,7 @@ public class FirstPersonMovementChanger : MonoBehaviour
         }
     }
 
-    private void ShiftPosition()
-    {
-        float shiftX = normal.StandardNormalDistribution(0, PositionNoiseStandardDeviation, -PositionNoiseMaxDeviation, PositionNoiseMaxDeviation);
-        float shiftY = normal.StandardNormalDistribution(0, PositionNoiseStandardDeviation, -PositionNoiseMaxDeviation, PositionNoiseMaxDeviation);
-
-        transform.position += new Vector3(shiftX, 0, shiftY);
-
-        nextPositionNoise = Time.time + PositionNoiseInterval;
-        if (Debugging)
-        {
-            Debug.Log(this.GetType() + ": time is " + Time.time);
-            Debug.Log(this.GetType() + ": Shifting position by: "+shiftX+", "+shiftY);
-            Debug.Log(this.GetType() + ": Next change at " + nextPositionNoise);
-        }
-    }
+    
 }
 
 

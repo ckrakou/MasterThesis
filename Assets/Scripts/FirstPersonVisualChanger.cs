@@ -37,6 +37,7 @@ public class FirstPersonVisualChanger : MonoBehaviour
 
     void Start()
     {
+        
         controller = GetComponent<FirstPersonController>();
         normal = GetComponent<NormalDist>();
         smoothChangeTimestamp = Time.time;
@@ -53,10 +54,12 @@ public class FirstPersonVisualChanger : MonoBehaviour
         {
             Debug.Log(this.GetType() + ": Initialised. Left Control = Invert mouse look. Left Alt = Noise on mouse look. Return = change in mouse smoothing. Insert = shift in sensitivity");
         }
+        
     }
 
     void Update()
     {
+        
         if (Debugging)
         {
             if (Input.GetKeyDown(KeyCode.LeftControl))
@@ -77,11 +80,11 @@ public class FirstPersonVisualChanger : MonoBehaviour
             }
         }
 
-        if (lookNoise&& Time.time >noiseChangeTimestamp)
+        if (lookNoise&& Time.time > noiseChangeTimestamp)
         {
-            this.transform.Rotate(new Vector3(0, normal.StandardNormalDistribution(0, NoiseStandardDeviation, -NoiseBoundary, NoiseBoundary), 0));
+         this.transform.Rotate(new Vector3(0, normal.StandardNormalDistribution(0, NoiseStandardDeviation, -NoiseBoundary, NoiseBoundary), 0));
             this.transform.Find("FirstPersonCharacter").Rotate(new Vector3(normal.StandardNormalDistribution(0, NoiseStandardDeviation, -NoiseBoundary, NoiseBoundary), 0, 0));
-            noiseChangeTimestamp += NoiseInterval * normal.StandardNormalDistribution(NoiseInterval/2,1,0,1);
+            noiseChangeTimestamp += NoiseInterval * normal.StandardNormalDistribution(0.5f,1,0,1);
         }
 
         if (sensitivityShift)
@@ -91,15 +94,16 @@ public class FirstPersonVisualChanger : MonoBehaviour
         {
             ChangeSmoothness();
         }
-
+        
     }
 
     private void ChangeSmoothness()
     {
+        
         float newSmoothing = Random.Range(SmoothingMinimum, SmoothingMaximum);
         controller.m_MouseLook.smoothTime = newSmoothing;
         smoothChangeTimestamp = Time.time + SmoothingInterval;
-
+        
         if (Debugging)
         {
             Debug.Log(this.GetType() + ": time is " + Time.time);
@@ -110,8 +114,10 @@ public class FirstPersonVisualChanger : MonoBehaviour
 
     public void InvertControls()
     {
+        
         controller.m_MouseLook.XSensitivity = controller.m_MouseLook.XSensitivity * -1;
         controller.m_MouseLook.YSensitivity = controller.m_MouseLook.YSensitivity * -1;
+        
         if (Debugging)
 
             Debug.Log(this.GetType() + ": Inverting Controls");
@@ -141,6 +147,7 @@ public class FirstPersonVisualChanger : MonoBehaviour
 
     public void ToggleSensitivityShift()
     {
+        
         Debug.Log(this.GetType() + ": Toggling Mouse Sensitivity");
         if (sensitivityShift == true)
         {
@@ -150,18 +157,20 @@ public class FirstPersonVisualChanger : MonoBehaviour
         }
 
         sensitivityShift = !sensitivityShift;
+        
     }
 
     private void ShiftMouseSensitivity()
     {
-
+        
         controller.m_MouseLook.XSensitivity = normal.StandardNormalDistribution(initialSensitivityX, 1, MouseSensitivityMinimum, MouseSensitivityMaximum);
         controller.m_MouseLook.YSensitivity = normal.StandardNormalDistribution(initialSensitivityY, 1, MouseSensitivityMinimum, MouseSensitivityMaximum);
-
+        
     }
 
     public void ToggleVertical()
     {
+        
         if (verticalDistabled)
         {
             controller.m_MouseLook.MinimumX = -90;
@@ -172,7 +181,7 @@ public class FirstPersonVisualChanger : MonoBehaviour
             controller.m_MouseLook.MinimumX = 0;
             controller.m_MouseLook.MaximumX = 0;
         }
-
+        
 
     }
    
