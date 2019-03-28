@@ -31,7 +31,9 @@ public class IdentityTester : MonoBehaviour
             Button.SetActive(false);
             RejectionText.SetActive(true);
             RejectionText.GetComponentInChildren<Text>().text = RejectionMessages[UnityEngine.Random.Range((int)0, RejectionMessages.Length - 1)];
-            GetComponent<SQLDatabaseConnection>().RegisterFailedLogin();
+
+            if (!Debugging)
+                GetComponent<SQLDatabaseConnection>().RegisterFailedLogin();
 
         }
         else
