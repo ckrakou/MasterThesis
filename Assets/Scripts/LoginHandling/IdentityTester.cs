@@ -28,14 +28,14 @@ public class IdentityTester : MonoBehaviour
 
         if (foundString == IdentityString)
         {
-            RecordVisit(false);
             Button.SetActive(false);
             RejectionText.SetActive(true);
             RejectionText.GetComponentInChildren<Text>().text = RejectionMessages[UnityEngine.Random.Range((int)0, RejectionMessages.Length - 1)];
+            GetComponent<SQLDatabaseConnection>().RegisterFailedLogin();
+
         }
         else
         {
-            RecordVisit(true);
             RejectionText.SetActive(false);
             Button.SetActive(true);
         }
@@ -49,12 +49,7 @@ public class IdentityTester : MonoBehaviour
         PlayerPrefs.SetString(Key, IdentityString);
     }
 
-    private void RecordVisit(bool v)
-    {
-        // Implement database record of visit here
-        // bool indicates unique visitor when true, repeat visitor when false
-        throw new NotImplementedException();
-    }
+   
 
 
 }

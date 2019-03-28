@@ -52,7 +52,6 @@ public class FileUpload : MonoBehaviour
         // DATABASE WRITING
         if (CheckFile(rawFile))
         {
-            db.RegisterSucessfullLogin();
             Text.SetActive(true);
             Button.SetActive(false);
             if (debugging)
@@ -71,7 +70,10 @@ public class FileUpload : MonoBehaviour
         {
             if (debugging)
                 Debug.Log("FileUpload: File does not match");
-            db.RegisterFailedLogin();
+
+            if(!debugging)
+                db.RegisterFailedLogin();
+
             Text.SetActive(true);
             Text.GetComponentInChildren<Text>().text = FailureMessages[UnityEngine.Random.Range((int)0, FailureMessages.Length - 1)];
         }
