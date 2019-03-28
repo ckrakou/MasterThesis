@@ -720,30 +720,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2108083539 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4632268277165724253, guid: 45697bdd8ec32414e9e78b4ad16e446e,
-    type: 3}
-  m_PrefabInstance: {fileID: 8004834498641793268}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c79845cdda02e8742aa5b7f0ce19a9e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2108083540 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2104415027, guid: 45697bdd8ec32414e9e78b4ad16e446e,
-    type: 3}
-  m_PrefabInstance: {fileID: 8004834498641793268}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c15e1d2868bb91c4eb3deb1d4a43bfac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &3205520338997713713
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1122,51 +1098,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
-        type: 3}
-      propertyPath: ProgressEvents.m_PersistentCalls.m_Calls.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
-        type: 3}
-      propertyPath: ProgressEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2108083539}
-    - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
-        type: 3}
-      propertyPath: ProgressEvents.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AdjustMouseNoise
-      objectReference: {fileID: 0}
-    - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
-        type: 3}
-      propertyPath: ProgressEvents.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
-        type: 3}
-      propertyPath: ProgressEvents.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: AdjustMouseSmoothness
-      objectReference: {fileID: 0}
-    - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
-        type: 3}
-      propertyPath: ProgressEvents.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: SetSyboxExposure
-      objectReference: {fileID: 0}
-    - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
-        type: 3}
-      propertyPath: ProgressEvents.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 2108083540}
-    - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
-        type: 3}
-      propertyPath: ProgressEvents.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
-        type: 3}
-      propertyPath: ProgressEvents.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4632268277165724253, guid: 45697bdd8ec32414e9e78b4ad16e446e,
         type: 3}

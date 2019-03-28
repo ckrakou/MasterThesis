@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.069240965, g: 0.009534035, b: 0.013696931, a: 1}
+  m_IndirectSpecularColor: {r: 0.0650282, g: 0.008954174, b: 0.012863938, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -341,6 +341,11 @@ PrefabInstance:
       value: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       objectReference: {fileID: 0}
+    - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
+        type: 3}
+      propertyPath: Debugging
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2104415027, guid: 45697bdd8ec32414e9e78b4ad16e446e, type: 3}
       propertyPath: MinimumSkyboxExposure
       value: 0.55
@@ -358,6 +363,11 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 1596035544}
+    - target: {fileID: 4632268277165724253, guid: 45697bdd8ec32414e9e78b4ad16e446e,
+        type: 3}
+      propertyPath: Debugging
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45697bdd8ec32414e9e78b4ad16e446e, type: 3}
 --- !u!1001 &23254668
@@ -25998,5 +26008,9 @@ PrefabInstance:
       propertyPath: UI
       value: 
       objectReference: {fileID: 995139890}
+    - target: {fileID: 1729931747, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
+      propertyPath: Debugging
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}

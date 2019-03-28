@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,14 +12,14 @@ public class WorldTimer : MonoBehaviour
     public bool Debugging;
 
     [Tooltip("Total Play Time in Minutes")]
-    [Range(1,30)]
+    [Range(1, 30)]
     public float PlayTime = 20;
     [HideInInspector]
     public float CurrentProgression = 0;
 
     public UnityEventFloat ProgressEvents;
     public UnityEvent EndGameEvents;
-    public TimedEvent[] TimedEvents;
+    public List<TimedEvent> TimedEvents;
 
     private float decayRate = 1f;
     private float savedRate = 1f;
@@ -47,10 +48,10 @@ public class WorldTimer : MonoBehaviour
             CurrentProgression = timeProgressed / (PlayTime * 60);
             TriggerTimedEvents();
 
-            
-                ProgressEvents.Invoke(CurrentProgression);
-    
-            
+
+            ProgressEvents.Invoke(CurrentProgression);
+
+
         }
 
         if (Debugging)
@@ -59,7 +60,7 @@ public class WorldTimer : MonoBehaviour
 
     public void StopTime()
     {
-        
+
         savedRate = decayRate;
         decayRate = 0;
 
@@ -134,18 +135,20 @@ public class WorldTimer : MonoBehaviour
 
     private void TriggerTimedEvents()
     {
-        for (int i = 0; i < TimedEvents.Length; i++)
+        int removeIndex = -1;
+        foreach (var timed in TimedEvents )
         {
-            var currentEvent = TimedEvents[i];
-
-               if(Time.time > currentEvent.Time*60f && currentEvent.HasHappened == false)
+            if (timed.Time*60 < timeProgressed)
             {
-                currentEvent.Function.Invoke();
-                currentEvent.HasHappened = true;
+                timed.Function.Invoke();
+                removeIndex = TimedEvents.IndexOf(timed);
+                if (Debugging)
+                    Debug.Log(GetType() + ": removed item " + removeIndex + " at time " + timeProgressed+", Item Time:"+timed.Time*60);
             }
 
-            
         }
+        if (removeIndex != -1)
+        TimedEvents.RemoveAt(removeIndex);
     }
 
 
