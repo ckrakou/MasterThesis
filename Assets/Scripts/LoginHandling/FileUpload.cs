@@ -105,14 +105,16 @@ public class FileUpload : MonoBehaviour
     public void OnButtonPointerDown()
     {
 
+
 #if UNITY_EDITOR
-        string path = UnityEditor.EditorUtility.OpenFilePanel("Open file", "", "");
-        if (!System.String.IsNullOrEmpty(path))
-            FileSelected("file:///" + path);
+            string path = UnityEditor.EditorUtility.OpenFilePanel("Open file", "", "");
+            if (!System.String.IsNullOrEmpty(path))
+                FileSelected("file:///" + path);
 #else
         //ImageUploaderCaptureClick ();
 
 #endif
 
+        
     }
 }

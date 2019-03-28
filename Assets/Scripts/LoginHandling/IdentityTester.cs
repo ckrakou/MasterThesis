@@ -10,10 +10,11 @@ public class IdentityTester : MonoBehaviour
 
     public string Key;
     public string IdentityString;
-    public GameObject Button;
-
     public string[] RejectionMessages;
     public GameObject RejectionText;
+
+    [HideInInspector]
+    public bool KeyFound = false;
 
     private string foundString;
 
@@ -21,37 +22,32 @@ public class IdentityTester : MonoBehaviour
     void Awake()
     {
 
-        foundString = PlayerPrefs.GetString(Key);
-
-        if (Debugging)
-            Debug.Log(GetType() + ": found string " + foundString);
-
-        if (foundString == IdentityString)
+        if (PlayerPrefs.HasKey(Key) && PlayerPrefs.GetString(Key).Equals(IdentityString))
         {
-            Button.SetActive(false);
-            RejectionText.SetActive(true);
-            RejectionText.GetComponentInChildren<Text>().text = RejectionMessages[UnityEngine.Random.Range((int)0, RejectionMessages.Length - 1)];
+            
 
-            if (!Debugging)
-                GetComponent<SQLDatabaseConnection>().RegisterFailedLogin();
+            if (Debugging)
+            {
+                Debug.Log(GetType() + ": found key "+Key);
+                PlayerPrefs.DeleteKey(Key);
+            }
+            else
+            {
+                KeyFound = true;
+            }
 
         }
         else
         {
-            RejectionText.SetActive(false);
-            Button.SetActive(true);
+            if (Debugging)
+                Debug.Log(GetType() + ": no such key " + Key);
+
         }
+
+
     }
 
-    public void WriteToPrefs()
-    {
-        if (Debugging)
-            Debug.Log(GetType() + ": writing " + IdentityString + " to " + Key);
 
-        PlayerPrefs.SetString(Key, IdentityString);
-    }
-
-   
 
 
 }
