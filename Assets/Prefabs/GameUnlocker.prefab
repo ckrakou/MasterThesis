@@ -614,9 +614,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2f3aa5267088da48b0103c122d17630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugging: 0
+  debugging: 1
+  FailureMessages: []
   TestCube: {fileID: 3400995014955467534}
   Button: {fileID: 1199357502}
+  Text: {fileID: 1269388034}
 --- !u!114 &7212383128361749918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -646,6 +648,7 @@ MonoBehaviour:
   Key: GardenIdentity
   IdentityString: f0343156fafb803b3085fc32c9469ed5
   Button: {fileID: 1199357502}
+  RejectionMessages: []
   RejectionText: {fileID: 1269388034}
 --- !u!114 &7212383128361749891
 MonoBehaviour:

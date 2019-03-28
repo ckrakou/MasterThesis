@@ -10,8 +10,10 @@ using System;
 public class FileUpload : MonoBehaviour
 {
     public bool debugging = false;
+    public string[] FailureMessages;
     public GameObject TestCube;
     public GameObject Button;
+    public GameObject Text;
     
 
     [DllImport("__Internal")]
@@ -47,7 +49,7 @@ public class FileUpload : MonoBehaviour
         yield return file.SendWebRequest();
         byte[] rawFile = file.downloadHandler.data;
 
-
+        // DATABASE WRITING
         if (CheckFile(rawFile))
         {
             
@@ -68,6 +70,9 @@ public class FileUpload : MonoBehaviour
         {
             if (debugging)
                 Debug.Log("FileUpload: File does not match");
+
+            Text.SetActive(true);
+            Text.GetComponentInChildren<Text>().text = FailureMessages[UnityEngine.Random.Range((int)0, FailureMessages.Length - 1)];
         }
 
     }
