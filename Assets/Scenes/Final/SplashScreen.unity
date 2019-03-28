@@ -275,11 +275,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameUnlocker
       objectReference: {fileID: 0}
-    - target: {fileID: 7212383128361749919, guid: 4a907ff6c901ce74a98721411d946d88,
-        type: 3}
-      propertyPath: debugging
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7212383128361749916, guid: 4a907ff6c901ce74a98721411d946d88,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -335,29 +330,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7212383128361749890, guid: 4a907ff6c901ce74a98721411d946d88,
-        type: 3}
-      propertyPath: Debugging
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3180494620250489663, guid: 4a907ff6c901ce74a98721411d946d88,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnButtonPointerDown
-      objectReference: {fileID: 0}
-    - target: {fileID: 1269388034, guid: 4a907ff6c901ce74a98721411d946d88, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6723523423350749071, guid: 4a907ff6c901ce74a98721411d946d88,
         type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 11042603}
-    - target: {fileID: 6087333886189601863, guid: 4a907ff6c901ce74a98721411d946d88,
-        type: 3}
-      propertyPath: m_Text
-      value: Enter The Garden
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a907ff6c901ce74a98721411d946d88, type: 3}
