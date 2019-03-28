@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.Runtime.InteropServices;
 using UnityEngine.Networking;
 using System.IO;
@@ -10,6 +11,8 @@ public class FileUpload : MonoBehaviour
 {
     public bool debugging = false;
     public GameObject TestCube;
+    public GameObject Button;
+    
 
     [DllImport("__Internal")]
     private static extern void ImageUploaderInit();
@@ -18,6 +21,8 @@ public class FileUpload : MonoBehaviour
 
     private byte[] masterFile = new byte[0];
     private GameUnlocker unlocker;
+
+
 
     private void Start()
     {
@@ -43,13 +48,17 @@ public class FileUpload : MonoBehaviour
 
         if (CheckFile(rawFile))
         {
+            Button.SetActive(false);
             if (debugging)
             {
                 Debug.Log("FileUpload: File identified successfully");
                 TestCube.GetComponent<Renderer>().material.color = Color.red;
             }
             else
+            {
                 unlocker.UnlockMainScene();
+
+            }
         }
         else
         {
