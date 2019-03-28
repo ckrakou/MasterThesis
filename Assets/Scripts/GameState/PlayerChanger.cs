@@ -20,7 +20,6 @@ public class PlayerChanger : MonoBehaviour
     [Header("Movement Speed Shift")]
     public GaussianVariableChange MovementSpeed;
 
-    private FirstPersonMovementChanger movement;
     private FirstPersonVisualChanger visuals;
     private WorldTimer timer;
     private bool noise;
@@ -30,13 +29,11 @@ public class PlayerChanger : MonoBehaviour
     void Start()
     {
         
-        movement = Player.GetComponent<FirstPersonMovementChanger>();
         visuals = Player.GetComponent<FirstPersonVisualChanger>();
         timer = GetComponent<WorldTimer>();
         
         AdjustMouseNoise(0);
         AdjustMouseSmoothness(0);
-        AdjustMovementSpeed(0);
         
         StartNoise();
         
@@ -45,7 +42,6 @@ public class PlayerChanger : MonoBehaviour
     public void StartNoise()
     {
         noise = true;
-        movement.ToogleSpeedNoise();
         visuals.ToggleNoise();
         visuals.ToggleSmoothChange();
     }
@@ -53,7 +49,6 @@ public class PlayerChanger : MonoBehaviour
     public void StopNoise()
     {
         noise = false;
-        movement.ToogleSpeedNoise();
         visuals.ToggleNoise();
         visuals.ToggleSmoothChange();
     }
@@ -77,15 +72,7 @@ public class PlayerChanger : MonoBehaviour
         } 
     }
 
-    public void AdjustMovementSpeed(float progression)
-    {
-        if (noise)
-        {
-            movement.WalkSpeedNoiseStandardDeviation = Mathf.Lerp(0, MovementSpeed.deviation,progression);
-            movement.WalkSpeedNoiseMaxDeviation = Mathf.Lerp(0, MovementSpeed.bounds, progression);
-        }
-
-    }
+    
 }
 
 
