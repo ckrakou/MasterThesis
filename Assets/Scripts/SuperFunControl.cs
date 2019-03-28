@@ -7,14 +7,7 @@ using Kino;
 using UnityEngine.UI;
 public class SuperFunControl : MonoBehaviour
 {
-    
-    public UnityEvent FirstTimeStartToLeave;
-    public UnityEvent SecondTimeStartToLeave;
-
-    public UnityEvent ThirdTimeStartToLeave;
-
-
-
+   
     public UnityEvent TeleportToDepriWorld;
     public GameObject PlayerPrefab;
     
@@ -120,7 +113,7 @@ public class SuperFunControl : MonoBehaviour
       IEnumerator StuffThatHappensBeforeReturningFirstTime(int TimeBeforeGlitches, int timeToReturn){
         yield return new WaitForSeconds(TimeBeforeGlitches); 
         //start glitches and music before leaving
-        FirstTimeStartToLeave.Invoke(); 
+   
         MusicPlayer.clip=glitch[0];
         MusicPlayer.Play();
         PlayerCam.GetComponent<AnalogGlitch>().enabled=true;
@@ -139,7 +132,6 @@ public class SuperFunControl : MonoBehaviour
        IEnumerator StuffThatHappensBeforeReturningSecondTime(int TimeBeforeGlitches, int timeToReturn){
         yield return new WaitForSeconds(TimeBeforeGlitches); 
         //start glitches and music before leaving
-        SecondTimeStartToLeave.Invoke(); 
            MusicPlayer.clip=glitch[1];
         MusicPlayer.Play();
          PlayerCam.GetComponent<AnalogGlitch>().enabled=true;
@@ -160,7 +152,6 @@ public class SuperFunControl : MonoBehaviour
        IEnumerator StuffThatHappensBeforeReturningThirdTime(int TimeBeforeGlitches, int timeToReturn){
         yield return new WaitForSeconds(TimeBeforeGlitches); 
         //start glitches and music before leaving
-        ThirdTimeStartToLeave.Invoke(); 
            MusicPlayer.clip=glitch[2];
         MusicPlayer.Play();
           PlayerCam.GetComponent<AnalogGlitch>().enabled=true;
@@ -209,10 +200,6 @@ public class SuperFunControl : MonoBehaviour
           CartoonTree.gameObject.SetActive(true);
         GhostLog.gameObject.SetActive(false);
        }
-
-
     }
-
-    
 
 }

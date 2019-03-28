@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TeleportToOtherWorld : MonoBehaviour
 {
@@ -8,15 +9,17 @@ public class TeleportToOtherWorld : MonoBehaviour
 
     public GameObject Player;
     public GameObject SuperHappyFunWorld;
+
+    public UnityEvent GoToFunWorld; 
    
+   public UnityEvent LeaveFunWorld; 
 
     public void TeleportToFunWorld(){
             GameStateManager.IsPlayerInSuperFunWorld=true;
             SuperHappyFunWorld.gameObject.SetActive(true);
             Player.GetComponent<CharacterController>().enabled = false;
-            
             Player.transform.position = new Vector3(-1, -200, -15);
-
+            GoToFunWorld.Invoke();
     }
 
     public void TeleportToDepriWorld(){
@@ -27,6 +30,7 @@ public class TeleportToOtherWorld : MonoBehaviour
         Player.GetComponent<CharacterController>().enabled = false;
         
             Player.transform.position = new Vector3(0, 10, 0);
+            LeaveFunWorld.Invoke();
     }
 
  void OnTriggerEnter(Collider target)
