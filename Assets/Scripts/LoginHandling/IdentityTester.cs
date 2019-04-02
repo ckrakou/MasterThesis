@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor;
 
 public class IdentityTester : MonoBehaviour
 {
@@ -11,9 +12,9 @@ public class IdentityTester : MonoBehaviour
     public string Key;
     public string IdentityString;
     public string[] RejectionMessages;
-    public GameObject RejectionText;
+    public Text RejectionText;
 
-    [HideInInspector]
+    //[HideInInspector]
     public bool KeyFound = false;
 
     private string foundString;
@@ -24,17 +25,12 @@ public class IdentityTester : MonoBehaviour
 
         if (PlayerPrefs.HasKey(Key) && PlayerPrefs.GetString(Key).Equals(IdentityString))
         {
-            
+            KeyFound = true;
 
             if (Debugging)
-            {
-                Debug.Log(GetType() + ": found key "+Key);
-                PlayerPrefs.DeleteKey(Key);
-            }
-            else
-            {
-                KeyFound = true;
-            }
+                Debug.Log(GetType() + ": found key " + Key);
+
+            RejectionText.text = RejectionMessages[UnityEngine.Random.Range((int)0, RejectionMessages.Length - 1)];
 
         }
         else

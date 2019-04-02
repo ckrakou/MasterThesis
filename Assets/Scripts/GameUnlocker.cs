@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class GameUnlocker : MonoBehaviour
 {
+    public bool Debugging;
+
     public string SceneToLoad;
 
 
@@ -14,6 +16,9 @@ public class GameUnlocker : MonoBehaviour
 
         if (GetComponent<IdentityTester>().KeyFound)
         {
+            if (Debugging)
+                Debug.Log(GetType() + ": Key found, disabling button");
+
             GetComponent<FileUpload>().Button.SetActive(false);
             GetComponent<FileUpload>().Text.SetActive(true);
             GetComponent<FileUpload>().enabled = false;
@@ -22,9 +27,18 @@ public class GameUnlocker : MonoBehaviour
 
     public void UnlockMainScene()
     {
-        IdentityTester id = GetComponent<IdentityTester>();
-        PlayerPrefs.SetString(id.Key, id.IdentityString);
-        PlayerPrefs.Save();
-        SceneManager.LoadScene(SceneToLoad);
+
+        if (GetComponent<IdentityTester>().KeyFound == false)
+        {
+            IdentityTester id = GetComponent<IdentityTester>();
+            PlayerPrefs.SetString(id.Key, id.IdentityString);
+            PlayerPrefs.Save();
+            SceneManager.LoadScene(SceneToLoad);
+        }
+        else
+        {
+            if (Debugging)
+                Debug.Log(GetType() + ": Key found, not loading");
+        }
     }
 }

@@ -14,11 +14,11 @@ public class FileUpload : MonoBehaviour
     public GameObject TestCube;
     public GameObject Button;
     public GameObject Text;
-    
 
+#if UNITY_WEBGL
     [DllImport("__Internal")]
     private static extern void ImageUploaderInit();
-
+#endif
     static string s_dataUrlPrefix = "data:image/png;base64,";
 
     private byte[] masterFile = new byte[0];
@@ -74,6 +74,7 @@ public class FileUpload : MonoBehaviour
             if(!debugging)
                 db.RegisterFailedLogin();
 
+            Button.SetActive(false);
             Text.SetActive(true);
             Text.GetComponentInChildren<Text>().text = FailureMessages[UnityEngine.Random.Range((int)0, FailureMessages.Length - 1)];
         }
@@ -104,6 +105,10 @@ public class FileUpload : MonoBehaviour
 
     public void OnButtonPointerDown()
     {
+
+        if (debugging)
+            Debug.Log(GetType() + ": Click Registrered");
+
         if (GetComponent<IdentityTester>().KeyFound == false)
         {
 
