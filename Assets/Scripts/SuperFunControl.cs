@@ -17,6 +17,8 @@ public class SuperFunControl : MonoBehaviour
     public PostProcessVolume Post;
     public PostProcessProfile HappyPost;
     public PostProcessProfile FinalHappyPost;
+
+     public PostProcessProfile BonusHappyPost;
     public PostProcessProfile DepriPost;
 
     public Material DepriSkybox;
@@ -79,6 +81,17 @@ public class SuperFunControl : MonoBehaviour
                StartCoroutine(BlinkingTree());
                Rainbow.gameObject.SetActive(false);
         }
+         if(GameStateManager.TimesInSuperFunWorld==4){
+              StartCoroutine(StuffThatHappensBeforeReturningFourthTime(Random.Range(1,7),5));
+               MusicPlayer.clip=Music[0];
+              MusicPlayer.Play();
+               DigitalglitchSpeed = 0.1f;
+               Rainbow.gameObject.SetActive(true);
+               CartoonTree.gameObject.SetActive(false);
+                  GhostLog.gameObject.SetActive(true);
+                  PlayerPrefab.transform.localScale = new Vector3(2,2,2);
+
+        }
     }
 
     private void ReturnToOtherWorld(){
@@ -93,6 +106,9 @@ public class SuperFunControl : MonoBehaviour
          PlayerCam.GetComponent<DigitalGlitch>().intensity = 0.0f;
          PlayerCam.GetComponent<DigitalGlitch>().enabled=false;
          StartDigitalGlitch = false;
+         if(GameStateManager.TimesInSuperFunWorld==4){
+         PlayerPrefab.transform.localScale = new Vector3(1,1,1);
+         }
 
        //call teleport funtion from teleport script
        TeleportToDepriWorld.Invoke();        
@@ -105,7 +121,6 @@ public class SuperFunControl : MonoBehaviour
         if(GrowRainbow){
            Rainbow.transform.localScale = new Vector3(1+RainbowSize, 1+RainbowSize, 1+RainbowSize);
            RainbowSize +=  0.2f * Time.deltaTime;
-           Debug.Log("grow rainbow");
         }
     }
 
@@ -168,6 +183,25 @@ public class SuperFunControl : MonoBehaviour
 
     }
 
+     IEnumerator StuffThatHappensBeforeReturningFourthTime(int TimeBeforeGlitches, int timeToReturn){
+        yield return new WaitForSeconds(TimeBeforeGlitches); 
+        //start glitches and music before leaving
+           MusicPlayer.clip=glitch[1];
+        MusicPlayer.Play();
+          PlayerCam.GetComponent<AnalogGlitch>().enabled=true;
+        PlayerCam.GetComponent<AnalogGlitch>().verticalJump=0.2f;
+        PlayerCam.GetComponent<AnalogGlitch>().scanLineJitter=0.2f;
+        PlayerCam.GetComponent<AnalogGlitch>().horizontalShake=0.2f;
+        PlayerCam.GetComponent<AnalogGlitch>().colorDrift=0.3f;
+         PlayerCam.GetComponent<DigitalGlitch>().enabled=true;
+      StartDigitalGlitch = true;
+        PlayerCam.GetComponent<AnalogGlitch>().enabled=true;
+        yield return new WaitForSeconds(timeToReturn);  
+        //call leave function
+       ReturnToOtherWorld();    
+
+    }
+
     void SetupFunworld(){
         //set up basic graphic for fun world
 
@@ -180,7 +214,11 @@ public class SuperFunControl : MonoBehaviour
            break;
             case 3:
             Post.profile=FinalHappyPost;
-            Debug.Log("final post");
+  
+           break;
+               case 4:
+            Post.profile=BonusHappyPost;
+           
            break;
 
         }
