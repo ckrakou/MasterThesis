@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.061906952, g: 0.008524426, b: 0.012246491, a: 1}
+  m_IndirectSpecularColor: {r: 0.06254117, g: 0.008611608, b: 0.012371757, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2498,6 +2498,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 547511095}
   m_CullTransparentMesh: 0
+--- !u!1 &549211278 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100002, guid: cb37b5e40b5f5416e988e30be23befd3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1533000469}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &556671581 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4632268277165724253, guid: 45697bdd8ec32414e9e78b4ad16e446e,
@@ -17822,7 +17828,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9ba7f4029aaab43258142abeb1b36e6b, type: 3}
   MusicPlayer: {fileID: 1375048121}
   CartoonTree: {fileID: 1906397249}
-  GhostLog: {fileID: 0}
+  GhostLog: {fileID: 549211278}
   Rainbow: {fileID: 1326091365}
 --- !u!1 &1269756812
 GameObject:
