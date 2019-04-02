@@ -25,8 +25,9 @@ public class SQLDatabaseConnection : MonoBehaviour
             //Debug.Log("registration started");
             //RegisterWhenPlayerDies();
             //RegisterFailedLogin();
-            RetriveDeadCoordinates();
+           
         }
+         RetriveDeadCoordinates();
     }
     void Update()
     {
@@ -152,14 +153,14 @@ public class SQLDatabaseConnection : MonoBehaviour
                 float y = float.Parse(xyz[1]);
                 float z = float.Parse(xyz[2]);
                 float playtime = float.Parse(xyz[3]);
-                float NewLogSize = playtime / 500;
+                float NewLogSize = playtime / 300;
                 Vector3 vec = new Vector3(x, 0 + NewLogSize / 2, z);
                 int ramdomLogY = Random.Range(-180, 180);
                 Quaternion LogSpawnRotation = Quaternion.Euler(0, ramdomLogY, 0);
 
                 GameObject newObject = Instantiate(DeadPlayers, vec, LogSpawnRotation) as GameObject;
-
-                newObject.transform.localScale = new Vector3(1, NewLogSize, 1);
+                    Debug.Log("spawned log");
+                newObject.transform.localScale = new Vector3(NewLogSize, NewLogSize, NewLogSize);
 
 
 

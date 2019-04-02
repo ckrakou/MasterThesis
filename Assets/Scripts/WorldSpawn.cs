@@ -30,6 +30,7 @@ public int MinAnalogGlitchColliders = 25;
 	// Use this for initialization
 	void Awake () {
         Cursor.visible = false;
+        /*  
     for(int i = 0; i < WorldMonuments.Length; i++){
       //spawn world monuments at random
        int ramdomMonumentRotationY=Random.Range(-180,180);
@@ -38,6 +39,7 @@ public int MinAnalogGlitchColliders = 25;
 	Instantiate(WorldMonuments[i], placeToSpawn, MonumenrSpawnRotation);
         
         }
+        */
              
         //spawn datamosh colliders
         int NumberOfDatamosh = Random.Range(MinDatamoshColliders,MaxDatamoshColliders);
@@ -65,7 +67,7 @@ public int MinAnalogGlitchColliders = 25;
         }
 
          //spawn alot of clocks
-          int NumberOfClocks = Random.Range(40,60);
+        /*  int NumberOfClocks = Random.Range(40,60);
         for(int i = 0; i < NumberOfClocks; i++){
       
         placeToSpawn = new Vector3(Random.Range(-500, 500), 0, Random.Range(-500, 500));
@@ -75,6 +77,8 @@ public int MinAnalogGlitchColliders = 25;
         int randonSize = Random.Range(4, 10);
         newObject.transform.localScale = new Vector3(randonSize, randonSize+Random.Range(0,4), randonSize);
         }
+
+        */ 
         //Set starting skybox exposure
         RenderSettings.skybox.SetFloat ("_Exposure",0.55f);
 
