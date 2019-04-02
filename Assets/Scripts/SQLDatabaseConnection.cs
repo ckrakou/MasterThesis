@@ -159,7 +159,6 @@ public class SQLDatabaseConnection : MonoBehaviour
                 Quaternion LogSpawnRotation = Quaternion.Euler(0, ramdomLogY, 0);
 
                 GameObject newObject = Instantiate(DeadPlayers, vec, LogSpawnRotation) as GameObject;
-                    Debug.Log("spawned log");
                 newObject.transform.localScale = new Vector3(NewLogSize, NewLogSize, NewLogSize);
 
 
