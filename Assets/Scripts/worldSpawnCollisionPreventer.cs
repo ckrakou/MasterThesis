@@ -25,7 +25,7 @@ public class worldSpawnCollisionPreventer : MonoBehaviour
      {
          if(target.tag == "WorldMonument")
          {
-            transform.position=new Vector3(Random.Range(-100, 100),0,Random.Range(-100, 100));
+          //  transform.position=new Vector3(Random.Range(-100, 100),0,Random.Range(-100, 100));
             //Debug.Log("monuments moved!");
          }
      }

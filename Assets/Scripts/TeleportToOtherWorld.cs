@@ -15,7 +15,6 @@ public class TeleportToOtherWorld : MonoBehaviour
    public UnityEvent LeaveFunWorld; 
 
     public void TeleportToFunWorld(){
-            GameStateManager.IsPlayerInSuperFunWorld=true;
             SuperHappyFunWorld.gameObject.SetActive(true);
             Player.GetComponent<CharacterController>().enabled = false;
             Player.transform.position = new Vector3(-1, -200, -15);
@@ -23,8 +22,6 @@ public class TeleportToOtherWorld : MonoBehaviour
     }
 
     public void TeleportToDepriWorld(){
-
-       GameStateManager.IsPlayerInSuperFunWorld=false;
        GameStateManager.TimesInSuperFunWorld++;
       SuperHappyFunWorld.gameObject.SetActive(false);
         Player.GetComponent<CharacterController>().enabled = false;
@@ -37,7 +34,7 @@ public class TeleportToOtherWorld : MonoBehaviour
      {
          if(target.tag == "TeleportCollider")
          {
-         if(GameStateManager.TimesInSuperFunWorld<4){
+         if(GameStateManager.TimesInSuperFunWorld<5){
            TeleportToFunWorld();
          }
            Destroy(target.gameObject);
