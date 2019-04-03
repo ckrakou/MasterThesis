@@ -13,13 +13,13 @@ public class worldSpawnCollisionPreventerMonsterCam : MonoBehaviour
     public AudioSource GlitchSound;
     public AudioSource Speak;
 
+      public AudioSource MonsterSound;
     public GameObject MonsterCam;
 
     public GameObject PlayerCam;
 
     private bool OnlyBlinkOnce = true;
 
-    private bool MonsterCamSwitch = false;
 
 
 
@@ -29,19 +29,16 @@ public class worldSpawnCollisionPreventerMonsterCam : MonoBehaviour
     }
 
   
-  /*
+  
     void Update(){
 
-          if(MonsterCamSwitch){
-               
-                      PlayerCam.SetActive(false);
-                       MonsterCam.SetActive(true);
-                       MonsterCamSwitch=false;
-                
-          }
-    }
-    */
-    
+   
+    }  
+
+    void TurnOnMonsterCam(){
+      PlayerCam.SetActive(false);
+      MonsterCam.SetActive(true);
+    }  
      void OnTriggerStay(Collider target)
      {
          if(target.tag == "WorldMonument")
@@ -58,11 +55,10 @@ public class worldSpawnCollisionPreventerMonsterCam : MonoBehaviour
              if(OnlyBlinkOnce){
              StartCoroutine(Blink());
              OnlyBlinkOnce=false;
-         //      MonsterCamSwitch=true;
+             
              }
          }
      }
-
        IEnumerator Blink() {
 
        WorldMonument.GetComponent<Renderer>().enabled=false;
@@ -124,8 +120,24 @@ public class worldSpawnCollisionPreventerMonsterCam : MonoBehaviour
       Speak.Play();
      Destroy(Light);
     Destroy(Particles);    
+    StartCoroutine(RunMonsterCam(Speak.clip.length));
   
  }
+
+IEnumerator RunMonsterCam(float SongTime){
+  yield return new WaitForSeconds(SongTime+2);   
+      PlayerCam.SetActive(false);
+      MonsterCam.SetActive(true);
+      MonsterSound.Play();
+
+      yield return new WaitForSeconds(7); 
+        PlayerCam.SetActive(true);
+      MonsterCam.SetActive(false);
+      MonsterSound.Stop();
+
+
+}
+
 
 
 }
