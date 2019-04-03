@@ -551,7 +551,7 @@ PrefabInstance:
     - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
         type: 3}
       propertyPath: EndGameEvents.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: StartNoise
+      value: StopNoise
       objectReference: {fileID: 0}
     - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
         type: 3}
