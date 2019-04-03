@@ -25,6 +25,7 @@ public class GameEnder : MonoBehaviour
     {
         GameObject obj = Instantiate(SpawnOnDeath, Player.transform.position, Player.transform.rotation);
         obj.transform.localScale = Scale;
+        //GetComponentInChildren<Spline>().FacingPoint = obj.transform;
     }
 
     public void GoBackToStartScene()

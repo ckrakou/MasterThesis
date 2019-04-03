@@ -14,11 +14,14 @@ public class Spline : MonoBehaviour
     [Tooltip("How many points each segment should be split into. More points means more precision in traversal.")]
     public int Resolution = 10;
 
+    [HideInInspector]
+    public Transform FacingPoint;
+
+
     private List<Vector3> points;
     private bool isTraveling;
     private int currentSpline;
     private float TraversalTimePerSegment;
-    private Transform FacingPoint;
     private Transform manager;
 
 
