@@ -8,9 +8,9 @@ public class WorldChanger : MonoBehaviour
 {
     [Header("Skybox")]
     public LinearChange SkyboxMode = LinearChange.NONE;
-    [Range(0,1)]
+    [Range(0,8)]
     public float MinimumSkyboxExposure = 0.6f;
-    [Range(0, 1)]
+    [Range(0, 8)]
     public float MaximumSkyboxExposure = 0.8f;
 
     private float skyboxExposureInterval;

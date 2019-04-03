@@ -73,8 +73,7 @@ public class Spline : MonoBehaviour
                 Debug.Log(GetType() + ": Aquired position for segment " + currentSpline + ", coordinates: " + newpos);
 
 
-                FacingPoint = new GameObject("point").transform;
-                FacingPoint.position = Vehicle.transform.position;
+
             
 
                     Vehicle.transform.LookAt(FacingPoint);
@@ -92,6 +91,7 @@ public class Spline : MonoBehaviour
         Vehicle.GetComponent<CharacterController>().enabled = true;
         Vehicle.GetComponent<FirstPersonController>().enabled = true;
         */
+
         isTraveling = false;
         Vehicle = null;
 
@@ -106,6 +106,8 @@ public class Spline : MonoBehaviour
        
         vehicle.GetComponent<CharacterController>().enabled = false;
         vehicle.GetComponent<FirstPersonController>().enabled = false;
+        FacingPoint = new GameObject("point").transform;
+        FacingPoint.position = Vehicle.transform.position;
         isTraveling = true;
         currentSpline = 0;
         t = 0;

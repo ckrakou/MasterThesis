@@ -21,7 +21,7 @@ public class WorldTimer : MonoBehaviour
     public UnityEvent EndGameEvents;
     public List<TimedEvent> TimedEvents;
 
-    private float decayRate = 1f;
+    private float decayRate = 10f;
     private float savedRate = 1f;
     private float timeProgressed = 0;
 

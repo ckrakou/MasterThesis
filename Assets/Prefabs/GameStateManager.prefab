@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6643967092860436870}
   - component: {fileID: 2104415027}
   - component: {fileID: 4632268277165724253}
+  - component: {fileID: 1004727409}
   m_Layer: 0
   m_Name: GameStateManager
   m_TagString: Untagged
@@ -112,6 +113,39 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1004727409}
+        m_MethodName: SpawnGravestone
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1004727409}
+        m_MethodName: GoBackToStartScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   TimedEvents: []
@@ -152,6 +186,25 @@ MonoBehaviour:
     upper: 10
     lower: 0
     initial: 5
+--- !u!114 &1004727409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6643967092860436869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 506f81f0410b7b8469cf3739179f3637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnOnDeath: {fileID: 5561984872749756277, guid: 14fb1a07fe9e8425fbe6798b20e95ef4,
+    type: 3}
+  Scale: {x: 1, y: 1, z: 1}
+  SceneName: SplashScreen
+  TimeBeforeFade: 6
+  FadeTime: 4
+  EndValue: 8
 --- !u!1001 &4857881323889068997
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -232,11 +285,6 @@ PrefabInstance:
     - target: {fileID: 2024805460121126801, guid: 2f51021404f911b48b5a63074a4cb14c,
         type: 3}
       propertyPath: Segments.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2024805460121126801, guid: 2f51021404f911b48b5a63074a4cb14c,
-        type: 3}
-      propertyPath: FacingPoint
       value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
