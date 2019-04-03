@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class Spline : MonoBehaviour
 {
@@ -9,14 +10,17 @@ public class Spline : MonoBehaviour
 
     public List<Catmul> Segments;
     public GameObject Vehicle;
-    public bool FaceTravelDirection = true;
-    public float TraversalTimePerSegment = 3;
+    public Facing Facing;
+    public Transform FacingPoint;
+    public float TraversalTime;
     [Tooltip("How many points each segment should be split into. More points means more precision in traversal.")]
     public int Resolution = 10;
 
     private List<Vector3> points;
     private bool isTraveling;
     private int currentSpline;
+    private float TraversalTimePerSegment;
+
 
     private float t = 0;
 
@@ -25,6 +29,7 @@ public class Spline : MonoBehaviour
     {
         
         points = new List<Vector3>();
+        TraversalTimePerSegment = TraversalTime / Segments.Count;
 
         foreach (var segment in Segments)
         {
@@ -68,8 +73,20 @@ public class Spline : MonoBehaviour
             if (Debugging)
                 Debug.Log(GetType() + ": Aquired position for segment " + currentSpline + ", coordinates: " + newpos);
 
-            if(FaceTravelDirection)
-                Vehicle.transform.LookAt(newpos);
+            switch (Facing)
+            {
+                case Facing.none:
+                    break;
+                case Facing.forward:
+                    Vehicle.transform.LookAt(newpos);
+                    break;
+                case Facing.atPoint:
+                    Vehicle.transform.LookAt(FacingPoint);
+                    break;
+                default:
+                    break;
+            }
+                
 
             Vehicle.transform.position = newpos;
 
@@ -78,7 +95,10 @@ public class Spline : MonoBehaviour
 
     private void StopTravelling()
     {
+        /*
         Vehicle.GetComponent<CharacterController>().enabled = true;
+        Vehicle.GetComponent<FirstPersonController>().enabled = true;
+        */
         isTraveling = false;
         Vehicle = null;
 
@@ -92,8 +112,14 @@ public class Spline : MonoBehaviour
         this.Vehicle = vehicle;
        
         vehicle.GetComponent<CharacterController>().enabled = false;
+        vehicle.GetComponent<FirstPersonController>().enabled = false;
         isTraveling = true;
         currentSpline = 0;
         t = 0;
     }
+}
+
+public enum Facing
+{
+    none,forward,atPoint
 }
