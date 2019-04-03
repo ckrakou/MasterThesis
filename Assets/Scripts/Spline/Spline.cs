@@ -10,8 +10,6 @@ public class Spline : MonoBehaviour
 
     public List<Catmul> Segments;
     public GameObject Vehicle;
-    public Facing Facing;
-    public Transform FacingPoint;
     public float TraversalTime;
     [Tooltip("How many points each segment should be split into. More points means more precision in traversal.")]
     public int Resolution = 10;
@@ -20,6 +18,7 @@ public class Spline : MonoBehaviour
     private bool isTraveling;
     private int currentSpline;
     private float TraversalTimePerSegment;
+    private Transform FacingPoint;
 
 
     private float t = 0;
@@ -73,19 +72,13 @@ public class Spline : MonoBehaviour
             if (Debugging)
                 Debug.Log(GetType() + ": Aquired position for segment " + currentSpline + ", coordinates: " + newpos);
 
-            switch (Facing)
-            {
-                case Facing.none:
-                    break;
-                case Facing.forward:
-                    Vehicle.transform.LookAt(newpos);
-                    break;
-                case Facing.atPoint:
+
+                FacingPoint = new GameObject("point").transform;
+                FacingPoint.position = Vehicle.transform.position;
+            
+
                     Vehicle.transform.LookAt(FacingPoint);
-                    break;
-                default:
-                    break;
-            }
+
                 
 
             Vehicle.transform.position = newpos;
@@ -117,9 +110,4 @@ public class Spline : MonoBehaviour
         currentSpline = 0;
         t = 0;
     }
-}
-
-public enum Facing
-{
-    none,forward,atPoint
 }
