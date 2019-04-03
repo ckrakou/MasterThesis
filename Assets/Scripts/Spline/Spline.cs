@@ -111,8 +111,10 @@ public class Spline : MonoBehaviour
         this.Vehicle = vehicle;
         transform.SetParent(null);
         transform.position = vehicle.transform.position;
+
         vehicle.GetComponent<CharacterController>().enabled = false;
         vehicle.GetComponent<FirstPersonController>().enabled = false;
+
         FacingPoint = new GameObject("point").transform;
         FacingPoint.position = Vehicle.transform.position;
         isTraveling = true;
