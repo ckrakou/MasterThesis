@@ -43,12 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f8b03e2d233dac4aa09c5d268563681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Debugging: 1
+  Debugging: 0
   Segments:
   - {fileID: 0}
   - {fileID: 0}
   Vehicle: {fileID: 0}
-  Facing: 2
-  FacingPoint: {fileID: 0}
   TraversalTime: 6
   Resolution: 10

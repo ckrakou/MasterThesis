@@ -19,6 +19,7 @@ public class Spline : MonoBehaviour
     private int currentSpline;
     private float TraversalTimePerSegment;
     private Transform FacingPoint;
+    private Transform manager;
 
 
     private float t = 0;
@@ -26,7 +27,7 @@ public class Spline : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        manager = transform.root;
         points = new List<Vector3>();
         TraversalTimePerSegment = TraversalTime / Segments.Count;
 
@@ -94,6 +95,8 @@ public class Spline : MonoBehaviour
 
         isTraveling = false;
         Vehicle = null;
+        this.transform.position = Vector3.zero;
+        this.transform.SetParent(manager);
 
     }
 
@@ -103,7 +106,8 @@ public class Spline : MonoBehaviour
             Debug.Log(this.GetType() + ": travel started, moving "+vehicle.name);
 
         this.Vehicle = vehicle;
-       
+        transform.SetParent(null);
+        transform.position = vehicle.transform.position;
         vehicle.GetComponent<CharacterController>().enabled = false;
         vehicle.GetComponent<FirstPersonController>().enabled = false;
         FacingPoint = new GameObject("point").transform;
