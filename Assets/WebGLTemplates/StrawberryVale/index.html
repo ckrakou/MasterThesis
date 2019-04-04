@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+    <script src="detect-private-browsing.js"></script>
+    <script src="%UNITY_WEBGL_LOADER_URL%"></script>
+    
+    var gameInstance;
+    </script> 
+    <script>
+      detectPrivateMode(
+          function(is_private) {
+              //document.getElementById('result').innerHTML = typeof is_private === 'undefined' ? 'cannot detect' : is_private ? 'private' : 'not private';
+              //document.getElementById('negative').enabled = false;
+              if (is_private){
+                //document.getElementById('result').innerHTML = "private"
+              } 
+              else
+              {
+                var gameInstance = UnityLoader.instantiate("gameContainer", "%UNITY_WEBGL_BUILD_URL%");
+                //document.getElementById('result').innerHTML = "not private"
+              }
+          }
+      );
+  
+</script>
+    
+  <div id="result"></div>
+  
+  
+<div id=gameContainer>
+  <!-- Game goes in this container -->
+</div>
+
+</body>
+</html>
