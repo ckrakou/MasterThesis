@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameEnder : MonoBehaviour
 {
+    public bool Debugging;
     [Header("Gravestone")]
     public GameObject SpawnOnDeath;
     public Vector3 Scale = new Vector3(1,1,1);
@@ -23,9 +24,11 @@ public class GameEnder : MonoBehaviour
 
     public void SpawnGravestone(GameObject Player)
     {
+        if (Debugging)
+            Debug.Log(GetType() + ": Spawning tree");
+
         GameObject obj = Instantiate(SpawnOnDeath, Player.transform.position, Player.transform.rotation);
         obj.transform.localScale = Scale;
-        //GetComponentInChildren<Spline>().FacingPoint = obj.transform;
     }
 
     public void GoBackToStartScene()
@@ -35,6 +38,9 @@ public class GameEnder : MonoBehaviour
 
     private IEnumerator SceneChanger()
     {
+        if (Debugging)
+            Debug.Log(GetType() + ": Starting end sequence, duration is " + TimeBeforeFade);
+
         yield return new WaitForSeconds(TimeBeforeFade);
         fadeTimestamp = Time.time;
         StartCoroutine(FadeOut());
@@ -44,16 +50,24 @@ public class GameEnder : MonoBehaviour
 
     private IEnumerator FadeOut()
     {
-        initialSkyboxExposure = RenderSettings.skybox.GetFloat("_Exposure");
-        skyboxExposureInterval = EndValue - initialSkyboxExposure;
+        if (Debugging)
+            Debug.Log(GetType() + ": Starting Fadeout, duration: "+FadeTime);
 
+        initialSkyboxExposure = RenderSettings.skybox.GetFloat("_Exposure");
+        float startTimeStamp = Time.time;
+        float fadeTimestamp = Time.time + FadeTime;
 
         float t = 0;
-        while (t < 1)
+        while (t < FadeTime)
         {
-            RenderSettings.skybox.SetFloat("_Exposure", Mathf.Lerp(initialSkyboxExposure,EndValue,t));
+            float skyboxExposure = Mathf.Lerp(initialSkyboxExposure, EndValue, t / FadeTime);
+            RenderSettings.skybox.SetFloat("_Exposure", skyboxExposure );
 
-            t += Time.deltaTime / FadeTime;
+            t = t + Time.deltaTime;
+
+            if (Debugging)
+                Debug.Log(GetType() + ": fadeout, t = " + t + ", skybox value:"+skyboxExposure);
+
             yield return null;
         }
 

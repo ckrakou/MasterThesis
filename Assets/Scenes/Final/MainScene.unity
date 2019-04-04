@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 20.647356, g: 2.8430026, b: 4.08429, a: 1}
+  m_IndirectSpecularColor: {r: 16.67199, g: 2.2956376, b: 3.2979991, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -322,7 +322,7 @@ PrefabInstance:
     - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
         type: 3}
       propertyPath: PlayTime
-      value: 20
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
         type: 3}
@@ -364,7 +364,7 @@ PrefabInstance:
     - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
         type: 3}
       propertyPath: Debugging
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
         type: 3}
@@ -613,6 +613,21 @@ PrefabInstance:
       propertyPath: EndGameEvents.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
       value: GoBackToStartScene
       objectReference: {fileID: 0}
+    - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
+        type: 3}
+      propertyPath: EndGameEvents.m_PersistentCalls.m_Calls.Array.data[5].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
+        type: 3}
+      propertyPath: EndGameEvents.m_PersistentCalls.m_Calls.Array.data[5].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
+        type: 3}
+      propertyPath: EndGameEvents.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 1927360163}
     - target: {fileID: 2104415027, guid: 45697bdd8ec32414e9e78b4ad16e446e, type: 3}
       propertyPath: MinimumSkyboxExposure
       value: 0.55
@@ -701,6 +716,14 @@ PrefabInstance:
       propertyPath: TimeBeforeFade
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 1004727409, guid: 45697bdd8ec32414e9e78b4ad16e446e, type: 3}
+      propertyPath: Debugging
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004727409, guid: 45697bdd8ec32414e9e78b4ad16e446e, type: 3}
+      propertyPath: EndValue
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45697bdd8ec32414e9e78b4ad16e446e, type: 3}
 --- !u!114 &22612331 stripped
@@ -721,7 +744,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 22612330}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1927360163}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 506f81f0410b7b8469cf3739179f3637, type: 3}
@@ -3521,7 +3544,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 22612330}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1927360163}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c79845cdda02e8742aa5b7f0ce19a9e3, type: 3}
@@ -3533,7 +3556,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 22612330}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1927360163}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74410aea5f68a474cbc236e989468fce, type: 3}
@@ -19623,6 +19646,12 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 1952049948450848382, guid: 1ac22042a622f2747bbf8b0d4b6e4ba0,
     type: 3}
   m_PrefabInstance: {fileID: 192386313}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1927360163 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6643967092860436869, guid: 45697bdd8ec32414e9e78b4ad16e446e,
+    type: 3}
+  m_PrefabInstance: {fileID: 22612330}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1973620250
 GameObject:
