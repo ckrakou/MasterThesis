@@ -33,6 +33,7 @@ public class GameUnlocker : MonoBehaviour
             IdentityTester id = GetComponent<IdentityTester>();
             PlayerPrefs.SetString(id.Key, id.IdentityString);
             PlayerPrefs.Save();
+            GetComponent<SQLDatabaseConnection>().RegisterSucessfullLogin();
             SceneManager.LoadScene(SceneToLoad);
         }
         else
