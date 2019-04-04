@@ -17,6 +17,8 @@ public class MusicControl : MonoBehaviour
 
      public AudioSource AngelSynth;
 
+     public AudioSource Water;
+
 
      public AudioClip[] DatamoshAudio;
 
@@ -50,6 +52,12 @@ public class MusicControl : MonoBehaviour
     public void PlayRoomtone(int FadeTime){
     RoomTone.Play();
     StartCoroutine(FadeUp(RoomTone,FadeTime)); 
+    }
+
+    public void playWater(int FadeTime){
+    Water.Play();
+    StartCoroutine(FadeUp(Water,FadeTime)); 
+
     }
     public void PlayEerieMusic(int FadeTime){
     EerieMusic.Play();
@@ -85,6 +93,10 @@ public void PlayAngelSynth(int FadeTime){
     }
      public void FadeOutDigitalGlitch(int FadeTime){
             StartCoroutine(FadeOut(DigitalGlitch,FadeTime));  
+    }
+
+    public void FadeOutWater(int FadeTime){
+            StartCoroutine(FadeOut(Water,FadeTime));  
     }
 
    

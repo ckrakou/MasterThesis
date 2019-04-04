@@ -9,6 +9,7 @@ TagManager:
   - DatamoshCollider
   - AnalogGlitchCollider
   - TeleportCollider
+  - GrowthCollider
   layers:
   - Default
   - TransparentFX
