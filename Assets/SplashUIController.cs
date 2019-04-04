@@ -5,18 +5,20 @@
  public class SplashUIController : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
  
      private Text myText;
+     private Color textColor;
  
      void Start (){
          myText = GetComponentInChildren<Text>();
+         textColor = myText.color;
      }
  
      public void OnPointerEnter (PointerEventData eventData)
      {
-         myText.text = "Hovering";
+         myText.color=new Color32(150,60,60,255);
      }
  
      public void OnPointerExit (PointerEventData eventData)
      {
-         myText.text = "Not Hovering";
+         myText.color = textColor;
      }
  }
