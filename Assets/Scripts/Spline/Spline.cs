@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class Spline : MonoBehaviour
 {
@@ -9,22 +10,29 @@ public class Spline : MonoBehaviour
 
     public List<Catmul> Segments;
     public GameObject Vehicle;
-    public bool FaceTravelDirection = true;
-    public float TraversalTimePerSegment = 3;
+    public float TraversalTime;
     [Tooltip("How many points each segment should be split into. More points means more precision in traversal.")]
     public int Resolution = 10;
+
+    [HideInInspector]
+    public Transform FacingPoint;
+
 
     private List<Vector3> points;
     private bool isTraveling;
     private int currentSpline;
+    private float TraversalTimePerSegment;
+    private Transform manager;
+
 
     private float t = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        manager = transform.root;
         points = new List<Vector3>();
+        TraversalTimePerSegment = TraversalTime / Segments.Count;
 
         foreach (var segment in Segments)
         {
@@ -68,8 +76,13 @@ public class Spline : MonoBehaviour
             if (Debugging)
                 Debug.Log(GetType() + ": Aquired position for segment " + currentSpline + ", coordinates: " + newpos);
 
-            if(FaceTravelDirection)
-                Vehicle.transform.LookAt(newpos);
+
+
+            
+
+                    Vehicle.transform.LookAt(FacingPoint);
+
+                
 
             Vehicle.transform.position = newpos;
 
@@ -78,9 +91,15 @@ public class Spline : MonoBehaviour
 
     private void StopTravelling()
     {
+        /*
         Vehicle.GetComponent<CharacterController>().enabled = true;
+        Vehicle.GetComponent<FirstPersonController>().enabled = true;
+        */
+
         isTraveling = false;
         Vehicle = null;
+        this.transform.position = Vector3.zero;
+        this.transform.SetParent(manager);
 
     }
 
@@ -90,8 +109,14 @@ public class Spline : MonoBehaviour
             Debug.Log(this.GetType() + ": travel started, moving "+vehicle.name);
 
         this.Vehicle = vehicle;
-       
+        transform.SetParent(null);
+        transform.position = vehicle.transform.position;
+
         vehicle.GetComponent<CharacterController>().enabled = false;
+        vehicle.GetComponent<FirstPersonController>().enabled = false;
+
+        FacingPoint = new GameObject("point").transform;
+        FacingPoint.position = Vehicle.transform.position;
         isTraveling = true;
         currentSpline = 0;
         t = 0;

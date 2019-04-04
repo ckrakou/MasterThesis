@@ -24,7 +24,7 @@ public class UI : MonoBehaviour
         
         int RandomImage = Random.Range(1,3);
 
-        Debug.Log(RandomImage);
+        //Debug.Log(RandomImage);
         switch(RandomImage) {
                 case 1:
                 signs[SignNumber].sprite = Nothing[SignNumber];

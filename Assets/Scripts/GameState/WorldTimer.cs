@@ -30,7 +30,10 @@ public class WorldTimer : MonoBehaviour
     void Start()
     {
         if (Debugging)
-            Debug.Log(GetType() + ": Time Begins");
+        {
+            Debug.Log(GetType() + ": Time Begins. 10 times normal speed");
+            decayRate = 10f;
+        }
 
     }
 

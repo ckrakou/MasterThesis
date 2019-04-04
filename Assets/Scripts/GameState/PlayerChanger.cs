@@ -43,6 +43,7 @@ public class PlayerChanger : MonoBehaviour
         noise = true;
         visuals.ToggleNoise();
         visuals.ToggleSmoothChange();
+
     }
 
     public void StopNoise()
@@ -50,6 +51,9 @@ public class PlayerChanger : MonoBehaviour
         noise = false;
         visuals.ToggleNoise();
         visuals.ToggleSmoothChange();
+
+        AdjustMouseNoise(0);
+        AdjustMouseSmoothness(0);
     }
 
     public void AdjustMouseNoise(float progression)
@@ -71,6 +75,7 @@ public class PlayerChanger : MonoBehaviour
         } 
     }
 
+   
     
 }
 

@@ -37,7 +37,9 @@ public class FileUpload : MonoBehaviour
         if (!debugging)
         {
             TestCube.SetActive(false);
+#if UNITY_WEBGL
             ImageUploaderInit();
+#endif
         }
     }
 
