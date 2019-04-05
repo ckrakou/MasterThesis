@@ -104,10 +104,13 @@ public class SQLDatabaseConnection : MonoBehaviour
     {
         //create webform
         WWWForm DeathForm = new WWWForm();
+        
+
         DeathForm.AddField("x", Player.transform.position.x.ToString());
         DeathForm.AddField("y", Player.transform.position.y.ToString());
         DeathForm.AddField("z", Player.transform.position.z.ToString());
-        DeathForm.AddField("plytime", playtime.ToString());
+        DeathForm.AddField("plytime", Mathf.RoundToInt(playtime));
+        //DeathForm.AddField("plytime", playtime.ToString());
 
 
         //call php script
