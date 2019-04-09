@@ -13,8 +13,6 @@ public class Spline : MonoBehaviour
     public float TraversalTime;
     [Tooltip("How many points each segment should be split into. More points means more precision in traversal.")]
     public int Resolution = 10;
-
-    [HideInInspector]
     public Transform FacingPoint;
 
 
@@ -115,10 +113,16 @@ public class Spline : MonoBehaviour
         vehicle.GetComponent<CharacterController>().enabled = false;
         vehicle.GetComponent<FirstPersonController>().enabled = false;
 
-        FacingPoint = new GameObject("point").transform;
+        //FacingPoint = new GameObject("point").transform;
         FacingPoint.position = Vehicle.transform.position;
         isTraveling = true;
         currentSpline = 0;
         t = 0;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawSphere(FacingPoint.transform.position,3);
     }
 }
