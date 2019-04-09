@@ -6,11 +6,7 @@ using UnityEngine.Rendering.PostProcessing;
 public class worldSpawnCollisionPreventerMonsterCam : MonoBehaviour
 {
 
-  public PostProcessVolume Post;
-
-  public PostProcessProfile DepriPost;
-
-  public PostProcessProfile MonsterPost;
+  
 
 
     public GameObject Light; 
@@ -22,7 +18,7 @@ public class worldSpawnCollisionPreventerMonsterCam : MonoBehaviour
     public AudioSource Speak;
 
       public AudioSource MonsterSound;
-    public GameObject MonsterCam;
+    
 
     public GameObject PlayerCam;
 
@@ -43,10 +39,7 @@ public class worldSpawnCollisionPreventerMonsterCam : MonoBehaviour
    
     }  
 
-    void TurnOnMonsterCam(){
-      PlayerCam.SetActive(false);
-      MonsterCam.SetActive(true);
-    }  
+  
      void OnTriggerStay(Collider target)
      {
          if(target.tag == "WorldMonument")
@@ -128,23 +121,11 @@ public class worldSpawnCollisionPreventerMonsterCam : MonoBehaviour
       Speak.Play();
      Destroy(Light);
     Destroy(Particles);    
-    StartCoroutine(RunMonsterCam(Speak.clip.length));
+   
   
  }
 
-IEnumerator RunMonsterCam(float SongTime){
-  yield return new WaitForSeconds(SongTime+10); 
-      Post.profile=MonsterPost;  
-      PlayerCam.SetActive(false);
-      MonsterCam.SetActive(true);
-      MonsterSound.Play();
 
-      yield return new WaitForSeconds(5); 
-      Post.profile=DepriPost;  
-        PlayerCam.SetActive(true);
-      MonsterCam.SetActive(false);
-      MonsterSound.Stop();
-}
 
 
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.16864643, g: 0.023221603, b: 0.033360593, a: 1}
+  m_IndirectSpecularColor: {r: 0.16864027, g: 0.023220714, b: 0.03335938, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -217,7 +217,7 @@ PrefabInstance:
     - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
         type: 3}
       propertyPath: TimedEvents.Array.data[1].Time
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
         type: 3}
@@ -2268,16 +2268,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2ecc6dcc8e14f98ad0ef48708af650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Post: {fileID: 0}
-  DepriPost: {fileID: 0}
-  MonsterPost: {fileID: 0}
   Light: {fileID: 1671244692}
   Particles: {fileID: 1478085350}
   WorldMonument: {fileID: 1414642895}
   GlitchSound: {fileID: 1923834566}
   Speak: {fileID: 270543539}
   MonsterSound: {fileID: 0}
-  MonsterCam: {fileID: 0}
   PlayerCam: {fileID: 0}
 --- !u!4 &273798861 stripped
 Transform:
@@ -3223,16 +3219,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2ecc6dcc8e14f98ad0ef48708af650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Post: {fileID: 0}
-  DepriPost: {fileID: 0}
-  MonsterPost: {fileID: 0}
   Light: {fileID: 1422151559}
   Particles: {fileID: 450867458}
   WorldMonument: {fileID: 30634694}
   GlitchSound: {fileID: 230751662}
   Speak: {fileID: 1808693238}
   MonsterSound: {fileID: 0}
-  MonsterCam: {fileID: 0}
   PlayerCam: {fileID: 0}
 --- !u!4 &451558995 stripped
 Transform:
@@ -4758,16 +4750,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2ecc6dcc8e14f98ad0ef48708af650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Post: {fileID: 0}
-  DepriPost: {fileID: 0}
-  MonsterPost: {fileID: 0}
   Light: {fileID: 582944286}
   Particles: {fileID: 134498709}
   WorldMonument: {fileID: 1102099487}
   GlitchSound: {fileID: 296073798}
   Speak: {fileID: 1535175591}
   MonsterSound: {fileID: 0}
-  MonsterCam: {fileID: 0}
   PlayerCam: {fileID: 0}
 --- !u!4 &830614404 stripped
 Transform:
@@ -11218,16 +11206,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2ecc6dcc8e14f98ad0ef48708af650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Post: {fileID: 0}
-  DepriPost: {fileID: 0}
-  MonsterPost: {fileID: 0}
   Light: {fileID: 950257765}
   Particles: {fileID: 1200878516}
   WorldMonument: {fileID: 848634929}
   GlitchSound: {fileID: 939561225}
   Speak: {fileID: 306672993}
   MonsterSound: {fileID: 880806859}
-  MonsterCam: {fileID: 663958164}
   PlayerCam: {fileID: 454731887}
 --- !u!4 &1113336535 stripped
 Transform:
@@ -16658,16 +16642,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2ecc6dcc8e14f98ad0ef48708af650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Post: {fileID: 0}
-  DepriPost: {fileID: 0}
-  MonsterPost: {fileID: 0}
   Light: {fileID: 241568145}
   Particles: {fileID: 356359266}
   WorldMonument: {fileID: 599720202}
   GlitchSound: {fileID: 885684521}
   Speak: {fileID: 129771132}
   MonsterSound: {fileID: 0}
-  MonsterCam: {fileID: 0}
   PlayerCam: {fileID: 0}
 --- !u!4 &1310233233 stripped
 Transform:
@@ -19426,7 +19406,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 20
+          m_FloatArgument: 30
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -19475,7 +19455,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 20
+          m_FloatArgument: 30
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -19546,7 +19526,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 20
+          m_FloatArgument: 30
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -19584,7 +19564,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 20
+          m_FloatArgument: 30
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -20111,16 +20091,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2ecc6dcc8e14f98ad0ef48708af650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Post: {fileID: 0}
-  DepriPost: {fileID: 0}
-  MonsterPost: {fileID: 0}
   Light: {fileID: 690866929}
   Particles: {fileID: 968219346}
   WorldMonument: {fileID: 684159051}
   GlitchSound: {fileID: 2101235256}
   Speak: {fileID: 1097747786}
   MonsterSound: {fileID: 0}
-  MonsterCam: {fileID: 0}
   PlayerCam: {fileID: 0}
 --- !u!4 &2108805638 stripped
 Transform:
