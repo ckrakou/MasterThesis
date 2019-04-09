@@ -12,6 +12,10 @@ public class SQLDatabaseConnection : MonoBehaviour
     public bool Debugging;
     public GameObject Player;
     public GameObject DeadPlayers;
+    public WorldTimer worldTimer;
+
+    [Header("Tree Settings")]
+    public Vector3 MaxSize = new Vector3(3, 3, 3);
 
     private float playtime;
 
@@ -25,9 +29,9 @@ public class SQLDatabaseConnection : MonoBehaviour
             //Debug.Log("registration started");
             //RegisterWhenPlayerDies();
             //RegisterFailedLogin();
-           
+
         }
-         RetriveDeadCoordinates();
+        RetriveDeadCoordinates();
     }
     void Update()
     {
@@ -104,7 +108,7 @@ public class SQLDatabaseConnection : MonoBehaviour
     {
         //create webform
         WWWForm DeathForm = new WWWForm();
-        
+
 
         DeathForm.AddField("x", Player.transform.position.x.ToString());
         DeathForm.AddField("y", Player.transform.position.y.ToString());
@@ -145,28 +149,49 @@ public class SQLDatabaseConnection : MonoBehaviour
         }
         else
         {
+
+
             //Debug.Log(www.downloadHandler.text);
             //  retrieve results as string
             string[] results = www.downloadHandler.text.Split('\t'); ;
-            int lengthoftable = results.Length - 1;
-            for (int i = 0; i < lengthoftable; i++)
-            {
-                string[] xyz = results[i].Split('_');
-                float x = float.Parse(xyz[0]);
-                float y = float.Parse(xyz[1]);
-                float z = float.Parse(xyz[2]);
-                float playtime = float.Parse(xyz[3]);
-                float NewLogSize = playtime / 300;
-                Vector3 vec = new Vector3(x, 0 + NewLogSize / 2, z);
-                int ramdomLogY = Random.Range(-180, 180);
-                Quaternion LogSpawnRotation = Quaternion.Euler(0, ramdomLogY, 0);
+            SpawnTrees(results);
+            
+        }
+    }
 
-                GameObject newObject = Instantiate(DeadPlayers, vec, LogSpawnRotation) as GameObject;
-                newObject.transform.localScale = new Vector3(NewLogSize, NewLogSize, NewLogSize);
+    public void SpawnTrees(string[] recievedData)
+    {
+        int lengthoftable = recievedData.Length - 1;
+        for (int i = 0; i < lengthoftable; i++)
+        {
+            string[] xyz = recievedData[i].Split('_');
+            float x = float.Parse(xyz[0]);
+            float y = float.Parse(xyz[1]);
+            float z = float.Parse(xyz[2]);
+            float playtime = float.Parse(xyz[3]);
+
+            float logMultiplier = playtime / (worldTimer.PlayTime * 60);
+
+            Vector3 scale = MaxSize * logMultiplier;
+            Vector3 position = new Vector3(x, scale.y/2, z);
+            Quaternion rotation = Quaternion.Euler(0, Random.Range(0, 360),0);
+
+            GameObject graveObject = Instantiate(DeadPlayers, position, rotation, this.transform);
+            graveObject.transform.localScale = scale;
+
+            /*
+            float NewLogSize = playtime / 300;
+            Vector3 vec = new Vector3(x, 0 + NewLogSize / 2, z);
+            int ramdomLogY = Random.Range(-180, 180);
+            Quaternion LogSpawnRotation = Quaternion.Euler(0, ramdomLogY, 0);
+
+            GameObject newObject = Instantiate(DeadPlayers, vec, LogSpawnRotation) as GameObject;
+            newObject.transform.localScale = new Vector3(NewLogSize, NewLogSize, NewLogSize);
+            */
 
 
 
-            }
+
         }
     }
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.05693227, g: 0.007839603, b: 0.011262582, a: 1}
+  m_IndirectSpecularColor: {r: 0.05764945, g: 0.0079381205, b: 0.011404222, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4697,6 +4697,7 @@ MonoBehaviour:
   preloadAudioData: 1
   DigitalGlitch: {fileID: 1859750071}
   AngelSynth: {fileID: 880575162}
+  Water: {fileID: 0}
   DatamoshAudio:
   - {fileID: 8300000, guid: 9ef276a646a8f49429da848d3746ade9, type: 3}
   - {fileID: 8300000, guid: 2c1d3a2da8daf4cabbb1eb84e18f56c8, type: 3}
@@ -20026,6 +20027,8 @@ MonoBehaviour:
   Player: {fileID: 1596035544}
   DeadPlayers: {fileID: 904567281543684667, guid: dc991f5fea06d427590491216dcf6875,
     type: 3}
+  worldTimer: {fileID: 556671583}
+  MaxSize: {x: 6, y: 6, z: 6}
 --- !u!4 &2142682456
 Transform:
   m_ObjectHideFlags: 0
