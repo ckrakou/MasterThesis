@@ -17,7 +17,7 @@ public class MusicControl : MonoBehaviour
 
      public AudioSource AngelSynth;
 
-     public AudioSource Water;
+     public AudioSource EndGameMusic;
 
 
      public AudioClip[] DatamoshAudio;
@@ -54,9 +54,9 @@ public class MusicControl : MonoBehaviour
     StartCoroutine(FadeUp(RoomTone,FadeTime)); 
     }
 
-    public void playWater(int FadeTime){
-    Water.Play();
-    StartCoroutine(FadeUp(Water,FadeTime)); 
+    public void playEndGameMusic(int FadeTime){
+    EndGameMusic.Play();
+    StartCoroutine(FadeUp(EndGameMusic,FadeTime)); 
 
     }
     public void PlayEerieMusic(int FadeTime){
@@ -95,8 +95,8 @@ public void PlayAngelSynth(int FadeTime){
             StartCoroutine(FadeOut(DigitalGlitch,FadeTime));  
     }
 
-    public void FadeOutWater(int FadeTime){
-            StartCoroutine(FadeOut(Water,FadeTime));  
+    public void FadeOutEndGameMusic(int FadeTime){
+            StartCoroutine(FadeOut(EndGameMusic,FadeTime));  
     }
 
    
