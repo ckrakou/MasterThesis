@@ -9,22 +9,26 @@ public class Fader : MonoBehaviour
 {
     public bool Debugging;
     public Image FadeImage;
-    public Text[] Text;
+    public Text Welcome;
+    public Text Response;
+    public Text Button;
+    //public Text[] Text;
     [HideInInspector]
     public float FadeTime;
 
     private float initialTextAlpha;
+    private string response;
 
     private void Awake()
     {
         //FadeImage.enabled = true;
-        initialTextAlpha = Text[0].color.a;
-        foreach (var text in Text)
-        {
-            Color c = text.color;
+        initialTextAlpha = Welcome.color.a;
+       
+            Color c = Welcome.color;
             c.a = 0;
-            text.color = c;
-        }
+        Welcome.color = c;
+        Response.color = c;
+        Button.color = c;
     }
 
     public void FadeIn()
@@ -34,33 +38,60 @@ public class Fader : MonoBehaviour
         Color color = FadeImage.color;
         color.a = 1;
 
-        FadeImage.color = color;
-        FadeImage.DOFade(0f, FadeTime).onComplete+=new TweenCallback(FadeInText);
+        //FadeImage.color = color;
+        //FadeImage.DOFade(0f, FadeTime).onComplete += new TweenCallback(FadeInText);
 
+        Response.text = "";
+        Response.DOFade(0, FadeTime);
 
     }
 
+    public IEnumerator FadeResponse(string response)
+    {
+        this.response = response;
+        Debug.Log("RESPONSE IS NOW " + response);
+
+        Color c = Response.color;
+        c.a = 0;
+        Response.color = c;
+
+        Button.DOFade(0, FadeTime);
+        Response.text = response;
+        Button.gameObject.GetComponent<Button>().interactable = false;
+
+
+
+        yield return new WaitForSeconds(FadeTime);
+        Response.DOFade(initialTextAlpha, FadeTime);
+
+
+        
+    }
+
+
     public void FadeInText()
     {
-        foreach (var text in Text)
-        {
-            text.DOFade(initialTextAlpha, FadeTime);
-        }
+
+        Button.DOFade(initialTextAlpha, FadeTime);
+        Welcome.DOFade(initialTextAlpha, FadeTime);
+        Response.DOFade(initialTextAlpha, FadeTime);
+
 
     }
 
     public void FadeOut()
     {
         FadeImage.enabled = true;
-        FadeImage.DOFade(1f, FadeTime).onComplete=new TweenCallback(FadeOutText);
+        FadeImage.DOFade(1f, FadeTime).onComplete = new TweenCallback(FadeOutText);
     }
 
     public void FadeOutText()
     {
-        foreach (var text in Text)
-        {
-            text.DOFade(0, FadeTime);
-        }
+
+        Button.DOFade(0, FadeTime);
+       // Welcome.DOFade(0, FadeTime);
+       // Response.DOFade(0, FadeTime);
+
 
     }
 }

@@ -53,7 +53,7 @@ public class GameUnlocker : MonoBehaviour
 
     private IEnumerator UnlockThread()
     {
-        fader.FadeOut();
+        fader.FadeOutText();
         yield return new WaitForSeconds(FadeTime);
 
         PlayerPrefs.SetString(idTest.Key, idTest.IdentityString);
