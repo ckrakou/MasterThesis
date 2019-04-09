@@ -176,12 +176,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c79845cdda02e8742aa5b7f0ce19a9e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Debugging: 1
+  Debugging: 0
   Player: {fileID: 0}
   MouseLookNoise:
     mean: 0
-    deviation: 2
-    bounds: 3
+    deviation: 0.75
+    bounds: 5
   MouseAdjustmentChange:
     upper: 10
     lower: 0
@@ -198,6 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 506f81f0410b7b8469cf3739179f3637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Debugging: 0
   SpawnOnDeath: {fileID: 5561984872749756277, guid: 14fb1a07fe9e8425fbe6798b20e95ef4,
     type: 3}
   Scale: {x: 1, y: 1, z: 1}
