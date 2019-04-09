@@ -15,7 +15,7 @@ public class Spline : MonoBehaviour
     public int Resolution = 10;
     public Transform FacingPoint;
 
-
+    private Vector3 facingOffset;
     private List<Vector3> points;
     private bool isTraveling;
     private int currentSpline;
@@ -28,6 +28,7 @@ public class Spline : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        facingOffset = FacingPoint.transform.position;
         manager = transform.root;
         points = new List<Vector3>();
         TraversalTimePerSegment = TraversalTime / Segments.Count;
@@ -76,9 +77,10 @@ public class Spline : MonoBehaviour
 
 
 
-            
 
-                    Vehicle.transform.LookAt(FacingPoint);
+            //FacingPoint.position += facingOffset;
+            FacingPoint.position = transform.position + facingOffset;
+            Vehicle.transform.LookAt(FacingPoint);
 
                 
 
