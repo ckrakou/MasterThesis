@@ -1,9 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 public class worldSpawnCollisionPreventerMonsterCam : MonoBehaviour
 {
+
+  public PostProcessVolume Post;
+
+  public PostProcessProfile DepriPost;
+
+  public PostProcessProfile MonsterPost;
+
 
     public GameObject Light; 
     public  GameObject Particles; 
@@ -125,17 +133,17 @@ public class worldSpawnCollisionPreventerMonsterCam : MonoBehaviour
  }
 
 IEnumerator RunMonsterCam(float SongTime){
-  yield return new WaitForSeconds(SongTime+2);   
+  yield return new WaitForSeconds(SongTime+10); 
+      Post.profile=MonsterPost;  
       PlayerCam.SetActive(false);
       MonsterCam.SetActive(true);
       MonsterSound.Play();
 
-      yield return new WaitForSeconds(7); 
+      yield return new WaitForSeconds(5); 
+      Post.profile=DepriPost;  
         PlayerCam.SetActive(true);
       MonsterCam.SetActive(false);
       MonsterSound.Stop();
-
-
 }
 
 

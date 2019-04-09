@@ -77,7 +77,7 @@ public void PlayAngelSynth(int FadeTime){
     int RandomGlitchsound = Random.Range(0,DatamoshAudio.Length);
             DigitalGlitch.clip=DatamoshAudio[RandomGlitchsound];
             DigitalGlitch.pitch=Random.Range(0.3f,1.5f);
-            DigitalGlitch.time=Random.Range(0.3f,30.5f);
+            DigitalGlitch.time=Random.Range(0.3f,3.5f);
             DigitalGlitch.Play();
             StartCoroutine(FadeUp(DigitalGlitch,FadeTime)); 
     }
