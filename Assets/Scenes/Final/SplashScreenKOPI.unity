@@ -14751,6 +14751,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 11042603}
+    - target: {fileID: 1269388036, guid: 4a907ff6c901ce74a98721411d946d88, type: 3}
+      propertyPath: m_Text
+      value: Welcome to
+      objectReference: {fileID: 0}
     - target: {fileID: 1255727257, guid: 4a907ff6c901ce74a98721411d946d88, type: 3}
       propertyPath: Text.Array.size
       value: 3
