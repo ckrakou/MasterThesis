@@ -7,12 +7,22 @@ using UnityEngine.SceneManagement;
 public class GameUnlocker : MonoBehaviour
 {
     public bool Debugging;
-
+    public float FadeTime = 0.5f;
     public string SceneToLoad;
 
+    private Fader fader;
+    private IdentityTester idTest;
 
     private void Start()
     {
+        fader = GetComponent<Fader>();
+        fader.FadeTime = FadeTime;
+
+        idTest = GetComponent<IdentityTester>();
+
+
+        if(idTest.KeyFound)
+            fader.FadeIn();
 
         if (GetComponent<IdentityTester>().KeyFound)
         {
@@ -20,7 +30,7 @@ public class GameUnlocker : MonoBehaviour
                 Debug.Log(GetType() + ": Key found, disabling button");
 
             GetComponent<FileUpload>().Button.SetActive(false);
-            GetComponent<FileUpload>().Text.SetActive(true);
+            //GetComponent<FileUpload>().WelcomeText.SetActive(true);
             GetComponent<FileUpload>().enabled = false;
         }
     }
@@ -30,16 +40,23 @@ public class GameUnlocker : MonoBehaviour
 
         if (GetComponent<IdentityTester>().KeyFound == false)
         {
-            IdentityTester id = GetComponent<IdentityTester>();
-            PlayerPrefs.SetString(id.Key, id.IdentityString);
-            PlayerPrefs.Save();
-            GetComponent<SQLDatabaseConnection>().RegisterSucessfullLogin();
-            SceneManager.LoadScene(SceneToLoad);
+            StartCoroutine(UnlockThread());
         }
         else
         {
             if (Debugging)
                 Debug.Log(GetType() + ": Key found, not loading");
         }
+    }
+
+    private IEnumerator UnlockThread()
+    {
+        fader.FadeOut();
+        yield return new WaitForSeconds(FadeTime);
+
+        PlayerPrefs.SetString(idTest.Key, idTest.IdentityString);
+        PlayerPrefs.Save();
+        GetComponent<SQLDatabaseConnection>().RegisterSucessfullLogin();
+        SceneManager.LoadScene(SceneToLoad);
     }
 }

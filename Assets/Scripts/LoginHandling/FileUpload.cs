@@ -11,9 +11,10 @@ public class FileUpload : MonoBehaviour
 {
     public bool debugging = false;
     public string[] FailureMessages;
-    public GameObject TestCube;
     public GameObject Button;
-    public GameObject Text;
+    //public GameObject WelcomeText;
+    public GameObject ResponseText;
+
 
 #if UNITY_WEBGL
     [DllImport("__Internal")]
@@ -36,7 +37,6 @@ public class FileUpload : MonoBehaviour
 
         if (!debugging)
         {
-            TestCube.SetActive(false);
 #if UNITY_WEBGL
             ImageUploaderInit();
 #endif
@@ -54,19 +54,13 @@ public class FileUpload : MonoBehaviour
         // DATABASE WRITING
         if (CheckFile(rawFile))
         {
-            Text.SetActive(true);
+            //WelcomeText.SetActive(true);
+            ResponseText.SetActive(false);
             Button.SetActive(false);
             if (debugging)
-            {
                 Debug.Log("FileUpload: File identified successfully");
-                TestCube.GetComponent<Renderer>().material.color = Color.red;
-                
-            }
-            else
-            {
-                unlocker.UnlockMainScene();
 
-            }
+            unlocker.UnlockMainScene();
         }
         else
         {
@@ -77,8 +71,10 @@ public class FileUpload : MonoBehaviour
                 db.RegisterFailedLogin();
 
             Button.SetActive(false);
-            Text.SetActive(true);
-            Text.GetComponentInChildren<Text>().text = FailureMessages[UnityEngine.Random.Range((int)0, FailureMessages.Length - 1)];
+            //WelcomeText.SetActive(false);
+            ResponseText.SetActive(true);
+
+            ResponseText.GetComponentInChildren<Text>().text = FailureMessages[UnityEngine.Random.Range((int)0, FailureMessages.Length - 1)];
         }
 
     }
