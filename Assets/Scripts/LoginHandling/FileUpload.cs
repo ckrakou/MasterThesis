@@ -15,6 +15,8 @@ public class FileUpload : MonoBehaviour
     //public GameObject WelcomeText;
     public GameObject ResponseText;
 
+    private Fader fader;
+
 
 #if UNITY_WEBGL
     [DllImport("__Internal")]
@@ -32,6 +34,7 @@ public class FileUpload : MonoBehaviour
     {
         db = GetComponent<SQLDatabaseConnection>();
         unlocker = GetComponent<GameUnlocker>();
+        fader = GetComponent<Fader>();
         TextAsset bindata = Resources.Load("MasterFile") as TextAsset;
         masterFile = bindata.bytes;
 
@@ -56,7 +59,7 @@ public class FileUpload : MonoBehaviour
         {
             //WelcomeText.SetActive(true);
             ResponseText.SetActive(false);
-            Button.SetActive(false);
+            Button.GetComponent<Button>().enabled = false;
             if (debugging)
                 Debug.Log("FileUpload: File identified successfully");
 
@@ -70,11 +73,13 @@ public class FileUpload : MonoBehaviour
             if(!debugging)
                 db.RegisterFailedLogin();
 
-            Button.SetActive(false);
+            //Button.SetActive(false);
             //WelcomeText.SetActive(false);
             ResponseText.SetActive(true);
 
-            ResponseText.GetComponentInChildren<Text>().text = FailureMessages[UnityEngine.Random.Range((int)0, FailureMessages.Length - 1)];
+            StartCoroutine( fader.FadeResponse(FailureMessages[UnityEngine.Random.Range((int)0, FailureMessages.Length - 1)]));
+
+            //ResponseText.GetComponentInChildren<Text>().text = FailureMessages[UnityEngine.Random.Range((int)0, FailureMessages.Length - 1)];
         }
 
     }
