@@ -21,8 +21,10 @@ public class GameUnlocker : MonoBehaviour
         idTest = GetComponent<IdentityTester>();
 
 
-        if(idTest.KeyFound)
+        if (idTest.KeyFound)
             fader.FadeIn();
+        else
+            fader.FadeInText();
 
         if (GetComponent<IdentityTester>().KeyFound)
         {
