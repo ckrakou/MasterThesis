@@ -22,14 +22,27 @@ public class GameUnlocker : MonoBehaviour
 
 
         if (idTest.KeyFound)
+        {
+
+
             fader.FadeIn();
+
+            if (Debugging)
+                Debug.Log(GetType() + ": " + idTest.RejectionMessages[Random.Range((int)0, idTest.RejectionMessages.Length - 1)]);
+
+            fader.FadeResponse(idTest.RejectionMessages[Random.Range((int)0, idTest.RejectionMessages.Length - 1)]);
+        }
         else
+        {
             fader.FadeInText();
+
+        }
 
         if (GetComponent<IdentityTester>().KeyFound)
         {
             if (Debugging)
                 Debug.Log(GetType() + ": Key found, disabling button");
+
 
             GetComponent<FileUpload>().Button.SetActive(false);
             //GetComponent<FileUpload>().WelcomeText.SetActive(true);

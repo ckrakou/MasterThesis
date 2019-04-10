@@ -206,6 +206,18 @@ MonoBehaviour:
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &236267360 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 913613089, guid: 4a907ff6c901ce74a98721411d946d88,
+    type: 3}
+  m_PrefabInstance: {fileID: 4135223773248923647}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &454548187
 GameObject:
   m_ObjectHideFlags: 0
@@ -9888,13 +9900,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1199273350 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1695676739, guid: 4a907ff6c901ce74a98721411d946d88,
+    type: 3}
+  m_PrefabInstance: {fileID: 4135223773248923647}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1199273353 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1695676742, guid: 4a907ff6c901ce74a98721411d946d88,
     type: 3}
   m_PrefabInstance: {fileID: 4135223773248923647}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1199273350}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -14598,6 +14616,18 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &1319027696 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5061149326444513909, guid: 4a907ff6c901ce74a98721411d946d88,
+    type: 3}
+  m_PrefabInstance: {fileID: 4135223773248923647}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1439442908
 GameObject:
   m_ObjectHideFlags: 0
@@ -14667,6 +14697,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1950622831 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 386213364, guid: 4a907ff6c901ce74a98721411d946d88,
+    type: 3}
+  m_PrefabInstance: {fileID: 4135223773248923647}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4135223773248923647
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14754,6 +14796,11 @@ PrefabInstance:
       propertyPath: FailureMessages.Array.data[3]
       value: Tyying to sneak in, are we?. You need an invitation like everyone else.
       objectReference: {fileID: 0}
+    - target: {fileID: 7212383128361749919, guid: 4a907ff6c901ce74a98721411d946d88,
+        type: 3}
+      propertyPath: Button
+      value: 
+      objectReference: {fileID: 1199273350}
     - target: {fileID: 1255727257, guid: 4a907ff6c901ce74a98721411d946d88, type: 3}
       propertyPath: Welcome
       value: 
@@ -14762,6 +14809,19 @@ PrefabInstance:
       propertyPath: Button
       value: 
       objectReference: {fileID: 1199273353}
+    - target: {fileID: 1255727257, guid: 4a907ff6c901ce74a98721411d946d88, type: 3}
+      propertyPath: Background
+      value: 
+      objectReference: {fileID: 1319027696}
+    - target: {fileID: 1255727257, guid: 4a907ff6c901ce74a98721411d946d88, type: 3}
+      propertyPath: Header
+      value: 
+      objectReference: {fileID: 236267360}
+    - target: {fileID: 7212383128361749890, guid: 4a907ff6c901ce74a98721411d946d88,
+        type: 3}
+      propertyPath: ResponseText
+      value: 
+      objectReference: {fileID: 1950622831}
     - target: {fileID: 69819858, guid: 4a907ff6c901ce74a98721411d946d88, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -14773,6 +14833,11 @@ PrefabInstance:
     - target: {fileID: 386213363, guid: 4a907ff6c901ce74a98721411d946d88, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -274
+      objectReference: {fileID: 0}
+    - target: {fileID: 717001158423609886, guid: 4a907ff6c901ce74a98721411d946d88,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1695676742, guid: 4a907ff6c901ce74a98721411d946d88, type: 3}
       propertyPath: m_Color.a

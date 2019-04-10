@@ -12,6 +12,9 @@ public class Fader : MonoBehaviour
     public Text Welcome;
     public Text Response;
     public Image Button;
+    public Image Background;
+    public Image Header;
+
     //public Text[] Text;
     [HideInInspector]
     public float FadeTime;
@@ -44,9 +47,9 @@ public class Fader : MonoBehaviour
         FadeImage.DOFade(0f, FadeTime).onComplete += new TweenCallback(FadeInText);
 
         Button.DOFade(initialTextAlpha, FadeTime);
-
-        Response.text = "";
-        Response.DOFade(0, FadeTime);
+        Header.DOFade(255, FadeTime);
+        //Response.text = "";
+        //Response.DOFade(0, FadeTime);
 
     }
 
@@ -61,6 +64,7 @@ public class Fader : MonoBehaviour
 
         Button.DOFade(0, FadeTime);
         Response.text = response;
+        
         Button.gameObject.GetComponent<Button>().interactable = false;
 
 
@@ -93,9 +97,17 @@ public class Fader : MonoBehaviour
     {
 
         Button.DOFade(0, FadeTime);
-       // Welcome.DOFade(0, FadeTime);
-       // Response.DOFade(0, FadeTime);
+       Welcome.DOFade(0, FadeTime);
+       Response.DOFade(0, FadeTime);
+        Background.DOFade(1, FadeTime);
+        Header.DOFade(0, FadeTime);
 
 
+    }
+
+    private IEnumerator FadeBackground()
+    {
+        yield return new WaitForSeconds(FadeTime);
+        Background.DOFade(1, FadeTime);
     }
 }
