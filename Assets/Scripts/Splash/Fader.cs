@@ -11,7 +11,7 @@ public class Fader : MonoBehaviour
     public Image FadeImage;
     public Text Welcome;
     public Text Response;
-    public Text Button;
+    public Image Button;
     //public Text[] Text;
     [HideInInspector]
     public float FadeTime;
@@ -26,9 +26,11 @@ public class Fader : MonoBehaviour
        
             Color c = Welcome.color;
             c.a = 0;
+
+
         Welcome.color = c;
         Response.color = c;
-        Button.color = c;
+        //Button.color = c;
     }
 
     public void FadeIn()
@@ -38,8 +40,10 @@ public class Fader : MonoBehaviour
         Color color = FadeImage.color;
         color.a = 1;
 
-        //FadeImage.color = color;
-        //FadeImage.DOFade(0f, FadeTime).onComplete += new TweenCallback(FadeInText);
+        FadeImage.color = color;
+        FadeImage.DOFade(0f, FadeTime).onComplete += new TweenCallback(FadeInText);
+
+        Button.DOFade(initialTextAlpha, FadeTime);
 
         Response.text = "";
         Response.DOFade(0, FadeTime);
