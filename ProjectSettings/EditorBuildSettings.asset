@@ -8,10 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Chris - Styled.unity
     guid: fa094fa5eca3e44409c88dbf7ee57baf
-  - enabled: 1
-    path: Assets/Scenes/Final/SplashScreen.unity
+  - enabled: 0
+    path: Assets/__DELETED_GUID_Trash/08ab7d32eee0f1b4cbf0c54a2d948dbe
     guid: 08ab7d32eee0f1b4cbf0c54a2d948dbe
   - enabled: 0
     path: Assets/Scenes/BaldeersPlayground.unity
     guid: 19e65459d3a4d4f368431c22ad17f46f
+  - enabled: 1
+    path: Assets/Scenes/Final/MainScene.unity
+    guid: 9b95f73feab809742b279045f92bcd65
   m_configObjects: {}
