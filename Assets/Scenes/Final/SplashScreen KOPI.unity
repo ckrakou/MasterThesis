@@ -14739,6 +14739,21 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 11042603}
+    - target: {fileID: 7212383128361749919, guid: 4a907ff6c901ce74a98721411d946d88,
+        type: 3}
+      propertyPath: FailureMessages.Array.data[0]
+      value: 'You are not invited. Bring me the invitation. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212383128361749919, guid: 4a907ff6c901ce74a98721411d946d88,
+        type: 3}
+      propertyPath: FailureMessages.Array.data[2]
+      value: "You should not be here, you don\u2019t have an invitation."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212383128361749919, guid: 4a907ff6c901ce74a98721411d946d88,
+        type: 3}
+      propertyPath: FailureMessages.Array.data[3]
+      value: Tyying to sneak in, are we?. You need an invitation like everyone else.
+      objectReference: {fileID: 0}
     - target: {fileID: 1255727257, guid: 4a907ff6c901ce74a98721411d946d88, type: 3}
       propertyPath: Welcome
       value: 
