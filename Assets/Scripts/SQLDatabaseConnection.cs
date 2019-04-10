@@ -11,7 +11,9 @@ public class SQLDatabaseConnection : MonoBehaviour
 
     public bool Debugging;
     public GameObject Player;
+     
     public GameObject DeadPlayers;
+    
     public WorldTimer worldTimer;
 
     [Header("Tree Settings")]
@@ -21,6 +23,7 @@ public class SQLDatabaseConnection : MonoBehaviour
 
     void Start()
     {
+    
         if (Debugging)
         {
 
@@ -113,7 +116,7 @@ public class SQLDatabaseConnection : MonoBehaviour
         DeathForm.AddField("x", Player.transform.position.x.ToString());
         DeathForm.AddField("y", Player.transform.position.y.ToString());
         DeathForm.AddField("z", Player.transform.position.z.ToString());
-        DeathForm.AddField("plytime", Mathf.RoundToInt(playtime));
+        DeathForm.AddField("playtime", Mathf.RoundToInt(playtime));
         //DeathForm.AddField("plytime", playtime.ToString());
 
 
@@ -162,6 +165,7 @@ public class SQLDatabaseConnection : MonoBehaviour
     public void SpawnTrees(string[] recievedData)
     {
         int lengthoftable = recievedData.Length - 1;
+        Debug.Log("Number of trees spawned"+recievedData.Length);
         for (int i = 0; i < lengthoftable; i++)
         {
             string[] xyz = recievedData[i].Split('_');
