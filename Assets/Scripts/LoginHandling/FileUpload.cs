@@ -57,11 +57,13 @@ public class FileUpload : MonoBehaviour
         // DATABASE WRITING
         if (CheckFile(rawFile))
         {
+            if (debugging)
+                Debug.Log("FileUpload: File identified successfully");
+
             //WelcomeText.SetActive(true);
             ResponseText.SetActive(false);
             Button.GetComponent<Button>().interactable = false;
-            if (debugging)
-                Debug.Log("FileUpload: File identified successfully");
+            Cursor.visible = false;
 
             unlocker.UnlockMainScene();
         }
