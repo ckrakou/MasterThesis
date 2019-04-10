@@ -13,8 +13,10 @@ public class Spline : MonoBehaviour
     public float TraversalTime;
     [Tooltip("How many points each segment should be split into. More points means more precision in traversal.")]
     public int Resolution = 10;
+    public float Delay = 0;
     public Transform FacingPoint;
 
+    private float startTime;
     private Vector3 facingOffset;
     private List<Vector3> points;
     private bool isTraveling;
@@ -105,6 +107,11 @@ public class Spline : MonoBehaviour
 
     public void StartTravelling(GameObject vehicle)
     {
+        StartCoroutine(Travel(vehicle));
+    }
+
+        public IEnumerator Travel(GameObject vehicle)
+    {
         if (Debugging)
             Debug.Log(this.GetType() + ": travel started, moving "+vehicle.name);
 
@@ -114,6 +121,8 @@ public class Spline : MonoBehaviour
 
         vehicle.GetComponent<CharacterController>().enabled = false;
         vehicle.GetComponent<FirstPersonController>().enabled = false;
+
+        yield return new WaitForSeconds(Delay);
 
         //FacingPoint = new GameObject("point").transform;
         FacingPoint.position = Vehicle.transform.position;
