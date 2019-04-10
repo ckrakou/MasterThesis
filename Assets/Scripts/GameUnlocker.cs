@@ -44,7 +44,7 @@ public class GameUnlocker : MonoBehaviour
                 Debug.Log(GetType() + ": Key found, disabling button");
 
 
-            GetComponent<FileUpload>().Button.SetActive(false);
+            GetComponent<FileUpload>().Button.GetComponent<Button>().interactable = false;
             //GetComponent<FileUpload>().WelcomeText.SetActive(true);
             GetComponent<FileUpload>().enabled = false;
         }

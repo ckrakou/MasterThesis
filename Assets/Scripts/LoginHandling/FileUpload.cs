@@ -59,7 +59,7 @@ public class FileUpload : MonoBehaviour
         {
             //WelcomeText.SetActive(true);
             ResponseText.SetActive(false);
-            Button.GetComponent<Button>().enabled = false;
+            Button.GetComponent<Button>().interactable = false;
             if (debugging)
                 Debug.Log("FileUpload: File identified successfully");
 
