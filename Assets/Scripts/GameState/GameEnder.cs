@@ -14,7 +14,8 @@ public class GameEnder : MonoBehaviour
     public float TimeBeforeFade = 10;
     [Header("Fade")]
     public float FadeTime = 2;
-    public float EndValue;
+    //public float EndValue;
+    public Animator Fader;
      
 
     private float fadeTimestamp;
@@ -52,11 +53,14 @@ public class GameEnder : MonoBehaviour
     {
         if (Debugging)
             Debug.Log(GetType() + ": Starting Fadeout, duration: "+FadeTime);
-
+        /*
         initialSkyboxExposure = RenderSettings.skybox.GetFloat("_Exposure");
         float startTimeStamp = Time.time;
         float fadeTimestamp = Time.time + FadeTime;
-
+        */
+        Fader.SetTrigger("FadeOut");
+       yield return new WaitForSeconds(FadeTime);
+        /*
         float t = 0;
         while (t < FadeTime)
         {
@@ -70,6 +74,6 @@ public class GameEnder : MonoBehaviour
 
             yield return null;
         }
-
+        */
     }
 }
