@@ -141,12 +141,12 @@ public class WorldTimer : MonoBehaviour
         int removeIndex = -1;
         foreach (var timed in TimedEvents )
         {
-            if (timed.Time*60 < timeProgressed)
+            if ((timed.Minutes * 60) + timed.Seconds < timeProgressed)
             {
                 timed.Function.Invoke();
                 removeIndex = TimedEvents.IndexOf(timed);
                 if (Debugging)
-                    Debug.Log(GetType() + ": removed item " + removeIndex + " at time " + timeProgressed+", Item Time:"+timed.Time*60);
+                    Debug.Log(GetType() + ": removed item " + removeIndex + " at time " + timeProgressed + ", Item Time:" + (timed.Minutes * 60) + timed.Seconds);
             }
 
         }
@@ -159,7 +159,9 @@ public class WorldTimer : MonoBehaviour
 [System.Serializable]
 public struct TimedEvent
 {
-    public int Time;
+    public int Minutes;
+    [Range(0, 60)]
+    public int Seconds;
     public UnityEvent Function;
 
     [HideInInspector]
