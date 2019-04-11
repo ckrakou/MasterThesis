@@ -10,6 +10,8 @@ public class MusicControl : MonoBehaviour
     public AudioSource RoomTone;
     public AudioSource EerieMusic;
 
+    public AudioSource PreDeathMusic;
+
     public AudioSource Gong;
     public bool preloadAudioData; 
 
@@ -63,6 +65,11 @@ public class MusicControl : MonoBehaviour
     EerieMusic.Play();
     StartCoroutine(FadeUp(EerieMusic,FadeTime)); 
     }
+  public void PlayPreDeathMusic(int FadeTime){
+    PreDeathMusic.Play();
+    StartCoroutine(FadeUp(PreDeathMusic,FadeTime)); 
+    }
+
 public void PlayAngelSynth(int FadeTime){
     AngelSynth.Play();
     StartCoroutine(FadeUp(AngelSynth,FadeTime)); 
@@ -84,6 +91,9 @@ public void PlayAngelSynth(int FadeTime){
 
     public void FadeOutErieMusic(int FadeTime){
             StartCoroutine(FadeOut(EerieMusic,FadeTime));  
+    }
+     public void FadeOutPreDeathTime(int FadeTime){
+            StartCoroutine(FadeOut(PreDeathMusic,FadeTime));  
     }
     public void FadeOutAngelSynth(int FadeTime){
             StartCoroutine(FadeOut(AngelSynth,FadeTime));  

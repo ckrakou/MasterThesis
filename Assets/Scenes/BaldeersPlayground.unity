@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.14017107, g: 0.01930065, b: 0.027728202, a: 1}
+  m_IndirectSpecularColor: {r: 0.058593933, g: 0.008068388, b: 0.011591321, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -312,7 +312,7 @@ PrefabInstance:
     - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
         type: 3}
       propertyPath: PlayTime
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
         type: 3}
@@ -354,7 +354,7 @@ PrefabInstance:
     - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
         type: 3}
       propertyPath: Debugging
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
         type: 3}
@@ -2162,16 +2162,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2ecc6dcc8e14f98ad0ef48708af650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Post: {fileID: 0}
-  DepriPost: {fileID: 0}
-  MonsterPost: {fileID: 0}
   Light: {fileID: 1671244692}
   Particles: {fileID: 1478085350}
   WorldMonument: {fileID: 1414642895}
   GlitchSound: {fileID: 1923834566}
   Speak: {fileID: 270543539}
   MonsterSound: {fileID: 0}
-  MonsterCam: {fileID: 0}
   PlayerCam: {fileID: 0}
 --- !u!4 &273798861 stripped
 Transform:
@@ -3085,16 +3081,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2ecc6dcc8e14f98ad0ef48708af650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Post: {fileID: 0}
-  DepriPost: {fileID: 0}
-  MonsterPost: {fileID: 0}
   Light: {fileID: 1422151559}
   Particles: {fileID: 450867458}
   WorldMonument: {fileID: 30634694}
   GlitchSound: {fileID: 230751662}
   Speak: {fileID: 1808693238}
   MonsterSound: {fileID: 0}
-  MonsterCam: {fileID: 0}
   PlayerCam: {fileID: 0}
 --- !u!4 &451558995 stripped
 Transform:
@@ -3120,7 +3112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a3a070408aa941ab83ae10be1708848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _intensity: 0
+  _intensity: 0.5
   _shader: {fileID: 4800000, guid: ba40dc630e1d9417cb9ea22586ece1e1, type: 3}
 --- !u!1 &467396158 stripped
 GameObject:
@@ -4487,16 +4479,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2ecc6dcc8e14f98ad0ef48708af650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Post: {fileID: 0}
-  DepriPost: {fileID: 0}
-  MonsterPost: {fileID: 0}
   Light: {fileID: 582944286}
   Particles: {fileID: 134498709}
   WorldMonument: {fileID: 1102099487}
   GlitchSound: {fileID: 296073798}
   Speak: {fileID: 1535175591}
   MonsterSound: {fileID: 0}
-  MonsterCam: {fileID: 0}
   PlayerCam: {fileID: 0}
 --- !u!4 &830614404 stripped
 Transform:
@@ -4545,7 +4533,7 @@ MonoBehaviour:
   preloadAudioData: 1
   DigitalGlitch: {fileID: 1859750071}
   AngelSynth: {fileID: 880575162}
-  Water: {fileID: 373575283}
+  EndGameMusic: {fileID: 0}
   DatamoshAudio:
   - {fileID: 8300000, guid: 9ef276a646a8f49429da848d3746ade9, type: 3}
   - {fileID: 8300000, guid: 2c1d3a2da8daf4cabbb1eb84e18f56c8, type: 3}
@@ -10729,16 +10717,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2ecc6dcc8e14f98ad0ef48708af650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Post: {fileID: 1089346231}
-  DepriPost: {fileID: 11400000, guid: ab754bae0e04d42b9a754912f1fb0f2d, type: 2}
-  MonsterPost: {fileID: 11400000, guid: a958c0df523544ef9b08cc3eaa6651dc, type: 2}
   Light: {fileID: 950257765}
   Particles: {fileID: 1200878516}
   WorldMonument: {fileID: 848634929}
   GlitchSound: {fileID: 939561225}
   Speak: {fileID: 306672993}
   MonsterSound: {fileID: 880806859}
-  MonsterCam: {fileID: 663958164}
   PlayerCam: {fileID: 454731887}
 --- !u!4 &1113336535 stripped
 Transform:
@@ -16170,16 +16154,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2ecc6dcc8e14f98ad0ef48708af650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Post: {fileID: 0}
-  DepriPost: {fileID: 0}
-  MonsterPost: {fileID: 0}
   Light: {fileID: 241568145}
   Particles: {fileID: 356359266}
   WorldMonument: {fileID: 599720202}
   GlitchSound: {fileID: 885684521}
   Speak: {fileID: 129771132}
   MonsterSound: {fileID: 0}
-  MonsterCam: {fileID: 0}
   PlayerCam: {fileID: 0}
 --- !u!4 &1310233233 stripped
 Transform:
@@ -18641,16 +18621,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2ecc6dcc8e14f98ad0ef48708af650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Post: {fileID: 0}
-  DepriPost: {fileID: 0}
-  MonsterPost: {fileID: 0}
   Light: {fileID: 690866929}
   Particles: {fileID: 968219346}
   WorldMonument: {fileID: 684159051}
   GlitchSound: {fileID: 2101235256}
   Speak: {fileID: 1097747786}
   MonsterSound: {fileID: 0}
-  MonsterCam: {fileID: 0}
   PlayerCam: {fileID: 0}
 --- !u!4 &2108805638 stripped
 Transform:
@@ -18707,6 +18683,80 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &4719402173378936300
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4719402172566497623, guid: 78134444be20645dda0b297f8b2c941c,
+        type: 3}
+      propertyPath: m_Name
+      value: VideoEye
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719402172566497617, guid: 78134444be20645dda0b297f8b2c941c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 274
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719402172566497617, guid: 78134444be20645dda0b297f8b2c941c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 154
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719402172566497617, guid: 78134444be20645dda0b297f8b2c941c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719402172566497617, guid: 78134444be20645dda0b297f8b2c941c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719402172566497617, guid: 78134444be20645dda0b297f8b2c941c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719402172566497617, guid: 78134444be20645dda0b297f8b2c941c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719402172566497617, guid: 78134444be20645dda0b297f8b2c941c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719402172566497617, guid: 78134444be20645dda0b297f8b2c941c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719402172566497617, guid: 78134444be20645dda0b297f8b2c941c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719402172566497617, guid: 78134444be20645dda0b297f8b2c941c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719402172566497617, guid: 78134444be20645dda0b297f8b2c941c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
+        type: 3}
+      propertyPath: m_TargetCamera
+      value: 
+      objectReference: {fileID: 1249417446}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 78134444be20645dda0b297f8b2c941c, type: 3}
 --- !u!1001 &5561984871434895156
 PrefabInstance:
   m_ObjectHideFlags: 0
