@@ -1,7 +1,10 @@
 function retry(isDone, next) {
-    var current_trial = 0, max_retry = 50, interval = 10, is_timeout = false;
+    var current_trial = 0,
+        max_retry = 50,
+        interval = 10,
+        is_timeout = false;
     var id = window.setInterval(
-        function() {
+        function () {
             if (isDone()) {
                 window.clearInterval(id);
                 next(is_timeout);
@@ -34,10 +37,10 @@ function detectPrivateMode(callback) {
     if (window.webkitRequestFileSystem) {
         window.webkitRequestFileSystem(
             window.TEMPORARY, 1,
-            function() {
+            function () {
                 is_private = false;
             },
-            function(e) {
+            function (e) {
                 console.log(e);
                 is_private = true;
             }
@@ -46,7 +49,7 @@ function detectPrivateMode(callback) {
         var db;
         try {
             db = window.indexedDB.open('test');
-        } catch(e) {
+        } catch (e) {
             is_private = true;
         }
 
@@ -67,14 +70,14 @@ function detectPrivateMode(callback) {
         try {
             if (!window.indexedDB) {
                 is_private = true;
-            }                 
+            }
         } catch (e) {
             is_private = true;
         }
     } else if (window.localStorage && /Safari/.test(window.navigator.userAgent)) {
         try {
             window.localStorage.setItem('test', 1);
-        } catch(e) {
+        } catch (e) {
             is_private = true;
         }
 

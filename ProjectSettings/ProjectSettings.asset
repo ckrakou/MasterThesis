@@ -77,7 +77,7 @@ PlayerSettings:
   hideHomeButton: 0
   submitAnalytics: 1
   usePlayerLog: 1
-  bakeCollisionMeshes: 1
+  bakeCollisionMeshes: 0
   forceSingleInstance: 0
   resizableWindow: 0
   useMacAppStoreValidation: 0
@@ -120,18 +120,20 @@ PlayerSettings:
     Others: 1
   bundleVersion: 0.1
   preloadedAssets:
-  - {fileID: 4467928605519189906, guid: 7921f491cb9a54a1aa046e59aec64375, type: 3}
-  - {fileID: 3149489213051044084, guid: 51a1489c12a0a4a078a41183d06eec11, type: 3}
-  - {fileID: 7019766676498630090, guid: 6afcc7d56f2134737ac8ab5b71deea4a, type: 3}
-  - {fileID: 3552887746142606144, guid: 2195f1d13a65c4768821180a19812412, type: 3}
-  - {fileID: 999879884660642299, guid: 87fcfc9bff5404285bf45d9389b14747, type: 3}
-  - {fileID: 6104632560172640181, guid: 3898e65fa39004f3e9502559ed687e50, type: 3}
-  - {fileID: 4421364994205197603, guid: ef44426152fb4432caba00e69f6741c4, type: 3}
-  - {fileID: 1772691960884353434, guid: 7b2f4c1f5afbd4e39b6fd825b404f4c0, type: 3}
-  - {fileID: 1772691960884353434, guid: 8ac18ebb9a5e24903926645733210748, type: 3}
+  - {fileID: 7581234355332639907, guid: d2f8f90a9af35bf4f9ee8777ff41d998, type: 3}
+  - {fileID: 7530620472401747793, guid: cad0fd13545ed034b9254526fa4e35af, type: 3}
+  - {fileID: 3941335591409522460, guid: c596f7b964215024394f165bc6a2028d, type: 3}
+  - {fileID: 8944948961227266562, guid: 9bc49e0fcfc404e4693a057d44e03ff5, type: 3}
+  - {fileID: 5495207093776968010, guid: b25d750dda65da041a12cb9410e4e6b3, type: 3}
+  - {fileID: 7020925761892687815, guid: 1ac22042a622f2747bbf8b0d4b6e4ba0, type: 3}
+  - {fileID: 6044979650538798058, guid: b7d1456f2d2af094599bd1e3056a1166, type: 3}
+  - {fileID: 6545358620500823381, guid: 7beee22ac2ac74acb99974331151ba52, type: 3}
+  - {fileID: 5916761818430934788, guid: e12fd9a0f6c984431897163e127b67ef, type: 3}
   - {fileID: 8300000, guid: a7d6ab1bae4324cfe981b1d8eb92f172, type: 3}
   - {fileID: 8300000, guid: 66797d5fd25244f39ac9f6c42b557cf8, type: 3}
-  - {fileID: 8323165137423683523, guid: 97d079814a6d8470983dc2e2f3d0f02a, type: 3}
+  - {fileID: 5561984872749756277, guid: 14fb1a07fe9e8425fbe6798b20e95ef4, type: 3}
+  - {fileID: 904567281543684667, guid: dc991f5fea06d427590491216dcf6875, type: 3}
+  - {fileID: 904567281543684667, guid: 443b96ff3137e4fff87b3cc8041aba94, type: 3}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -519,7 +521,7 @@ PlayerSettings:
   ps4attribEyeToEyeDistanceSettingVR: 0
   ps4IncludedModules: []
   monoEnv: 
-  splashScreenBackgroundSourceLandscape: {fileID: 21300000, guid: fe101ed6b67e04e48809d4e255127f68,
+  splashScreenBackgroundSourceLandscape: {fileID: 21300000, guid: 345e414b56c514fb8a5b19b6cd84ba88,
     type: 3}
   splashScreenBackgroundSourcePortrait: {fileID: 0}
   spritePackerPolicy: 
@@ -530,7 +532,7 @@ PlayerSettings:
   webGLDebugSymbols: 0
   webGLEmscriptenArgs: 
   webGLModulesDirectory: 
-  webGLTemplate: PROJECT:BetterTemplate
+  webGLTemplate: PROJECT:StrawberryVale
   webGLAnalyzeBuildSize: 0
   webGLUseEmbeddedResources: 0
   webGLCompressionFormat: 1
