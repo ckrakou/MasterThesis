@@ -79,7 +79,7 @@ public class FileUpload : MonoBehaviour
             //WelcomeText.SetActive(false);
             ResponseText.SetActive(true);
 
-            StartCoroutine( fader.FadeResponse(FailureMessages[UnityEngine.Random.Range((int)0, FailureMessages.Length - 1)]));
+            fader.FadeResponse(FailureMessages[UnityEngine.Random.Range((int)0, FailureMessages.Length - 1)]);
 
             //ResponseText.GetComponentInChildren<Text>().text = FailureMessages[UnityEngine.Random.Range((int)0, FailureMessages.Length - 1)];
         }

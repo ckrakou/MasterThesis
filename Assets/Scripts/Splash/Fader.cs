@@ -46,22 +46,30 @@ public class Fader : MonoBehaviour
         FadeImage.color = color;
         FadeImage.DOFade(0f, FadeTime).onComplete += new TweenCallback(FadeInText);
 
-        Button.DOFade(initialTextAlpha, FadeTime);
-        Header.DOFade(255, FadeTime);
+        //Button.DOFade(initialTextAlpha, FadeTime);
+        //Header.DOFade(255, FadeTime);
         //Response.text = "";
         //Response.DOFade(0, FadeTime);
 
     }
 
-    public IEnumerator FadeResponse(string response)
+    public void FadeResponse(string response)
     {
         this.response = response;
         Debug.Log("RESPONSE IS NOW " + response);
 
+        FadeImage.enabled = true;
+        Color color = FadeImage.color;
+        color.a = 1;
+
+        FadeImage.color = color;
+        FadeImage.DOFade(0f, FadeTime).onComplete += new TweenCallback(FadeInResponse);
+
+        /*
         Color c = Response.color;
         c.a = 0;
         Response.color = c;
-
+        
         Button.DOFade(0, FadeTime);
         Response.text = response;
         
@@ -71,9 +79,9 @@ public class Fader : MonoBehaviour
 
         yield return new WaitForSeconds(FadeTime);
         Response.DOFade(initialTextAlpha, FadeTime);
+        */
 
 
-        
     }
 
 
@@ -85,6 +93,12 @@ public class Fader : MonoBehaviour
         Response.DOFade(initialTextAlpha, FadeTime);
 
 
+    }
+
+    public void FadeInResponse()
+    {
+        Welcome.DOFade(initialTextAlpha, FadeTime);
+        Response.DOFade(initialTextAlpha, FadeTime);
     }
 
     public void FadeOut()

@@ -25,7 +25,6 @@ public class GameUnlocker : MonoBehaviour
         {
 
 
-            fader.FadeIn();
 
             if (Debugging)
                 Debug.Log(GetType() + ": " + idTest.RejectionMessages[Random.Range((int)0, idTest.RejectionMessages.Length - 1)]);
@@ -34,10 +33,11 @@ public class GameUnlocker : MonoBehaviour
         }
         else
         {
-            fader.FadeInText();
+            //fader.FadeInText();
+            fader.FadeIn();
 
         }
-
+        /*
         if (GetComponent<IdentityTester>().KeyFound)
         {
             if (Debugging)
@@ -48,6 +48,7 @@ public class GameUnlocker : MonoBehaviour
             //GetComponent<FileUpload>().WelcomeText.SetActive(true);
             GetComponent<FileUpload>().enabled = false;
         }
+        */
     }
 
     public void UnlockMainScene()

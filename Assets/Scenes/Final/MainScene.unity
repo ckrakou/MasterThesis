@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.16866742, g: 0.023224462, b: 0.033364598, a: 1}
+  m_IndirectSpecularColor: {r: 0.05713381, g: 0.007867082, b: 0.0113020735, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -17261,7 +17261,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1287865293}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 21f062c1f6ad5432186d9bf93bfac459, type: 3}
   m_Name: 
@@ -19599,6 +19599,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: VideoEye
       objectReference: {fileID: 0}
+    - target: {fileID: 4719402172566497623, guid: 78134444be20645dda0b297f8b2c941c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
+        type: 3}
+      propertyPath: m_TargetCamera
+      value: 
+      objectReference: {fileID: 1249417446}
     - target: {fileID: 4719402172566497617, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19654,11 +19664,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
-        type: 3}
-      propertyPath: m_TargetCamera
-      value: 
-      objectReference: {fileID: 1249417446}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78134444be20645dda0b297f8b2c941c, type: 3}
 --- !u!1 &1834497389
@@ -21250,6 +21255,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1729931747, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
+      propertyPath: Debugging
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1343156178, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
       propertyPath: EnterDatamoshCollider.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -21266,10 +21275,6 @@ PrefabInstance:
       propertyPath: UI
       value: 
       objectReference: {fileID: 995139890}
-    - target: {fileID: 1729931747, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
-      propertyPath: Debugging
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6460607991040989493, guid: f5f56e76ccdfe4d378cc779cd4924e60,
         type: 3}
       propertyPath: m_WalkSpeed
