@@ -12,7 +12,7 @@ public class IdentityTester : MonoBehaviour
     public string Key;
     public string IdentityString;
     public string[] RejectionMessages;
-    public Text ResponseText;
+    //public Text ResponseText;
 
     //[HideInInspector]
     public bool KeyFound = false;
@@ -31,7 +31,7 @@ public class IdentityTester : MonoBehaviour
                 Debug.Log(GetType() + ": found key " + Key);
 
             //ResponseText.SetActive(true);
-            ResponseText.text = RejectionMessages[UnityEngine.Random.Range((int)0, RejectionMessages.Length - 1)];
+            //ResponseText.text = RejectionMessages[UnityEngine.Random.Range((int)0, RejectionMessages.Length - 1)];
 
 
         }

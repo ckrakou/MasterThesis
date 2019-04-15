@@ -11,9 +11,9 @@ public class FileUpload : MonoBehaviour
 {
     public bool debugging = false;
     public string[] FailureMessages;
-    public GameObject Button;
+    //public GameObject Button;
     //public GameObject WelcomeText;
-    public GameObject ResponseText;
+    //public GameObject ResponseText;
 
     private Fader fader;
 
@@ -61,8 +61,8 @@ public class FileUpload : MonoBehaviour
                 Debug.Log("FileUpload: File identified successfully");
 
             //WelcomeText.SetActive(true);
-            ResponseText.SetActive(false);
-            Button.GetComponent<Button>().interactable = false;
+            //ResponseText.SetActive(false);
+            //Button.GetComponent<Button>().interactable = false;
             Cursor.visible = false;
 
             unlocker.UnlockMainScene();
@@ -75,13 +75,7 @@ public class FileUpload : MonoBehaviour
             if(!debugging)
                 db.RegisterFailedLogin();
 
-            //Button.SetActive(false);
-            //WelcomeText.SetActive(false);
-            ResponseText.SetActive(true);
-
-            fader.FadeResponse(FailureMessages[UnityEngine.Random.Range((int)0, FailureMessages.Length - 1)]);
-
-            //ResponseText.GetComponentInChildren<Text>().text = FailureMessages[UnityEngine.Random.Range((int)0, FailureMessages.Length - 1)];
+            fader.FadeToBadFile(FailureMessages[UnityEngine.Random.Range(0, FailureMessages.Length - 1)]);
         }
 
     }
