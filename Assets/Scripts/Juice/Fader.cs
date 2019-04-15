@@ -30,8 +30,7 @@ public class Fader : MonoBehaviour
         StartButton.interactable = true;
 
         Overlay.DOFade(0, FadeTime);
-        Header.DOFade(HeaderAlpha / 255, FadeTime);
-        StartButton.image.DOFade(StartButtonAlpha / 255, FadeTime);
+        Header.DOFade(HeaderAlpha / 255, FadeTime).OnComplete(new TweenCallback(FadeInButton));
     }
 
     public void FadeInKeyFound(string response)
@@ -41,7 +40,7 @@ public class Fader : MonoBehaviour
 
         Overlay.DOFade(0, FadeTime);
         Header.DOFade(HeaderAlpha/255, FadeTime);
-        Response.DOFade(ResponseAlpha/255, FadeTime);
+        FadeInResponseText();
     }
 
     public void FadeToBadFile(string response)
@@ -49,17 +48,34 @@ public class Fader : MonoBehaviour
         StartButton.interactable = false;
         Response.text = response;
 
-        StartButton.image.DOFade(0, FadeTime);
-        Response.DOFade(ResponseAlpha / 255, FadeTime);
+        StartButton.image.DOFade(0, FadeTime).OnComplete(new TweenCallback(FadeInResponseText));
     }
 
     public void FadeOut()
     {
         StartButton.interactable = false;
 
-        Overlay.DOFade(OverlayAlpha / 255, FadeTime);
         StartButton.GetComponent<Image>().DOFade(0, FadeTime);
         Header.DOFade(0, FadeTime);
-        Response.DOFade(0, FadeTime);
+        Response.DOFade(0, FadeTime).OnComplete(new TweenCallback(FadeOutOverlay));
+    }
+
+    /*
+        Methods for fading in steps
+    */
+
+    private void FadeInResponseText()
+    {
+        Response.DOFade(ResponseAlpha / 255, FadeTime);
+    }
+
+    private void FadeInButton()
+    {
+        StartButton.image.DOFade(StartButtonAlpha / 255, FadeTime);
+    }
+
+    private void FadeOutOverlay()
+    {
+        Overlay.DOFade(OverlayAlpha / 255, FadeTime);
     }
 }

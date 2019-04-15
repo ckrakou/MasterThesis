@@ -21,8 +21,7 @@ public class GameUnlocker : MonoBehaviour
         if (idTest.KeyFound)
         {
 
-            if (Debugging)
-                Debug.Log(GetType() + ": " + idTest.RejectionMessages[Random.Range((int)0, idTest.RejectionMessages.Length - 1)]);
+            
 
             fader.FadeInKeyFound(idTest.RejectionMessages[Random.Range(0,idTest.RejectionMessages.Length - 1)]);
         }
@@ -36,22 +35,15 @@ public class GameUnlocker : MonoBehaviour
 
     public void UnlockMainScene()
     {
-
-        if (GetComponent<IdentityTester>().KeyFound == false)
-        {
+        // Double-check in case of external calls
+        if(idTest.KeyFound == false)
             StartCoroutine(UnlockThread());
-        }
-        else
-        {
-            if (Debugging)
-                Debug.Log(GetType() + ": Key found, not loading");
-        }
     }
 
     private IEnumerator UnlockThread()
     {
         fader.FadeOut();
-        yield return new WaitForSeconds(fader.FadeTime);
+        yield return new WaitForSeconds(fader.FadeTime * 2);
 
         PlayerPrefs.SetString(idTest.Key, idTest.IdentityString);
         PlayerPrefs.Save();

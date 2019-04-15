@@ -60,11 +60,7 @@ public class FileUpload : MonoBehaviour
             if (debugging)
                 Debug.Log("FileUpload: File identified successfully");
 
-            //WelcomeText.SetActive(true);
-            //ResponseText.SetActive(false);
-            //Button.GetComponent<Button>().interactable = false;
             Cursor.visible = false;
-
             unlocker.UnlockMainScene();
         }
         else
