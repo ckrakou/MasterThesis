@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.16868097, g: 0.023225851, b: 0.03336659, a: 1}
+  m_IndirectSpecularColor: {r: 0.05650923, g: 0.0077813286, b: 0.011178916, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -16908,6 +16908,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WorldMonument2
       objectReference: {fileID: 0}
+    - target: {fileID: 7530620472401747690, guid: cad0fd13545ed034b9254526fa4e35af,
+        type: 3}
+      propertyPath: m_DataSource
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7530620472401747741, guid: cad0fd13545ed034b9254526fa4e35af,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20388,6 +20393,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  FifthWorldMonumentVisited:
+    m_PersistentCalls:
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &1893743564
