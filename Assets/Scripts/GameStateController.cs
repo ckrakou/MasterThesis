@@ -11,6 +11,7 @@ public class GameStateController : MonoBehaviour
     public UnityEvent TwoWorldMonumentVisited;
     public UnityEvent ThreeWorldMonumentVisited;
     public UnityEvent FourWorldMonumentVisited;
+    public UnityEvent FifthWorldMonumentVisited;
 
     
 
@@ -35,6 +36,10 @@ public class GameStateController : MonoBehaviour
                   case 4:
                  FourWorldMonumentVisited.Invoke();
                  Debug.Log("4 Monuments visited!");
+                 break;
+                    case 5:
+                 FifthWorldMonumentVisited.Invoke();
+                 Debug.Log("5 Monuments visited!");
                  break;
              }
     }

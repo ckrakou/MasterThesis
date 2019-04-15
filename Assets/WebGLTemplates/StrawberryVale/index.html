@@ -156,7 +156,7 @@
                     document.getElementById('loader').style.display = "none";
                     document.getElementById('gameContainer').style.display = "none";
                 } else {
-                    var gameInstance = UnityLoader.instantiate("gameContainer", "Build/strawberrytest.json", {
+                    var gameInstance = UnityLoader.instantiate("gameContainer", "%UNITY_WEBGL_BUILD_URL%", {
                         onProgress: UnityProgress
                     });
                     document.getElementById('result').style.display = "none";
