@@ -14721,7 +14721,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameUnlocker
       objectReference: {fileID: 0}
+    - target: {fileID: 1269388036, guid: 4a907ff6c901ce74a98721411d946d88, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1695676742, guid: 4a907ff6c901ce74a98721411d946d88, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 386213364, guid: 4a907ff6c901ce74a98721411d946d88, type: 3}
       propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
@@ -14805,6 +14813,11 @@ PrefabInstance:
       propertyPath: Button
       value: 
       objectReference: {fileID: 1199273350}
+    - target: {fileID: 7212383128361749919, guid: 4a907ff6c901ce74a98721411d946d88,
+        type: 3}
+      propertyPath: debugging
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1255727257, guid: 4a907ff6c901ce74a98721411d946d88, type: 3}
       propertyPath: Welcome
       value: 
@@ -14826,13 +14839,18 @@ PrefabInstance:
       propertyPath: ResponseText
       value: 
       objectReference: {fileID: 1950622831}
+    - target: {fileID: 7212383128361749890, guid: 4a907ff6c901ce74a98721411d946d88,
+        type: 3}
+      propertyPath: Debugging
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 69819858, guid: 4a907ff6c901ce74a98721411d946d88, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 69819858, guid: 4a907ff6c901ce74a98721411d946d88, type: 3}
       propertyPath: m_Color.a
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 69819858, guid: 4a907ff6c901ce74a98721411d946d88, type: 3}
       propertyPath: m_Sprite
@@ -14853,9 +14871,71 @@ PrefabInstance:
       propertyPath: SceneToLoad
       value: MainScene
       objectReference: {fileID: 0}
+    - target: {fileID: 7212383128361749918, guid: 4a907ff6c901ce74a98721411d946d88,
+        type: 3}
+      propertyPath: Debugging
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 69819857, guid: 4a907ff6c901ce74a98721411d946d88, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7212383128361749891, guid: 4a907ff6c901ce74a98721411d946d88,
+        type: 3}
+      propertyPath: Debugging
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1255727257, guid: 4a907ff6c901ce74a98721411d946d88, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4a907ff6c901ce74a98721411d946d88, type: 3}
+--- !u!1 &4135223773248923648 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7212383128361749889, guid: 4a907ff6c901ce74a98721411d946d88,
+    type: 3}
+  m_PrefabInstance: {fileID: 4135223773248923647}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4135223773248923649 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1695676741, guid: 4a907ff6c901ce74a98721411d946d88,
+    type: 3}
+  m_PrefabInstance: {fileID: 4135223773248923647}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199273350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4135223773248923650 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 69819858, guid: 4a907ff6c901ce74a98721411d946d88,
+    type: 3}
+  m_PrefabInstance: {fileID: 4135223773248923647}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4135223773248923651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4135223773248923648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43e3a942dfc5ae3429f010bf6ea90146, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FadeTime: 2.5
+  Overlay: {fileID: 4135223773248923650}
+  OverlayAlpha: 255
+  StartButton: {fileID: 4135223773248923649}
+  StartButtonAlpha: 235
+  Header: {fileID: 174480577}
+  HeaderAlpha: 239
+  Response: {fileID: 1950622831}
+  ResponseAlpha: 239

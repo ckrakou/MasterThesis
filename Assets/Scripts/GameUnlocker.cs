@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class GameUnlocker : MonoBehaviour
 {
     public bool Debugging;
-    public float FadeTime = 0.5f;
     public string SceneToLoad;
 
     private Fader fader;
@@ -15,60 +14,36 @@ public class GameUnlocker : MonoBehaviour
 
     private void Start()
     {
-        fader = GetComponent<Fader>();
-        fader.FadeTime = FadeTime;
 
         idTest = GetComponent<IdentityTester>();
-
+        fader = GetComponent<Fader>();
 
         if (idTest.KeyFound)
         {
 
+            
 
-
-            if (Debugging)
-                Debug.Log(GetType() + ": " + idTest.RejectionMessages[Random.Range((int)0, idTest.RejectionMessages.Length - 1)]);
-
-            fader.FadeResponse(idTest.RejectionMessages[Random.Range((int)0, idTest.RejectionMessages.Length - 1)]);
+            fader.FadeInKeyFound(idTest.RejectionMessages[Random.Range(0,idTest.RejectionMessages.Length - 1)]);
         }
         else
         {
-            //fader.FadeInText();
-            fader.FadeIn();
+            fader.FadeInPlayable();
 
         }
-        /*
-        if (GetComponent<IdentityTester>().KeyFound)
-        {
-            if (Debugging)
-                Debug.Log(GetType() + ": Key found, disabling button");
-
-
-            GetComponent<FileUpload>().Button.GetComponent<Button>().interactable = false;
-            //GetComponent<FileUpload>().WelcomeText.SetActive(true);
-            GetComponent<FileUpload>().enabled = false;
-        }
-        */
+        
     }
 
     public void UnlockMainScene()
     {
-
-        if (GetComponent<IdentityTester>().KeyFound == false)
-        {
+        // Double-check in case of external calls
+        if(idTest.KeyFound == false)
             StartCoroutine(UnlockThread());
-        }
-        else
-        {
-            if (Debugging)
-                Debug.Log(GetType() + ": Key found, not loading");
-        }
     }
 
     private IEnumerator UnlockThread()
     {
-        fader.FadeOutText();
-        yield return new WaitForSeconds(FadeTime);
+        fader.FadeOut();
+        yield return new WaitForSeconds(fader.FadeTime * 2);
 
         PlayerPrefs.SetString(idTest.Key, idTest.IdentityString);
         PlayerPrefs.Save();
