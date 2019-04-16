@@ -77,11 +77,11 @@ public class SQLDatabaseConnection : MonoBehaviour
         {
             yield return www.SendWebRequest();
 
-            Debug.Log(www.downloadHandler.text);
+            //Debug.Log(www.downloadHandler.text);
 
             if (www.downloadHandler.text == "0: Sucess!")
             {
-                Debug.Log("logintime sucessfully stored in database");
+                //Debug.Log("logintime sucessfully stored in database");
 
             }
         }
@@ -96,11 +96,11 @@ public class SQLDatabaseConnection : MonoBehaviour
         {
             yield return www.SendWebRequest();
 
-            Debug.Log(www.downloadHandler.text);
+            //Debug.Log(www.downloadHandler.text);
 
             if (www.downloadHandler.text == "0: Sucess!")
             {
-                Debug.Log("failed login sucessfully stored in database");
+               // Debug.Log("failed login sucessfully stored in database");
 
             }
         }
@@ -128,11 +128,11 @@ public class SQLDatabaseConnection : MonoBehaviour
         {
             yield return www.SendWebRequest();
 
-            Debug.Log(www.downloadHandler.text);
+            //Debug.Log(www.downloadHandler.text);
 
             if (www.downloadHandler.text == "0: Sucess!")
             {
-                Debug.Log("Deathcoordinates sucessfully stored in database");
+               // Debug.Log("Deathcoordinates sucessfully stored in database");
 
             }
         }
@@ -148,13 +148,12 @@ public class SQLDatabaseConnection : MonoBehaviour
 
         if (www.isNetworkError || www.isHttpError)
         {
-            Debug.Log(www.error);
+           // Debug.Log(www.error);
         }
         else
         {
 
 
-            //Debug.Log(www.downloadHandler.text);
             //  retrieve results as string
             string[] results = www.downloadHandler.text.Split('\t'); ;
             SpawnTrees(results);
@@ -165,7 +164,6 @@ public class SQLDatabaseConnection : MonoBehaviour
     public void SpawnTrees(string[] recievedData)
     {
         int lengthoftable = recievedData.Length - 1;
-        Debug.Log("Number of trees spawned"+recievedData.Length);
         for (int i = 0; i < lengthoftable; i++)
         {
             string[] xyz = recievedData[i].Split('_');
@@ -183,16 +181,7 @@ public class SQLDatabaseConnection : MonoBehaviour
             GameObject graveObject = Instantiate(DeadPlayers, position, rotation, this.transform);
             graveObject.transform.localScale = scale;
 
-            /*
-            float NewLogSize = playtime / 300;
-            Vector3 vec = new Vector3(x, 0 + NewLogSize / 2, z);
-            int ramdomLogY = Random.Range(-180, 180);
-            Quaternion LogSpawnRotation = Quaternion.Euler(0, ramdomLogY, 0);
-
-            GameObject newObject = Instantiate(DeadPlayers, vec, LogSpawnRotation) as GameObject;
-            newObject.transform.localScale = new Vector3(NewLogSize, NewLogSize, NewLogSize);
-            */
-
+           
 
 
 

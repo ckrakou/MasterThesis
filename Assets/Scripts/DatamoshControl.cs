@@ -40,7 +40,7 @@ public class DatamoshControl : MonoBehaviour
               FPSCam.GetComponent<Kino.AnalogGlitch>().verticalJump = Random.Range(01f,0.95f);
               FPSCam.GetComponent<Kino.AnalogGlitch>().colorDrift = Random.Range(01f,0.95f);
 
-               Debug.Log("Analog glitch!");
+               //Debug.Log("Analog glitch!");
            }
            }
          
@@ -53,11 +53,11 @@ public class DatamoshControl : MonoBehaviour
          if(target.tag == "DatamoshCollider")
          {
          ExitDatamoshCollider.Invoke();
-         Debug.Log("Remove Glitch!");
+         //Debug.Log("Remove Glitch!");
          }
           if(target.tag == "AnalogGlitchCollider"){
             FPSCam.GetComponent<Kino.AnalogGlitch>().enabled=false;
-              Debug.Log("Remove Analog glitch");
+           //   Debug.Log("Remove Analog glitch");
         }
         
 

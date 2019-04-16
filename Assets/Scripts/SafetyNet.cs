@@ -15,7 +15,7 @@ public class SafetyNet : MonoBehaviour
      {
          if(target.tag == "Player")
          {
-          Debug.Log("hit saftynet");
+          //Debug.Log("hit saftynet");
            HitSaftynet.Invoke();
 
           PlayerPrefab.GetComponent<CharacterController>().enabled = false;
