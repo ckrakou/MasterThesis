@@ -9867,11 +9867,11 @@ VideoPlayer:
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 793649250}
-  m_TargetTexture: {fileID: 0}
+  m_TargetTexture: {fileID: 8600000, guid: 4d5fc65aaeab77444b2274babb8888b8, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: _MainTex
-  m_RenderMode: 0
+  m_RenderMode: 2
   m_AspectRatio: 2
   m_DataSource: 1
   m_PlaybackSpeed: 1
@@ -14876,6 +14876,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -274
       objectReference: {fileID: 0}
+    - target: {fileID: 386213363, guid: 4a907ff6c901ce74a98721411d946d88, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 717001158423609886, guid: 4a907ff6c901ce74a98721411d946d88,
         type: 3}
       propertyPath: m_IsActive
@@ -14898,6 +14902,32 @@ PrefabInstance:
     - target: {fileID: 7212383128361749891, guid: 4a907ff6c901ce74a98721411d946d88,
         type: 3}
       propertyPath: Debugging
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 913613088, guid: 4a907ff6c901ce74a98721411d946d88, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291268730614573974, guid: 4a907ff6c901ce74a98721411d946d88,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1269388035, guid: 4a907ff6c901ce74a98721411d946d88, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 69819860, guid: 4a907ff6c901ce74a98721411d946d88, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695676740, guid: 4a907ff6c901ce74a98721411d946d88, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5489396091250713395, guid: 4a907ff6c901ce74a98721411d946d88,
+        type: 3}
+      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
