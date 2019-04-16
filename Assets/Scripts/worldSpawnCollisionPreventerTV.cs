@@ -20,6 +20,7 @@ public class worldSpawnCollisionPreventerTV : MonoBehaviour
 
     void Start()
     {
+        video.url = System.IO.Path.Combine(Application.streamingAssetsPath, "TVShows.webm");
         video.Prepare();
     }
 
@@ -62,7 +63,6 @@ public class worldSpawnCollisionPreventerTV : MonoBehaviour
         }
 
         GlitchSound.Stop();
-        video.url = System.IO.Path.Combine(Application.streamingAssetsPath, "TVShows_2.webm");
         video.Play();
         Destroy(Light);
         Destroy(Particles);

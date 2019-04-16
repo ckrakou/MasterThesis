@@ -13,6 +13,8 @@ public class SuperFunControl : MonoBehaviour
     
     public Camera PlayerCam;
 
+    public AudioSource MonkeyMusic;
+
 
     public PostProcessVolume Post;
     public PostProcessProfile HappyPost;
@@ -53,6 +55,9 @@ public class SuperFunControl : MonoBehaviour
     {
       //Post.profile=DepriPost;
       SetupFunworld();
+      if(MonkeyMusic.isPlaying){
+         MonkeyMusic.Stop();
+      }
        if(GameStateManager.TimesInSuperFunWorld==1){
               StartCoroutine(StuffThatHappensBeforeReturningFirstTime(Random.Range(2,10),1));
               

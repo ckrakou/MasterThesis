@@ -44,6 +44,12 @@ public class MusicControl : MonoBehaviour
             EerieMusic.volume=0.0f;
 
     }
+     public void StopMusic(){
+            RoomTone.Stop();
+            AngelSynth.Stop();
+            EerieMusic.Stop();
+
+    }
     public void TurnUpMusic(){
             RoomTone.volume=0.7f;
             AngelSynth.volume=0.1f;

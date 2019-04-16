@@ -6,29 +6,38 @@ using UnityEngine.Events;
 
 public class videoEye : MonoBehaviour
 {
-    public VideoPlayer video;
-    public GameObject VideoObject;
+    private VideoPlayer video;
+    public GameObject[] VideoObjects;
+
+     private int RandomVideo;
+     private bool DestroyEverything = false;
 
     public UnityEvent VideoEyeEvents;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        video.Prepare();
-        VideoObject.SetActive(false);
+       
+        RandomVideo=Random.Range(0,7);
+        video = VideoObjects[RandomVideo].GetComponent<VideoPlayer>();
+        for(int i=0; i<7;i++){
+         VideoObjects[i].SetActive(false);
+        }
     }
 
 void Update(){
-    if(Input.GetMouseButtonDown(0)){
-        PlayEyeVideo();
+    if(DestroyEverything){
+        if(!video.isPlaying){
+        Destroy(gameObject,0.1f);
+        }
     }
 }
 
     public void PlayEyeVideo(){
+        VideoObjects[RandomVideo].SetActive(true);
         VideoEyeEvents.Invoke();
-     VideoObject.SetActive(true);
-       video.Play();
-       float VideoLenght = (float)video.length;
-       Destroy(gameObject,VideoLenght+0.2f);
+        DestroyEverything = true;
+
+       
      
     }
    
