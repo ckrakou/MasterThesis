@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class WorldSpawn : MonoBehaviour
 {
+    // Skinny Puppy - Addiction
+    // truthism.com
+    // Charles Bukowski - Bluebird
+    // SCP 603
+    // Edgar Allan Poe - Alone
+    // Death shall have no dominion
+    // an english garden
+    // beginning of Agrippa 
+
     public string[] SpawnMessages;
 
     public GameObject[] WorldMonuments;
