@@ -36,11 +36,7 @@ public class videoEye : MonoBehaviour
                   Destroy(gameObject);
               }  
             }
-        }
-        if (Input.GetMouseButtonUp(0)){
-                 PlayEyeVideo();
-                 
-         }  
+        } 
     }
     public void PlayEyeVideo()
     {
