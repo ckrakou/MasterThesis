@@ -54,7 +54,8 @@ public class SuperFunControl : MonoBehaviour
       //Post.profile=DepriPost;
       SetupFunworld();
        if(GameStateManager.TimesInSuperFunWorld==1){
-              StartCoroutine(StuffThatHappensBeforeReturningFirstTime(Random.Range(2,10),1));
+
+            StartCoroutine(StuffThatHappensBeforeReturningFirstTime(Random.Range(2,10),1));
               
               MusicPlayer.clip=Music[0];
               MusicPlayer.Play();
@@ -139,8 +140,10 @@ public class SuperFunControl : MonoBehaviour
          PlayerCam.GetComponent<DigitalGlitch>().enabled=true;
          StartDigitalGlitch = true;
         
-        yield return new WaitForSeconds(timeToReturn);  
+        yield return new WaitForSeconds(timeToReturn);
         //call leave function
+        Debug.Log("NO! I want to stay. Don't make me leave! Please!");
+
        ReturnToOtherWorld();    
 
     }
@@ -156,34 +159,39 @@ public class SuperFunControl : MonoBehaviour
         PlayerCam.GetComponent<AnalogGlitch>().colorDrift=0.7f;
          PlayerCam.GetComponent<DigitalGlitch>().enabled=true;
          StartDigitalGlitch = true;
-         
-         
+
+        Debug.Log("Pleazae! This isaz where ibeleong!");
+
         yield return new WaitForSeconds(timeToReturn);  
         //call leave function
       GrowRainbow=false;
        ReturnToOtherWorld();    
 
     }
-       IEnumerator StuffThatHappensBeforeReturningThirdTime(int TimeBeforeGlitches, int timeToReturn){
-        yield return new WaitForSeconds(TimeBeforeGlitches); 
+    IEnumerator StuffThatHappensBeforeReturningThirdTime(int TimeBeforeGlitches, int timeToReturn)
+    {
+        yield return new WaitForSeconds(TimeBeforeGlitches);
         //start glitches and music before leaving
-           MusicPlayer.clip=glitch[2];
+        MusicPlayer.clip = glitch[2];
         MusicPlayer.Play();
-          PlayerCam.GetComponent<AnalogGlitch>().enabled=true;
-        PlayerCam.GetComponent<AnalogGlitch>().verticalJump=0.3f;
-        PlayerCam.GetComponent<AnalogGlitch>().scanLineJitter=0.9f;
-        PlayerCam.GetComponent<AnalogGlitch>().horizontalShake=0.7f;
-        PlayerCam.GetComponent<AnalogGlitch>().colorDrift=1f;
-         PlayerCam.GetComponent<DigitalGlitch>().enabled=true;
-         StartDigitalGlitch = true;
-        PlayerCam.GetComponent<AnalogGlitch>().enabled=true;
-        yield return new WaitForSeconds(timeToReturn);  
+        PlayerCam.GetComponent<AnalogGlitch>().enabled = true;
+        PlayerCam.GetComponent<AnalogGlitch>().verticalJump = 0.3f;
+        PlayerCam.GetComponent<AnalogGlitch>().scanLineJitter = 0.9f;
+        PlayerCam.GetComponent<AnalogGlitch>().horizontalShake = 0.7f;
+        PlayerCam.GetComponent<AnalogGlitch>().colorDrift = 1f;
+        PlayerCam.GetComponent<DigitalGlitch>().enabled = true;
+        StartDigitalGlitch = true;
+        PlayerCam.GetComponent<AnalogGlitch>().enabled = true;
+        yield return new WaitForSeconds(timeToReturn);
         //call leave function
-       ReturnToOtherWorld();    
+        ReturnToOtherWorld();
+
+        Debug.Log("NO!Ic3 06 1e b3 71  to &\\!!?.....0c 41 2d fe d2..? ++1FE LEAVE!");
+        
 
     }
 
-     IEnumerator StuffThatHappensBeforeReturningFourthTime(int TimeBeforeGlitches, int timeToReturn){
+    IEnumerator StuffThatHappensBeforeReturningFourthTime(int TimeBeforeGlitches, int timeToReturn){
         yield return new WaitForSeconds(TimeBeforeGlitches); 
         //start glitches and music before leaving
            MusicPlayer.clip=glitch[1];
@@ -198,7 +206,9 @@ public class SuperFunControl : MonoBehaviour
         PlayerCam.GetComponent<AnalogGlitch>().enabled=true;
         yield return new WaitForSeconds(timeToReturn);  
         //call leave function
-       ReturnToOtherWorld();    
+       ReturnToOtherWorld();
+
+        Debug.Log("NO! Ic3 06 NEVER LEAVE!");
 
     }
 
