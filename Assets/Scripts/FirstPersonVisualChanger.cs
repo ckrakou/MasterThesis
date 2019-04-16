@@ -175,6 +175,8 @@ public class FirstPersonVisualChanger : MonoBehaviour
         {
             controller.m_MouseLook.MinimumX = -90;
             controller.m_MouseLook.MaximumX = 90;
+
+            Debug.Log("W̹̹͖̲̟̦̬͝H̦͈A̠̰̲̥̗̞͢T̟̩̤͇̰̪͉ ̵̘̤̥͔̙H̺̲̤A̴͕̗͍͎͙V̸͓͔̯̱Ẹ ̫̞͔̠͖̟͟Y̬̪̟͚͕͇̰O͇̥͜Ṷ̶͉̣͕͍ ͉͈͕ͅͅD̬̭͕͝O͎͙̣N̯̖̞̫͕̝̰E͍̰̮ ̺̠̦T̯͡O̪͇͞ ̻͉̣̟M̝̟͘Ȩ͎̩̲͔");
         }
         else
         {

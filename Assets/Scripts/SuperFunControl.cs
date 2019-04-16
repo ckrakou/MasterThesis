@@ -160,8 +160,6 @@ public class SuperFunControl : MonoBehaviour
          PlayerCam.GetComponent<DigitalGlitch>().enabled=true;
          StartDigitalGlitch = true;
 
-        Debug.Log("Pleazae! This isaz where ibeleong!");
-
         yield return new WaitForSeconds(timeToReturn);  
         //call leave function
       GrowRainbow=false;
