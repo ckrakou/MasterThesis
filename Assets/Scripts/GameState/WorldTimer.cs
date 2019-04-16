@@ -142,7 +142,7 @@ public class WorldTimer : MonoBehaviour
         int removeIndex = -1;
         foreach (var timed in TimedEvents )
         {
-            if ((timed.Minutes * 60) + timed.Seconds < timeProgressed)
+            if ((timed.Minutes * 60) + timed.Seconds  < timeProgressed)
             {
                 timed.Function.Invoke();
                 removeIndex = TimedEvents.IndexOf(timed);

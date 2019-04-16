@@ -105,7 +105,7 @@ public class WorldSpawn : MonoBehaviour
 
     public void SpawnDatamoshCubes(int NumberOfCubes)
     {
-        Debug.Log("ERROR: Containment Breached, Corruption Emminent - SoulGarden.Detain() (at Picnic/SoulGarden.cs:12) - Caution is advised"); 
+        Debug.Log("ERROR: Containment Breach - File Corruption Emminent"); 
         
 
         for (int i = 0; i < NumberOfCubes; i++)
@@ -122,6 +122,7 @@ public class WorldSpawn : MonoBehaviour
 
     public void SpawnTeleportCubes(int NumberOfCubes)
     {
+        Debug.Log("WARNING: Dimensional barrier weakening - Engaging safety measures");
 
         for (int i = 0; i < NumberOfCubes; i++)
         {

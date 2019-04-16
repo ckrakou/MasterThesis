@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.06431106, g: 0.00885547, b: 0.012722077, a: 1}
+  m_IndirectSpecularColor: {r: 0.16864415, g: 0.023221292, b: 0.033360153, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -322,7 +322,7 @@ PrefabInstance:
     - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
         type: 3}
       propertyPath: PlayTime
-      value: 1
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
         type: 3}
@@ -1339,7 +1339,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 42921382}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d5bfbc0f51c89496b89d71db614f6f35, type: 2}
   m_CullingMode: 0
@@ -1395,7 +1395,7 @@ PrefabInstance:
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
       propertyPath: m_Url
-      value: file:///Volumes/500gb/git/MasterThesis/Assets/StreamingAssets/5.mp4
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
@@ -1723,7 +1723,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 71730883}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d5bfbc0f51c89496b89d71db614f6f35, type: 2}
   m_CullingMode: 0
@@ -3398,7 +3398,7 @@ PrefabInstance:
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
       propertyPath: m_Url
-      value: file:///Volumes/500gb/git/MasterThesis/Assets/StreamingAssets/2.mp4
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
@@ -3683,7 +3683,7 @@ PrefabInstance:
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
       propertyPath: m_Url
-      value: file:///Volumes/500gb/git/MasterThesis/Assets/StreamingAssets/6.mp4
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
@@ -5804,7 +5804,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 862746674}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d5bfbc0f51c89496b89d71db614f6f35, type: 2}
   m_CullingMode: 0
@@ -11525,7 +11525,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 945431389}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d5bfbc0f51c89496b89d71db614f6f35, type: 2}
   m_CullingMode: 0
@@ -12624,7 +12624,7 @@ PrefabInstance:
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
       propertyPath: m_Url
-      value: file:///Volumes/500gb/git/MasterThesis/Assets/StreamingAssets/3.mp4
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
@@ -19131,7 +19131,7 @@ PrefabInstance:
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
       propertyPath: m_Url
-      value: file:///Volumes/500gb/git/MasterThesis/Assets/StreamingAssets/7.mp4
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
@@ -19632,7 +19632,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1637961300}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d5bfbc0f51c89496b89d71db614f6f35, type: 2}
   m_CullingMode: 0
@@ -19782,7 +19782,7 @@ PrefabInstance:
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
       propertyPath: m_Url
-      value: file:///Volumes/500gb/git/MasterThesis/Assets/StreamingAssets/4.mp4
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
@@ -20614,7 +20614,7 @@ PrefabInstance:
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
       propertyPath: m_Url
-      value: file:///Volumes/500gb/git/MasterThesis/Assets/StreamingAssets/1.mp4
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
@@ -20712,7 +20712,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1830420218}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d5bfbc0f51c89496b89d71db614f6f35, type: 2}
   m_CullingMode: 0
@@ -21094,7 +21094,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1867888929}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d5bfbc0f51c89496b89d71db614f6f35, type: 2}
   m_CullingMode: 0

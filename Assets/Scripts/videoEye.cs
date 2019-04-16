@@ -39,7 +39,9 @@ public class videoEye : MonoBehaviour
 
     public void PlayEyeVideo()
     {
-        VideoObjects[RandomVideo].SetActive(true);
+        //var video = VideoObjects[RandomVideo];
+        video.gameObject.SetActive(true);
+        video.GetComponent<VideoPlayer>().Play();
         VideoEyeEvents.Invoke();
         DestroyEverything = true;
 
