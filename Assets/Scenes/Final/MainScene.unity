@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17064105, g: 0.023495857, b: 0.03375443, a: 1}
+  m_IndirectSpecularColor: {r: 0.1686409, g: 0.023220794, b: 0.033359513, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -197,7 +197,7 @@ PrefabInstance:
     - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
         type: 3}
       propertyPath: EndGameEvents.m_PersistentCalls.m_Calls.Array.size
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
         type: 3}
@@ -909,6 +909,36 @@ PrefabInstance:
         type: 3}
       propertyPath: TimedEvents.Array.data[5].Function.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
+        type: 3}
+      propertyPath: EndGameEvents.m_PersistentCalls.m_Calls.Array.data[9].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
+        type: 3}
+      propertyPath: EndGameEvents.m_PersistentCalls.m_Calls.Array.data[9].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
+        type: 3}
+      propertyPath: EndGameEvents.m_PersistentCalls.m_Calls.Array.data[9].m_Target
+      value: 
+      objectReference: {fileID: 48316894}
+    - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
+        type: 3}
+      propertyPath: EndGameEvents.m_PersistentCalls.m_Calls.Array.data[9].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
+        type: 3}
+      propertyPath: EndGameEvents.m_PersistentCalls.m_Calls.Array.data[9].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
+        type: 3}
+      propertyPath: EndGameEvents.m_PersistentCalls.m_Calls.Array.data[9].m_Arguments.m_BoolArgument
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2104415027, guid: 45697bdd8ec32414e9e78b4ad16e446e, type: 3}
       propertyPath: MinimumSkyboxExposure
@@ -2861,8 +2891,9 @@ MonoBehaviour:
   WorldMonument: {fileID: 1414642895}
   GlitchSound: {fileID: 1923834566}
   Speak: {fileID: 270543539}
-  MonsterSound: {fileID: 0}
-  PlayerCam: {fileID: 0}
+  GameControl: {fileID: 1893666266}
+  UI: {fileID: 995139890}
+  SignNumber: 5
 --- !u!4 &273798861 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5134057906321394845, guid: 1ac22042a622f2747bbf8b0d4b6e4ba0,
@@ -4104,8 +4135,9 @@ MonoBehaviour:
   WorldMonument: {fileID: 30634694}
   GlitchSound: {fileID: 230751662}
   Speak: {fileID: 1808693238}
-  MonsterSound: {fileID: 0}
-  PlayerCam: {fileID: 0}
+  GameControl: {fileID: 1893666266}
+  UI: {fileID: 995139890}
+  SignNumber: 4
 --- !u!4 &451558995 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3870354967747078025, guid: b25d750dda65da041a12cb9410e4e6b3,
@@ -5724,8 +5756,9 @@ MonoBehaviour:
   WorldMonument: {fileID: 1102099487}
   GlitchSound: {fileID: 296073798}
   Speak: {fileID: 1535175591}
-  MonsterSound: {fileID: 0}
-  PlayerCam: {fileID: 0}
+  GameControl: {fileID: 1893666266}
+  UI: {fileID: 995139890}
+  SignNumber: 3
 --- !u!4 &830614404 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3023219766568120388, guid: 9bc49e0fcfc404e4693a057d44e03ff5,
@@ -12361,8 +12394,9 @@ MonoBehaviour:
   WorldMonument: {fileID: 848634929}
   GlitchSound: {fileID: 939561225}
   Speak: {fileID: 306672993}
-  MonsterSound: {fileID: 880806859}
-  PlayerCam: {fileID: 454731887}
+  GameControl: {fileID: 1893666266}
+  UI: {fileID: 995139890}
+  SignNumber: 6
 --- !u!4 &1113336535 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1311949904947803069, guid: b7d1456f2d2af094599bd1e3056a1166,
@@ -17666,6 +17700,9 @@ MonoBehaviour:
   WorldMonument: {fileID: 467396158}
   GlitchSound: {fileID: 530682073}
   video: {fileID: 679396433}
+  GameControl: {fileID: 1893666266}
+  UI: {fileID: 995139890}
+  SignNumber: 0
 --- !u!4 &1239382273 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7530620472401747741, guid: cad0fd13545ed034b9254526fa4e35af,
@@ -18049,8 +18086,9 @@ MonoBehaviour:
   WorldMonument: {fileID: 599720202}
   GlitchSound: {fileID: 885684521}
   Speak: {fileID: 129771132}
-  MonsterSound: {fileID: 0}
-  PlayerCam: {fileID: 0}
+  GameControl: {fileID: 1893666266}
+  UI: {fileID: 995139890}
+  SignNumber: 1
 --- !u!4 &1310233233 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5565259738635269147, guid: c596f7b964215024394f165bc6a2028d,
@@ -22133,8 +22171,9 @@ MonoBehaviour:
   WorldMonument: {fileID: 684159051}
   GlitchSound: {fileID: 2101235256}
   Speak: {fileID: 1097747786}
-  MonsterSound: {fileID: 0}
-  PlayerCam: {fileID: 0}
+  GameControl: {fileID: 1893666266}
+  UI: {fileID: 995139890}
+  SignNumber: 2
 --- !u!4 &2108805638 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 451245985140859992, guid: d2f8f90a9af35bf4f9ee8777ff41d998,
@@ -22468,12 +22507,45 @@ PrefabInstance:
       propertyPath: m_RunSpeed
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 1343156175, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1343156175, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1343156175, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6460607991054644533, guid: f5f56e76ccdfe4d378cc779cd4924e60,
         type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 0.3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1343156177, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
+      propertyPath: m_Size.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1343156177, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
+      propertyPath: m_Size.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1343156177, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
+      propertyPath: m_Size.z
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1343156176, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1343156176, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 153684972, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
 --- !u!1001 &6545358621193787271
 PrefabInstance:

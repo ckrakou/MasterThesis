@@ -17,13 +17,15 @@ public class worldSpawnCollisionPreventerMonsterCam : MonoBehaviour
     public AudioSource GlitchSound;
     public AudioSource Speak;
 
-    public AudioSource MonsterSound;
+ 
 
-
-    public GameObject PlayerCam;
 
     private bool OnlyBlinkOnce = true;
 
+ public GameObject GameControl;
+ public GameObject UI;
+
+ public int SignNumber;
 
 
 
@@ -57,6 +59,9 @@ public class worldSpawnCollisionPreventerMonsterCam : MonoBehaviour
 
             if (OnlyBlinkOnce)
             {
+                GameStateManager.MasterGameState++;
+                GameControl.GetComponent<GameStateController>().TriggerWorldEvents(GameStateManager.MasterGameState);
+                UI.GetComponent<UI>().ChangeSign(SignNumber);    
                 StartCoroutine(Blink());
                 OnlyBlinkOnce = false;
 

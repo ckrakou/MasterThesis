@@ -10,7 +10,7 @@ public class GameStateCollider : MonoBehaviour
 
     private bool WMNotVisited1=true,WMNotVisited2=true,WMNotVisited3=true,WMNotVisited4=true,WMNotVisited5=true,WMNotVisited6=true,WMNotVisited7=true;
   
-    
+  /* 
     void OnTriggerEnter(Collider target)
      {
          if(target.name == "WorldMonument1")
@@ -82,6 +82,7 @@ public class GameStateCollider : MonoBehaviour
          }
 
         }
+        */  
      
      
   
