@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.16864415, g: 0.023221292, b: 0.033360153, a: 1}
+  m_IndirectSpecularColor: {r: 0.059042465, g: 0.008130076, b: 0.011679937, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1339,7 +1339,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 42921382}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d5bfbc0f51c89496b89d71db614f6f35, type: 2}
   m_CullingMode: 0
@@ -1380,12 +1380,12 @@ PrefabInstance:
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
       propertyPath: m_WaitForFirstFrame
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
       propertyPath: m_PlayOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
@@ -1400,6 +1400,11 @@ PrefabInstance:
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
       propertyPath: m_Looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
+        type: 3}
+      propertyPath: m_SkipOnDrop
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4719402172566497617, guid: 78134444be20645dda0b297f8b2c941c,
@@ -1459,7 +1464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 409695727, guid: 78134444be20645dda0b297f8b2c941c, type: 3}
       propertyPath: m_Color.a
-      value: 0.54901963
+      value: 0.39215687
       objectReference: {fileID: 0}
     - target: {fileID: 409695727, guid: 78134444be20645dda0b297f8b2c941c, type: 3}
       propertyPath: m_Color.b
@@ -1723,7 +1728,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 71730883}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d5bfbc0f51c89496b89d71db614f6f35, type: 2}
   m_CullingMode: 0
@@ -3383,12 +3388,12 @@ PrefabInstance:
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
       propertyPath: m_WaitForFirstFrame
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
       propertyPath: m_PlayOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
@@ -3403,6 +3408,11 @@ PrefabInstance:
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
       propertyPath: m_Looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
+        type: 3}
+      propertyPath: m_SkipOnDrop
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4719402172566497617, guid: 78134444be20645dda0b297f8b2c941c,
@@ -3462,7 +3472,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 409695727, guid: 78134444be20645dda0b297f8b2c941c, type: 3}
       propertyPath: m_Color.a
-      value: 0.54901963
+      value: 0.39215687
       objectReference: {fileID: 0}
     - target: {fileID: 409695727, guid: 78134444be20645dda0b297f8b2c941c, type: 3}
       propertyPath: m_Color.b
@@ -3668,12 +3678,12 @@ PrefabInstance:
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
       propertyPath: m_WaitForFirstFrame
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
       propertyPath: m_PlayOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
@@ -3688,6 +3698,11 @@ PrefabInstance:
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
       propertyPath: m_Looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
+        type: 3}
+      propertyPath: m_SkipOnDrop
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4719402172566497617, guid: 78134444be20645dda0b297f8b2c941c,
@@ -3747,7 +3762,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 409695727, guid: 78134444be20645dda0b297f8b2c941c, type: 3}
       propertyPath: m_Color.a
-      value: 0.54901963
+      value: 0.39215687
       objectReference: {fileID: 0}
     - target: {fileID: 409695727, guid: 78134444be20645dda0b297f8b2c941c, type: 3}
       propertyPath: m_Color.b
@@ -5804,7 +5819,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 862746674}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d5bfbc0f51c89496b89d71db614f6f35, type: 2}
   m_CullingMode: 0
@@ -11525,7 +11540,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 945431389}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d5bfbc0f51c89496b89d71db614f6f35, type: 2}
   m_CullingMode: 0
@@ -12609,12 +12624,12 @@ PrefabInstance:
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
       propertyPath: m_WaitForFirstFrame
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
       propertyPath: m_PlayOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
@@ -12629,6 +12644,11 @@ PrefabInstance:
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
       propertyPath: m_Looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
+        type: 3}
+      propertyPath: m_SkipOnDrop
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4719402172566497617, guid: 78134444be20645dda0b297f8b2c941c,
@@ -12688,7 +12708,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 409695727, guid: 78134444be20645dda0b297f8b2c941c, type: 3}
       propertyPath: m_Color.a
-      value: 0.54901963
+      value: 0.39215687
       objectReference: {fileID: 0}
     - target: {fileID: 409695727, guid: 78134444be20645dda0b297f8b2c941c, type: 3}
       propertyPath: m_Color.b
@@ -19116,12 +19136,12 @@ PrefabInstance:
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
       propertyPath: m_WaitForFirstFrame
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
       propertyPath: m_PlayOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
@@ -19136,6 +19156,11 @@ PrefabInstance:
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
       propertyPath: m_Looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
+        type: 3}
+      propertyPath: m_SkipOnDrop
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4719402172566497617, guid: 78134444be20645dda0b297f8b2c941c,
@@ -19195,7 +19220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 409695727, guid: 78134444be20645dda0b297f8b2c941c, type: 3}
       propertyPath: m_Color.a
-      value: 0.7058824
+      value: 0.39215687
       objectReference: {fileID: 0}
     - target: {fileID: 409695727, guid: 78134444be20645dda0b297f8b2c941c, type: 3}
       propertyPath: m_Color.b
@@ -19632,7 +19657,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1637961300}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d5bfbc0f51c89496b89d71db614f6f35, type: 2}
   m_CullingMode: 0
@@ -19767,12 +19792,12 @@ PrefabInstance:
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
       propertyPath: m_WaitForFirstFrame
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
       propertyPath: m_PlayOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
@@ -19787,6 +19812,11 @@ PrefabInstance:
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
       propertyPath: m_Looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
+        type: 3}
+      propertyPath: m_SkipOnDrop
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4719402172566497617, guid: 78134444be20645dda0b297f8b2c941c,
@@ -19846,7 +19876,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 409695727, guid: 78134444be20645dda0b297f8b2c941c, type: 3}
       propertyPath: m_Color.a
-      value: 0.54901963
+      value: 0.39215687
       objectReference: {fileID: 0}
     - target: {fileID: 409695727, guid: 78134444be20645dda0b297f8b2c941c, type: 3}
       propertyPath: m_Color.b
@@ -20604,12 +20634,12 @@ PrefabInstance:
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
       propertyPath: m_WaitForFirstFrame
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
       propertyPath: m_PlayOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
@@ -20619,6 +20649,11 @@ PrefabInstance:
     - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
         type: 3}
       propertyPath: m_Looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719402172566497616, guid: 78134444be20645dda0b297f8b2c941c,
+        type: 3}
+      propertyPath: m_SkipOnDrop
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4719402172566497617, guid: 78134444be20645dda0b297f8b2c941c,
@@ -20676,9 +20711,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 409695728, guid: 78134444be20645dda0b297f8b2c941c, type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 409695727, guid: 78134444be20645dda0b297f8b2c941c, type: 3}
       propertyPath: m_Color.a
-      value: 0.78431374
+      value: 0.39215687
       objectReference: {fileID: 0}
     - target: {fileID: 409695727, guid: 78134444be20645dda0b297f8b2c941c, type: 3}
       propertyPath: m_Color.b
@@ -20690,10 +20729,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 409695727, guid: 78134444be20645dda0b297f8b2c941c, type: 3}
       propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 409695728, guid: 78134444be20645dda0b297f8b2c941c, type: 3}
-      propertyPath: m_CullTransparentMesh
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -20712,7 +20747,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1830420218}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d5bfbc0f51c89496b89d71db614f6f35, type: 2}
   m_CullingMode: 0
@@ -21094,7 +21129,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1867888929}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d5bfbc0f51c89496b89d71db614f6f35, type: 2}
   m_CullingMode: 0
@@ -22319,10 +22354,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
-    - target: {fileID: 1729931747, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
-      propertyPath: Debugging
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6460607991051170037, guid: f5f56e76ccdfe4d378cc779cd4924e60,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22392,6 +22423,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729931747, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
+      propertyPath: Debugging
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1343156178, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
       propertyPath: EnterDatamoshCollider.m_PersistentCalls.m_Calls.Array.data[1].m_Target

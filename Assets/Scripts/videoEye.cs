@@ -22,6 +22,7 @@ public class videoEye : MonoBehaviour
         for (int i = 0; i < 7; i++)
         {
             VideoObjects[i].GetComponent<VideoPlayer>().url = System.IO.Path.Combine(Application.streamingAssetsPath, i+1 + ".mp4");
+            VideoObjects[i].GetComponent<VideoPlayer>().Prepare();
             VideoObjects[i].SetActive(false);
         }
     }
@@ -30,16 +31,19 @@ public class videoEye : MonoBehaviour
     {
         if (DestroyEverything)
         {
-            if (!video.isPlaying)
-            {
-                Destroy(gameObject, 0.1f);
+            if (video.GetComponent<VideoPlayer>().isPrepared){
+              if(!video.GetComponent<VideoPlayer>().isPlaying){
+                  Destroy(gameObject);
+              }  
             }
         }
+        if (Input.GetMouseButtonUp(0)){
+                 PlayEyeVideo();
+                 
+         }  
     }
-
     public void PlayEyeVideo()
     {
-        //var video = VideoObjects[RandomVideo];
         video.gameObject.SetActive(true);
         video.GetComponent<VideoPlayer>().Play();
         VideoEyeEvents.Invoke();
