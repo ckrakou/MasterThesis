@@ -65,6 +65,8 @@ public class FileUpload : MonoBehaviour
         }
         else
         {
+            Debug.Log("Such a shame. The trees in this place are quite wonderful");
+
             if (debugging)
                 Debug.Log("FileUpload: File does not match");
 

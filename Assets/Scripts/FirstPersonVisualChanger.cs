@@ -147,8 +147,9 @@ public class FirstPersonVisualChanger : MonoBehaviour
 
     public void ToggleSensitivityShift()
     {
-        
-        Debug.Log(this.GetType() + ": Toggling Mouse Sensitivity");
+        if(Debugging)
+            Debug.Log(this.GetType() + ": Toggling Mouse Sensitivity");
+
         if (sensitivityShift == true)
         {
             controller.m_MouseLook.XSensitivity = initialSensitivityX;
@@ -175,6 +176,8 @@ public class FirstPersonVisualChanger : MonoBehaviour
         {
             controller.m_MouseLook.MinimumX = -90;
             controller.m_MouseLook.MaximumX = 90;
+
+            Debug.Log("This really is an awful picnic, don't you think?");
         }
         else
         {

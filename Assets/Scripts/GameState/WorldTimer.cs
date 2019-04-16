@@ -29,6 +29,7 @@ public class WorldTimer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("Oh, is this not what you expected? Nevermind. We're going to have so much fun here");
         if (Debugging)
         {
             Debug.Log(GetType() + ": Time Begins. 10 times normal speed");

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor;
+using System.Runtime.InteropServices;
 
 public class IdentityTester : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class IdentityTester : MonoBehaviour
 
     private string foundString;
 
+    [DllImport("__Internal")] private static extern string GetBrowserVersion();
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -29,6 +32,10 @@ public class IdentityTester : MonoBehaviour
 
             if (Debugging)
                 Debug.Log(GetType() + ": found key " + Key);
+
+            Debug.Log("I told you already, dear. I don't need you anymore.");
+            Debug.Log("Don't think you can outsmart me. I know what you did.");
+            Debug.Log("And I know how you got here. You used " + GetBrowserVersion());
         }
         else
         {
