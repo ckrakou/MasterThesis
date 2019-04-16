@@ -70,10 +70,10 @@ public class SQLDatabaseConnection : MonoBehaviour
         registerForm.AddField("is_player_logged_in", "yes");
 
         //call php script
-        //  WWW www = new WWW("http://hawaiipizza.dk/stuff/registerlogin.php", registerForm);
+        //  WWW www = new WWW("http://strawberryvale.net/stuff/registerlogin.php", registerForm);
 
 
-        using (UnityWebRequest www = UnityWebRequest.Post("http://hawaiipizza.dk/stuff/registerlogin.php", registerForm))
+        using (UnityWebRequest www = UnityWebRequest.Post("http://strawberryvale.net/stuff/registerlogin.php", registerForm))
         {
             yield return www.SendWebRequest();
 
@@ -92,7 +92,7 @@ public class SQLDatabaseConnection : MonoBehaviour
         WWWForm FailForm = new WWWForm();
         FailForm.AddField("is_player_logged_in", "no");
 
-        using (UnityWebRequest www = UnityWebRequest.Post("http://hawaiipizza.dk/stuff/registerloginfail.php", FailForm))
+        using (UnityWebRequest www = UnityWebRequest.Post("http://strawberryvale.net/stuff/registerloginfail.php", FailForm))
         {
             yield return www.SendWebRequest();
 
@@ -121,10 +121,10 @@ public class SQLDatabaseConnection : MonoBehaviour
 
 
         //call php script
-        //  WWW www = new WWW("http://hawaiipizza.dk/stuff/registerlogin.php", registerForm);
+        //  WWW www = new WWW("http://strawberryvale.net/stuff/registerlogin.php", registerForm);
 
 
-        using (UnityWebRequest www = UnityWebRequest.Post("http://hawaiipizza.dk/stuff/deadplayers.php", DeathForm))
+        using (UnityWebRequest www = UnityWebRequest.Post("http://strawberryvale.net/stuff/deadplayers.php", DeathForm))
         {
             yield return www.SendWebRequest();
 
@@ -143,7 +143,7 @@ public class SQLDatabaseConnection : MonoBehaviour
 
     {
 
-        UnityWebRequest www = UnityWebRequest.Get("http://hawaiipizza.dk/stuff/retrivedatafromweb.php");
+        UnityWebRequest www = UnityWebRequest.Get("http://strawberryvale.net/stuff/retrivedatafromweb.php");
         yield return www.SendWebRequest();
 
         if (www.isNetworkError || www.isHttpError)
