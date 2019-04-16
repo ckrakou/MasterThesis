@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17016613, g: 0.023430478, b: 0.03366062, a: 1}
+  m_IndirectSpecularColor: {r: 0.14087752, g: 0.019397452, b: 0.027867375, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -322,7 +322,7 @@ PrefabInstance:
     - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
         type: 3}
       propertyPath: PlayTime
-      value: 1
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
         type: 3}
@@ -364,7 +364,7 @@ PrefabInstance:
     - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
         type: 3}
       propertyPath: Debugging
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
         type: 3}
@@ -20715,10 +20715,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 409695728, guid: 78134444be20645dda0b297f8b2c941c, type: 3}
-      propertyPath: m_CullTransparentMesh
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 409695727, guid: 78134444be20645dda0b297f8b2c941c, type: 3}
       propertyPath: m_Color.a
       value: 0.7058824
@@ -20733,6 +20729,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 409695727, guid: 78134444be20645dda0b297f8b2c941c, type: 3}
       propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 409695728, guid: 78134444be20645dda0b297f8b2c941c, type: 3}
+      propertyPath: m_CullTransparentMesh
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -22358,6 +22358,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 1729931747, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
+      propertyPath: Debugging
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6460607991051170037, guid: f5f56e76ccdfe4d378cc779cd4924e60,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22427,10 +22431,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1729931747, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
-      propertyPath: Debugging
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1343156178, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
       propertyPath: EnterDatamoshCollider.m_PersistentCalls.m_Calls.Array.data[1].m_Target
