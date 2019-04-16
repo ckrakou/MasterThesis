@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.05650923, g: 0.0077813286, b: 0.011178916, a: 1}
+  m_IndirectSpecularColor: {r: 0.06079573, g: 0.008371496, b: 0.012026705, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1079,7 +1079,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-92722
+  m_Name: pb_Mesh-33552
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -2090,7 +2090,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-92710
+  m_Name: pb_Mesh-33540
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -3008,7 +3008,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-92720
+  m_Name: pb_Mesh-33550
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -17811,7 +17811,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-92716
+  m_Name: pb_Mesh-33546
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -18673,7 +18673,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-92714
+  m_Name: pb_Mesh-33544
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -19014,7 +19014,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-92718
+  m_Name: pb_Mesh-33548
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -19463,7 +19463,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-92712
+  m_Name: pb_Mesh-33542
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -20152,6 +20152,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f1f805318e04ba7a68f9bb1d0e2979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpawnMessages:
+  - 'Encoded Transmission: 596f75722074696d652068657265206973207370656e7420696e207661696e2e205468657265206973206e6f20706f696e7420746f2074686973206d61646e657373'
+  - 'Encoded Transmission: 5468652074726565732061726520616c69766520776974682074686520736f756e64206f662073696c656e742073637265616d732e'
+  - 'Encoded Transmission: 427265616b646f776e20616d6964737420746865206d697874757265730d0a41766f69642061646469637469766520706c65610d0a496e736973742074686174206e6f7468696e672068617070656e65640d0a4368696c6c656420626c6f6f646c65737320666174696775650d0a52656368617267652077697468206269747465726e6573730d0a46616e6174696373206265636b6f6e696e678520'
+  - 'Encoded Transmission: 74686572652773206120626c75656269726420696e206d7920686561727420746861740d0a77616e747320746f20676574206f75740d0a6275742049276d20746f6f20746f75676820666f722068696d2c0d0a49207361792c207374617920696e2074686572652c2049276d206e6f7420676f696e670d0a746f206c657420616e79626f6479207365650d0a796f752e'
+  - 'Encoded Transmission: 49276d2077616c6b696e67206f6e2073756e7368696e652028576f7721290d0a49276d2077616c6b696e67206f6e2073756e7368696e652028576f7721290d0a49276d2077616c6b696e67206f6e2073756e7368696e652028576f7721290d0a416e6420646f6e2774206974206665656c20676f6f64'
   WorldMonuments:
   - {fileID: 4467928605519189906, guid: 7921f491cb9a54a1aa046e59aec64375, type: 3}
   - {fileID: 8323165137423683523, guid: 97d079814a6d8470983dc2e2f3d0f02a, type: 3}

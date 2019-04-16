@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WorldSpawn : MonoBehaviour
 {
+    public string[] SpawnMessages;
+
     public GameObject[] WorldMonuments;
 
     public GameObject DatamoshCubes;
@@ -94,6 +96,8 @@ public class WorldSpawn : MonoBehaviour
 
     public void SpawnDatamoshCubes(int NumberOfCubes)
     {
+        Debug.Log("ERROR: Containment Breached, Corruption Emminent - SoulGarden.Detain() (at Picnic/SoulGarden.cs:12) - Caution is advised"); 
+        
 
         for (int i = 0; i < NumberOfCubes; i++)
         {
@@ -103,6 +107,8 @@ public class WorldSpawn : MonoBehaviour
 
         }
         //Debug.Log("spawned "+NumberOfCubes+" datamosh cubes");
+
+        Debug.Log(SpawnMessages[Random.Range(0, SpawnMessages.Length - 1)]);
     }
 
     public void SpawnTeleportCubes(int NumberOfCubes)
@@ -121,6 +127,8 @@ public class WorldSpawn : MonoBehaviour
 
     public void spawnAnalogGlitchCubes(int NumberOfCubes)
     {
+        
+
         for (int i = 0; i < NumberOfCubes; i++)
         {
             placeToSpawn = new Vector3(Random.Range(-400, 400), 0, Random.Range(-400, 400));
@@ -175,5 +183,7 @@ public class WorldSpawn : MonoBehaviour
 
 
     }
+
+   
 
 }

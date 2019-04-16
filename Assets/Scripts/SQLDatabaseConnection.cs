@@ -43,6 +43,7 @@ public class SQLDatabaseConnection : MonoBehaviour
     }
     public void RegisterSucessfullLogin()
     {
+        
         StartCoroutine(RegisterPlayerLogin());
 
     }
@@ -109,6 +110,8 @@ public class SQLDatabaseConnection : MonoBehaviour
 
     IEnumerator RegisterPlayerDeath()
     {
+        Debug.Log(System.DateTime.Now + ": Planting Tree. Device successfully scanned, deleting evidence of picnic.");
+
         //create webform
         WWWForm DeathForm = new WWWForm();
 
@@ -157,7 +160,9 @@ public class SQLDatabaseConnection : MonoBehaviour
             //  retrieve results as string
             string[] results = www.downloadHandler.text.Split('\t'); ;
             SpawnTrees(results);
-            
+
+            Debug.Log(System.DateTime.Now + ": retrieved previous visitors. Inviting to picnic...");
+
         }
     }
 
@@ -186,6 +191,22 @@ public class SQLDatabaseConnection : MonoBehaviour
 
 
         }
+    }
+
+    // creepypasta
+    private IEnumerator LoginPasta()
+    {
+        Debug.Log(System.DateTime.Now + ": Idenitifying visitor");
+        yield return new WaitForSeconds(0.1f);
+
+        Debug.Log(System.DateTime.Now + ": Scanning for picnic");
+        yield return new WaitForSeconds(0.2f);
+
+        Debug.Log(System.DateTime.Now+": Pictures found, transmitting");
+        yield return new WaitForSeconds(0.75f);
+
+        Debug.Log(System.DateTime.Now + ": "+Random.Range(12, 75) + " pictures transmitted from host");
+
     }
 
 }
