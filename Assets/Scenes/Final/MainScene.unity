@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17016613, g: 0.023430478, b: 0.03366062, a: 1}
+  m_IndirectSpecularColor: {r: 0.17064105, g: 0.023495857, b: 0.03375443, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -322,7 +322,7 @@ PrefabInstance:
     - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
         type: 3}
       propertyPath: PlayTime
-      value: 1
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
         type: 3}
@@ -364,7 +364,7 @@ PrefabInstance:
     - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
         type: 3}
       propertyPath: Debugging
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6643967092860436870, guid: 45697bdd8ec32414e9e78b4ad16e446e,
         type: 3}
@@ -964,7 +964,7 @@ PrefabInstance:
     - target: {fileID: 1004727409, guid: 45697bdd8ec32414e9e78b4ad16e446e, type: 3}
       propertyPath: EndGameMusic
       value: 
-      objectReference: {fileID: 235282828}
+      objectReference: {fileID: 853503214}
     - target: {fileID: 6877881213376466004, guid: 45697bdd8ec32414e9e78b4ad16e446e,
         type: 3}
       propertyPath: Segments.Array.size
