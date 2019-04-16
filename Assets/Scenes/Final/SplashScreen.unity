@@ -9847,6 +9847,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1082850604}
   - component: {fileID: 1082850603}
+  - component: {fileID: 1082850605}
   m_Layer: 0
   m_Name: splash_screen
   m_TagString: Untagged
@@ -9872,7 +9873,7 @@ VideoPlayer:
   m_TargetMaterialProperty: _MainTex
   m_RenderMode: 0
   m_AspectRatio: 2
-  m_DataSource: 0
+  m_DataSource: 1
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 0
   m_TargetAudioSources: []
@@ -9881,7 +9882,7 @@ VideoPlayer:
   m_EnabledAudioTracks: 
   m_DirectAudioMutes: 
   m_ControlledAudioTrackCount: 0
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 1
   m_WaitForFirstFrame: 1
@@ -9900,6 +9901,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1082850605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082850602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71a3936d8b63f4ab193242e5e359781e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  video: {fileID: 1082850603}
+  VideoClipName: splash_screen.mp4
 --- !u!1 &1199273350 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1695676739, guid: 4a907ff6c901ce74a98721411d946d88,

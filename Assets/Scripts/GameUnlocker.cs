@@ -20,21 +20,19 @@ public class GameUnlocker : MonoBehaviour
 
         if (idTest.KeyFound)
         {
-
-            
-
             fader.FadeInKeyFound(idTest.RejectionMessages[Random.Range(0,idTest.RejectionMessages.Length - 1)]);
         }
         else
         {
             fader.FadeInPlayable();
-
         }
         
     }
 
     public void UnlockMainScene()
     {
+        Debug.Log("Curiosity killed the cat, you know.");
+
         // Double-check in case of external calls
         if(idTest.KeyFound == false)
             StartCoroutine(UnlockThread());

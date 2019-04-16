@@ -21,6 +21,7 @@ public class IdentityTester : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        Debug.Log("You're a curious one, aren't you?");
 
         if (PlayerPrefs.HasKey(Key) && PlayerPrefs.GetString(Key).Equals(IdentityString))
         {

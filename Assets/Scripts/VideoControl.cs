@@ -8,11 +8,13 @@ public class VideoControl : MonoBehaviour
     // Start is called before the first frame update
 
     public VideoPlayer video;
+    public string VideoClipName;
     private bool videoBool = true;
     void Start()
     {
-        video.Prepare();
-        
+        //video.Prepare();
+        video.url = System.IO.Path.Combine(Application.streamingAssetsPath, VideoClipName);
+        video.Play();
     }
 
     // Update is called once per frame
@@ -20,11 +22,11 @@ public class VideoControl : MonoBehaviour
     {
         if(video.isPrepared &&videoBool){
             //playVideo();
-            videoBool=false;
+            //videoBool=false;
         }
     }
     public void playVideo(){
-        video.Play();
+        //video.Play();
     }
 
 }
