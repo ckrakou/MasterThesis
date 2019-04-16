@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1686791, g: 0.02322558, b: 0.033366192, a: 1}
+  m_IndirectSpecularColor: {r: 0.06290776, g: 0.0086620925, b: 0.012444219, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -21204,6 +21204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f1f805318e04ba7a68f9bb1d0e2979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpawnMessages: []
   WorldMonuments:
   - {fileID: 4467928605519189906, guid: 7921f491cb9a54a1aa046e59aec64375, type: 3}
   - {fileID: 8323165137423683523, guid: 97d079814a6d8470983dc2e2f3d0f02a, type: 3}
@@ -21218,7 +21219,7 @@ MonoBehaviour:
     type: 3}
   teleporterCubes: {fileID: 535344702, guid: f54ee882128c64bacac19176f8e70f18, type: 3}
   Clock: {fileID: 4421364994205197603, guid: ef44426152fb4432caba00e69f6741c4, type: 3}
-  MinDatamoshColliders: 1
+  MinDatamoshColliders: 0
   MaxDatamoshColliders: 3
   MinAnalogGlitchColliders: 3
   MaxAnalogGlitchColliders: 4
@@ -21468,6 +21469,17 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1893666267}
+        m_MethodName: SpawnTeleportCubes
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 30
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

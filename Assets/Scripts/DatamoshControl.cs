@@ -20,17 +20,13 @@ public class DatamoshControl : MonoBehaviour
          
       }  
 
-
     // Start is called before the first frame update
    void OnTriggerEnter(Collider target)
      {
          if(target.tag == "DatamoshCollider")
          {
-         EnterDatamoshCollider.Invoke();
-         
-
-            
-            
+          
+         EnterDatamoshCollider.Invoke();     
 
          }
            if(target.tag == "AnalogGlitchCollider"){
@@ -54,6 +50,7 @@ public class DatamoshControl : MonoBehaviour
          {
          ExitDatamoshCollider.Invoke();
          //Debug.Log("Remove Glitch!");
+         Destroy(target);
          }
           if(target.tag == "AnalogGlitchCollider"){
             FPSCam.GetComponent<Kino.AnalogGlitch>().enabled=false;
