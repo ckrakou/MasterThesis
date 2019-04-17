@@ -56,6 +56,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_NextStep = m_StepCycle/2f;
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
+
+            transform.Rotate(Vector3.up, Random.Range(0, 360));
+
 			m_MouseLook.Init(transform , m_Camera.transform);
         }
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.061129037, g: 0.008417431, b: 0.01209275, a: 1}
+  m_IndirectSpecularColor: {r: 0.06414802, g: 0.008833027, b: 0.012689836, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -964,15 +964,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1004727409, guid: 45697bdd8ec32414e9e78b4ad16e446e, type: 3}
       propertyPath: Scale.x
-      value: 0.7
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1004727409, guid: 45697bdd8ec32414e9e78b4ad16e446e, type: 3}
       propertyPath: Scale.y
-      value: 0.7
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1004727409, guid: 45697bdd8ec32414e9e78b4ad16e446e, type: 3}
       propertyPath: Scale.z
-      value: 0.7
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1004727409, guid: 45697bdd8ec32414e9e78b4ad16e446e, type: 3}
       propertyPath: SpawnOnDeath
@@ -5384,7 +5384,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &712434244
 Animator:
   serializedVersion: 3
@@ -11505,7 +11505,7 @@ PrefabInstance:
     - target: {fileID: 904567281543684667, guid: dc991f5fea06d427590491216dcf6875,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 904567281543684666, guid: dc991f5fea06d427590491216dcf6875,
         type: 3}
@@ -11561,6 +11561,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 904567281543684666, guid: dc991f5fea06d427590491216dcf6875,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 904567281543684666, guid: dc991f5fea06d427590491216dcf6875,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 904567281543684666, guid: dc991f5fea06d427590491216dcf6875,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc991f5fea06d427590491216dcf6875, type: 3}
@@ -20655,10 +20670,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 409695728, guid: 78134444be20645dda0b297f8b2c941c, type: 3}
-      propertyPath: m_CullTransparentMesh
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 409695727, guid: 78134444be20645dda0b297f8b2c941c, type: 3}
       propertyPath: m_Color.a
       value: 0.7058824
@@ -20673,6 +20684,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 409695727, guid: 78134444be20645dda0b297f8b2c941c, type: 3}
       propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 409695728, guid: 78134444be20645dda0b297f8b2c941c, type: 3}
+      propertyPath: m_CullTransparentMesh
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -22116,7 +22131,7 @@ MonoBehaviour:
   DeadPlayers: {fileID: 904567281543684667, guid: dc991f5fea06d427590491216dcf6875,
     type: 3}
   worldTimer: {fileID: 556671583}
-  MaxSize: {x: 6, y: 6, z: 6}
+  MaxSize: {x: 4, y: 4, z: 4}
 --- !u!4 &2142682456
 Transform:
   m_ObjectHideFlags: 0
@@ -22294,6 +22309,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: FPSControllerGlitch
       objectReference: {fileID: 0}
+    - target: {fileID: 48316900, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
+      propertyPath: SuperHappyFunWorld
+      value: 
+      objectReference: {fileID: 1263489048}
+    - target: {fileID: 48316900, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
+      propertyPath: GoToFunWorld.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 556671583}
+    - target: {fileID: 48316900, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
+      propertyPath: GoToFunWorld.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 556671581}
+    - target: {fileID: 48316900, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
+      propertyPath: GoToFunWorld.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 853503215}
+    - target: {fileID: 48316900, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
+      propertyPath: LeaveFunWorld.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 556671583}
+    - target: {fileID: 48316900, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
+      propertyPath: LeaveFunWorld.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 556671581}
+    - target: {fileID: 48316900, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
+      propertyPath: LeaveFunWorld.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 853503215}
     - target: {fileID: 6460607991051170037, guid: f5f56e76ccdfe4d378cc779cd4924e60,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22307,7 +22350,7 @@ PrefabInstance:
     - target: {fileID: 6460607991051170037, guid: f5f56e76ccdfe4d378cc779cd4924e60,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -117.5
       objectReference: {fileID: 0}
     - target: {fileID: 6460607991051170037, guid: f5f56e76ccdfe4d378cc779cd4924e60,
         type: 3}
@@ -22355,34 +22398,6 @@ PrefabInstance:
       objectReference: {fileID: 853503215}
     - target: {fileID: 1343156178, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
       propertyPath: ExitDatamoshCollider.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 853503215}
-    - target: {fileID: 48316900, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
-      propertyPath: SuperHappyFunWorld
-      value: 
-      objectReference: {fileID: 1263489048}
-    - target: {fileID: 48316900, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
-      propertyPath: GoToFunWorld.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 556671583}
-    - target: {fileID: 48316900, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
-      propertyPath: GoToFunWorld.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 556671581}
-    - target: {fileID: 48316900, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
-      propertyPath: GoToFunWorld.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 853503215}
-    - target: {fileID: 48316900, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
-      propertyPath: LeaveFunWorld.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 556671583}
-    - target: {fileID: 48316900, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
-      propertyPath: LeaveFunWorld.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 556671581}
-    - target: {fileID: 48316900, guid: f5f56e76ccdfe4d378cc779cd4924e60, type: 3}
-      propertyPath: LeaveFunWorld.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 853503215}
     m_RemovedComponents: []

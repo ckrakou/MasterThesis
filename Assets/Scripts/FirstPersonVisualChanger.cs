@@ -45,7 +45,7 @@ public class FirstPersonVisualChanger : MonoBehaviour
         initialSensitivityX = controller.m_MouseLook.XSensitivity;
         initialSensitivityY = controller.m_MouseLook.YSensitivity;
 
-        
+        //transform.Rotate(transform.up, Random.Range(0, 360));
 
         // needs to be smooth for noise to work
         controller.m_MouseLook.smooth = true;
