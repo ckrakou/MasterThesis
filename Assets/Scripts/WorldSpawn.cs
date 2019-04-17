@@ -43,7 +43,7 @@ public class WorldSpawn : MonoBehaviour
     void Awake()
     {
         Cursor.visible = false;
-        messagesSent = new List<int>();
+        messagesSent = new List<int>(new int[] { 0, 1, 2, 3, 4, 5, 6, 7 });
         /*  
     for(int i = 0; i < WorldMonuments.Length; i++){
       //spawn world monuments at random
@@ -112,21 +112,16 @@ public class WorldSpawn : MonoBehaviour
 
         for (int i = 0; i < NumberOfCubes; i++)
         {
-
+            
             placeToSpawn = new Vector3(Random.Range(-400, 400), 0, Random.Range(-400, 400));
             Instantiate(DatamoshCubes, placeToSpawn, Quaternion.identity);
-
+            
         }
         //Debug.Log("spawned "+NumberOfCubes+" datamosh cubes");
 
-        int index;
-        do
-        {
-            index = Random.Range(0, SpawnMessages.Length - 1);
-        } while (messagesSent.Contains(index) == false);
-
-        messagesSent.Add(index);
+        int index = Random.Range(0, messagesSent.Count - 1);        
         Debug.Log(SpawnMessages[index]);
+        messagesSent.RemoveAt(index);
     }
 
     public void SpawnTeleportCubes(int NumberOfCubes)
