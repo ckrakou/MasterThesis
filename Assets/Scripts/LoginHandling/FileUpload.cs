@@ -10,6 +10,7 @@ using System;
 public class FileUpload : MonoBehaviour
 {
     public bool debugging = false;
+    [TextArea]
     public string[] FailureMessages;
     //public GameObject Button;
     //public GameObject WelcomeText;

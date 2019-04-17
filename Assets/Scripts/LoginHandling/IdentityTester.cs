@@ -12,6 +12,7 @@ public class IdentityTester : MonoBehaviour
 
     public string Key;
     public string IdentityString;
+    [TextArea]
     public string[] RejectionMessages;
 
     [HideInInspector]
