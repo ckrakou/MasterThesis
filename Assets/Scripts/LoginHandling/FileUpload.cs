@@ -38,7 +38,7 @@ public class FileUpload : MonoBehaviour
         TextAsset bindata = Resources.Load("MasterFile") as TextAsset;
         masterFile = bindata.bytes;
 
-        if (!debugging)
+        if (!debugging && !GetComponent<IdentityTester>().KeyFound)
         {
 #if UNITY_WEBGL
             ImageUploaderInit();

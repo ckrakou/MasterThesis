@@ -36,12 +36,14 @@ public class WorldSpawn : MonoBehaviour
     public int MaxTeleportColliders = 4;
 
     private Vector3 placeToSpawn;
+    private List<int> messagesSent;
 
 
     // Use this for initialization
     void Awake()
     {
         Cursor.visible = false;
+        messagesSent = new List<int>();
         /*  
     for(int i = 0; i < WorldMonuments.Length; i++){
       //spawn world monuments at random
@@ -117,7 +119,14 @@ public class WorldSpawn : MonoBehaviour
         }
         //Debug.Log("spawned "+NumberOfCubes+" datamosh cubes");
 
-        Debug.Log(SpawnMessages[Random.Range(0, SpawnMessages.Length - 1)]);
+        int index;
+        do
+        {
+            index = Random.Range(0, SpawnMessages.Length - 1);
+        } while (messagesSent.Contains(index) == false);
+
+        messagesSent.Add(index);
+        Debug.Log(SpawnMessages[index]);
     }
 
     public void SpawnTeleportCubes(int NumberOfCubes)
