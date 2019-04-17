@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028355, g: 0.22571374, b: 0.30692255, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -14842,7 +14842,7 @@ PrefabInstance:
     - target: {fileID: 7212383128361749919, guid: 4a907ff6c901ce74a98721411d946d88,
         type: 3}
       propertyPath: FailureMessages.Array.data[3]
-      value: Tyying to sneak in, are we?. You need an invitation like everyone else.
+      value: Trying to sneak in, are we? You need an invitation like everyone else.
       objectReference: {fileID: 0}
     - target: {fileID: 7212383128361749919, guid: 4a907ff6c901ce74a98721411d946d88,
         type: 3}
@@ -14853,6 +14853,11 @@ PrefabInstance:
         type: 3}
       propertyPath: debugging
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212383128361749919, guid: 4a907ff6c901ce74a98721411d946d88,
+        type: 3}
+      propertyPath: FailureMessages.Array.data[1]
+      value: To enter my garden, you must bring me the  invitation.
       objectReference: {fileID: 0}
     - target: {fileID: 1255727257, guid: 4a907ff6c901ce74a98721411d946d88, type: 3}
       propertyPath: Welcome
@@ -14879,6 +14884,12 @@ PrefabInstance:
         type: 3}
       propertyPath: Debugging
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212383128361749890, guid: 4a907ff6c901ce74a98721411d946d88,
+        type: 3}
+      propertyPath: RejectionMessages.Array.data[0]
+      value: "My beautiful tree, you are already here. I don\u2019t need anything
+        else from you."
       objectReference: {fileID: 0}
     - target: {fileID: 69819858, guid: 4a907ff6c901ce74a98721411d946d88, type: 3}
       propertyPath: m_Enabled

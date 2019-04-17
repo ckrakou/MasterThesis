@@ -118,7 +118,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.1
+  bundleVersion: 3.7.19e
   preloadedAssets:
   - {fileID: 7581234355332639907, guid: d2f8f90a9af35bf4f9ee8777ff41d998, type: 3}
   - {fileID: 7530620472401747793, guid: cad0fd13545ed034b9254526fa4e35af, type: 3}
@@ -526,8 +526,8 @@ PlayerSettings:
   splashScreenBackgroundSourcePortrait: {fileID: 0}
   spritePackerPolicy: 
   webGLMemorySize: 500
-  webGLExceptionSupport: 1
-  webGLNameFilesAsHashes: 0
+  webGLExceptionSupport: 0
+  webGLNameFilesAsHashes: 1
   webGLDataCaching: 1
   webGLDebugSymbols: 0
   webGLEmscriptenArgs: 
